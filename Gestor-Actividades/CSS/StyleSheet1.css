@@ -1,0 +1,25 @@
+﻿#imagen {
+    float: right;
+    margin: 40px 10px 0 0;
+    border-radius: 5px;
+}
+
+.contenido {
+    background-color: #0f3470;
+    margin: 0 0 10px 0px;
+    border-radius: 7px;
+    border: 1px solid #499ec8;
+    font-family: "Tahoma", "Geneva", sans-serif;
+}
+
+h1 {
+    color: #ffffff;
+    font-family: sans-serif;
+}
+
+.form {
+    background-color: #ffffff;
+    margin: 0 auto;
+    width: 500px;
+    padding: 0 20px 0 0;
+}
