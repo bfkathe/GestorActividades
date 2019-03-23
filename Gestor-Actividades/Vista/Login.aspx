@@ -9,13 +9,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="contenido">
+        <div id="titulo">
             <h1 align="center">Escuela de Ingeniería en Computación</h1>
         </div>
+
         <h2 align="center">Gestor de Actividades</h2>
         <img id="imagen" src="/Imagenes/imagen.png" height="150px" width="150px">
 
-        <div class="form" align="center">
+        <div id="form" align="center">
             <input type="text" name="username" value="Username"><br>
             <br>
             <input type="password" name="password" value="Password"><br>

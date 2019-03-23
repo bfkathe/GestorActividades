@@ -4,7 +4,7 @@
     border-radius: 5px;
 }
 
-.contenido {
+#titulo {
     background-color: #0f3470;
     margin: 0 0 10px 0px;
     border-radius: 7px;
@@ -15,11 +15,54 @@
 h1 {
     color: #ffffff;
     font-family: sans-serif;
+    text-align: center;
 }
+   
 
-.form {
+#form {
     background-color: #ffffff;
     margin: 0 auto;
     width: 500px;
     padding: 0 20px 0 0;
 }
+
+#menuOpciones {
+    background-color: #ffffff;
+    width: 350px;
+    height: 500px;
+    padding: 0 20px 0 0;
+    color: #444;
+    border: 1px solid #444;
+    border-radius: 10px;
+    overflow: hidden; 
+    float:left;
+}
+button {
+    width: 300px;
+    height: 40px;
+    background-color: #0f3470;
+    color: aliceblue;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#form2 {
+    background-color: #ffffff;
+    margin: 0 auto;
+    width: 500px;
+    padding: 0 20px 0 0;
+}
+
+#lugar{
+    float:left;
+    width:70%;
+}
+
+input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
