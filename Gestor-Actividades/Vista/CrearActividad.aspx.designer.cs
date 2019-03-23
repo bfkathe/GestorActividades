@@ -10,7 +10,7 @@
 namespace Gestor_Actividades.Vista {
     
     
-    public partial class Staff {
+    public partial class CrearActividad {
         
         /// <summary>
         /// form1 control.
@@ -49,39 +49,75 @@ namespace Gestor_Actividades.Vista {
         protected global::System.Web.UI.WebControls.Button botonCrearStaff;
         
         /// <summary>
-        /// txtBox_nombre control.
+        /// txtBox_lugar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_nombre;
+        protected global::System.Web.UI.WebControls.TextBox txtBox_lugar;
         
         /// <summary>
-        /// txtBox_nombreUsuario control.
+        /// txtBox_fecha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_nombreUsuario;
+        protected global::System.Web.UI.WebControls.TextBox txtBox_fecha;
         
         /// <summary>
-        /// txtBox_contrasenna control.
+        /// txtBox_horario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_contrasenna;
+        protected global::System.Web.UI.WebControls.TextBox txtBox_horario;
         
         /// <summary>
-        /// Button1 control.
+        /// txtBox_cupo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.TextBox txtBox_cupo;
+        
+        /// <summary>
+        /// txtBox_descripcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBox_descripcion;
+        
+        /// <summary>
+        /// ListBox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBox1;
+        
+        /// <summary>
+        /// FileUpload1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        
+        /// <summary>
+        /// botonRegistrar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button botonRegistrar;
     }
 }

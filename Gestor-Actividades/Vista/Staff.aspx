@@ -10,20 +10,21 @@
 <body>
     <form id="form1" runat="server">
         <div id="menuOpciones"><br />
-            <button>Crear actividades</button><br/><br />
-            <button>Crear usuarios de Staff</button><br />
+            <asp:Button ID="botonCrearAct" runat="server" Text="Crear Actividad" CssClass="botones" OnClick="botonCrearAct_Click"/><br />
+            <asp:Button ID="botonVerAct" runat="server" Text="Ver Actividades" CssClass="botones" OnClick="botonVerAct_Click"/><br />
+            <asp:Button ID="botonCrearStaff" runat="server" Text="Crear Staff" CssClass="botones" OnClick="botonCrearStaff_Click"/>
         </div>
 
-        <div id="lugar"><br />
+        <div id="seccion"><br />
             <div id="titulo">
                 <h1>Crear usuarios de staff</h1>
             </div>
             <br /><br /><br />
             <div id="form2">
-                <input name="nombre" type="text" value="Nombre"/><br /><br />
-                <input name="nombreUsuario" type="text" value="Nombre de usuario" /><br /><br />
-                <input name="contrasenna" type="password" /><br /><br />
-                <button>Registrar</button>
+                <asp:TextBox ID="txtBox_nombre" runat="server" Text="Nombre"></asp:TextBox><br /><br />
+                <asp:TextBox ID="txtBox_nombreUsuario" runat="server" Text="Nombre de usuario" /><br /><br />
+                <asp:TextBox ID="txtBox_contrasenna" runat="server" TextMode="Password" /><br /><br />
+                <asp:Button ID="Button1" runat="server" Text="Button" />
             </div>
             
         </div>
