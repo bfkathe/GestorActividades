@@ -71,6 +71,7 @@
     <Content Include="CSS\StyleSheet1.css" />
     <Content Include="Imagenes\imagen.png" />
     <Content Include="Vista\Login.aspx" />
+    <Content Include="Vista\Staff.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +82,13 @@
     </Compile>
     <Compile Include="Vista\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Staff.aspx.cs">
+      <DependentUpon>Staff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Staff.aspx.designer.cs">
+      <DependentUpon>Staff.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
