@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Gestor_Actividades.Vista
 {
-    public partial class CrearActividad : System.Web.UI.Page
+    public partial class VerActividades : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void botonCrearAct_Click(object sender, EventArgs e)
@@ -19,14 +19,14 @@ namespace Gestor_Actividades.Vista
             Response.Redirect("CrearActividad.aspx");
         }
 
-        protected void botonCrearStaff_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Staff.aspx");
-        }
-
         protected void botonVerAct_Click(object sender, EventArgs e)
         {
             Response.Redirect("VerActividades.aspx");
+        }
+
+        protected void botonCrearStaff_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Staff.aspx");
         }
     }
 }
