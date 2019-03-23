@@ -19,7 +19,7 @@
     <form id="form1" runat="server">
         <div id="menuOpciones"><br />
             <asp:Button ID="botonCrearAct" runat="server" Text="Crear Actividad" CssClass="botones" OnClick="botonCrearAct_Click"/><br />
-            <asp:Button ID="botonVerAct" runat="server" Text="Ver Actividades" CssClass="botones"/><br />
+            <asp:Button ID="botonVerAct" runat="server" Text="Ver Actividades" CssClass="botones" OnClick="botonVerAct_Click"/><br />
             <asp:Button ID="botonCrearStaff" runat="server" Text="Crear Staff" CssClass="botones" OnClick="botonCrearStaff_Click"/>
         </div>
 

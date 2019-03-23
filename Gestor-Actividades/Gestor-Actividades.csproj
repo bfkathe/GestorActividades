@@ -73,6 +73,7 @@
     <Content Include="Vista\CrearActividad.aspx" />
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\Staff.aspx" />
+    <Content Include="Vista\VerActividades.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +98,13 @@
     </Compile>
     <Compile Include="Vista\Staff.aspx.designer.cs">
       <DependentUpon>Staff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\VerActividades.aspx.cs">
+      <DependentUpon>VerActividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\VerActividades.aspx.designer.cs">
+      <DependentUpon>VerActividades.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

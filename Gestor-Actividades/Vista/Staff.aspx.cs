@@ -21,7 +21,7 @@ namespace Gestor_Actividades.Vista
 
         protected void botonVerAct_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("VerActividades.aspx");
         }
 
         protected void botonCrearStaff_Click(object sender, EventArgs e)
