@@ -70,12 +70,20 @@
   <ItemGroup>
     <Content Include="CSS\StyleSheet1.css" />
     <Content Include="Imagenes\imagen.png" />
+    <Content Include="Vista\CrearActividad.aspx" />
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\Staff.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\CrearActividad.aspx.cs">
+      <DependentUpon>CrearActividad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\CrearActividad.aspx.designer.cs">
+      <DependentUpon>CrearActividad.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
