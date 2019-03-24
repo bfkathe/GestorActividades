@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Gestor_Actividades.Vista
 {
-    public partial class VerActividades : System.Web.UI.Page
+    public partial class WebForm1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,14 +29,9 @@ namespace Gestor_Actividades.Vista
             Response.Redirect("Staff.aspx");
         }
 
-        protected void botonEditarActividad_Click(object sender, EventArgs e)
+        protected void botonRegistrar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("EditarActividades.aspx");
-        }
-
-        protected void botonEliminarActividad_Click(object sender, EventArgs e)
-        {
-            MsgBox("Actividad Eliminada", this.Page, this);
+            MsgBox("Actividad Editada", this.Page, this);
         }
 
         public void MsgBox(String ex, Page pg, Object obj)
@@ -46,6 +41,5 @@ namespace Gestor_Actividades.Vista
             ClientScriptManager cs = pg.ClientScript;
             cs.RegisterClientScriptBlock(cstype, s, s.ToString());
         }
-
     }
 }

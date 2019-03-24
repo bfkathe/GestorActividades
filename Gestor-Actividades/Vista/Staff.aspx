@@ -24,7 +24,7 @@
                 <asp:TextBox ID="txtBox_nombre" runat="server" Text="Nombre"></asp:TextBox><br /><br />
                 <asp:TextBox ID="txtBox_nombreUsuario" runat="server" Text="Nombre de usuario" /><br /><br />
                 <asp:TextBox ID="txtBox_contrasenna" runat="server" TextMode="Password" /><br /><br />
-                <asp:Button ID="Button1" runat="server" Text="Button" />
+                <asp:Button ID="botonStaffNuevo" runat="server" Text="Crear" CssClass="botones" OnClick="botonStaffNuevo_Click"/>
             </div>
             
         </div>

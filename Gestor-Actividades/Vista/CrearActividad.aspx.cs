@@ -28,5 +28,19 @@ namespace Gestor_Actividades.Vista
         {
             Response.Redirect("VerActividades.aspx");
         }
+
+        protected void botonRegistrar_Click(object sender, EventArgs e)
+        {
+            MsgBox("Actividad Registrada", this.Page, this);
+
+        }
+
+        public void MsgBox(String ex, Page pg, Object obj)
+        {
+            string s = "<SCRIPT language='javascript'>alert('" + ex.Replace("\r\n", "\\n").Replace("'", "") + "'); </SCRIPT>";
+            Type cstype = obj.GetType();
+            ClientScriptManager cs = pg.ClientScript;
+            cs.RegisterClientScriptBlock(cstype, s, s.ToString());
+        }
     }
 }

@@ -10,7 +10,7 @@
 namespace Gestor_Actividades.Vista {
     
     
-    public partial class Staff {
+    public partial class WebForm1 {
         
         /// <summary>
         /// Control form1.
@@ -49,39 +49,75 @@ namespace Gestor_Actividades.Vista {
         protected global::System.Web.UI.WebControls.Button botonCrearStaff;
         
         /// <summary>
-        /// Control txtBox_nombre.
+        /// Control txtBox_lugar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_nombre;
+        protected global::System.Web.UI.WebControls.TextBox txtBox_lugar;
         
         /// <summary>
-        /// Control txtBox_nombreUsuario.
+        /// Control txtBox_fecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_nombreUsuario;
+        protected global::System.Web.UI.WebControls.TextBox txtBox_fecha;
         
         /// <summary>
-        /// Control txtBox_contrasenna.
+        /// Control txtBox_horario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_contrasenna;
+        protected global::System.Web.UI.WebControls.TextBox txtBox_horario;
         
         /// <summary>
-        /// Control botonStaffNuevo.
+        /// Control txtBox_cupo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonStaffNuevo;
+        protected global::System.Web.UI.WebControls.TextBox txtBox_cupo;
+        
+        /// <summary>
+        /// Control txtBox_descripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBox_descripcion;
+        
+        /// <summary>
+        /// Control ListBox1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBox1;
+        
+        /// <summary>
+        /// Control FileUpload1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        
+        /// <summary>
+        /// Control botonRegistrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button botonRegistrar;
     }
 }

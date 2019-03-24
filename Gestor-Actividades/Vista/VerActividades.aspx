@@ -25,8 +25,8 @@
                     <asp:ListItem>Actividad 1</asp:ListItem>
                     <asp:ListItem>Actividad 2</asp:ListItem>
                 </asp:CheckBoxList><br /><br />
-                <asp:Button ID="botonEliminar" runat="server" Text="Eliminar" CssClass="botones" Width="100px"/><br /><br />
-                <asp:Button ID="botonEditar" runat="server" Text="Editar" CssClass="botones" Width="100px"/>
+                <asp:Button ID="botonEliminar" runat="server" Text="Eliminar" CssClass="botones" Width="100px"  OnClick ="botonEliminarActividad_Click"/><br /><br />
+                <asp:Button ID="botonEditar" runat="server" Text="Editar" CssClass="botones" Width="100px" OnClick="botonEditarActividad_Click"/>
             </div>
             
         </div>

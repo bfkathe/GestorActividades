@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CrearActividad.aspx.cs" Inherits="Gestor_Actividades.Vista.CrearActividad" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarActividades.aspx.cs" Inherits="Gestor_Actividades.Vista.WebForm1" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Crear Actividad</title>
-    <link href="/CSS/StyleSheet1.css" rel="Stylesheet" type="text/css"/>
+    <title>Editar Actividad</title>
+    <link href="../CSS/StyleSheet1.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style1 {
             height: 378px;
@@ -23,11 +23,12 @@
             <asp:Button ID="botonCrearStaff" runat="server" Text="Crear Staff" CssClass="botones" OnClick="botonCrearStaff_Click"/>
         </div>
 
-        <div id="seccion" class="auto-style2"><br />
+        <div id="seccion"><br />
             <div id="titulo">
-                <h1>Crear actividad</h1>
+                <h1>Editar Actividades</h1>
             </div>
             <br /><br /><br />
+
             <div id="form2" class="auto-style1">
                 <input id="nombre" name="nombre" type="text" value="Nombre"/><br /><br />
                 <label>Campus/Centro Académico</label>
@@ -51,10 +52,12 @@
                 <label>Encargados</label><br />
                 <asp:ListBox ID="ListBox1" runat="server" ></asp:ListBox><br /><br />
                 <asp:FileUpload ID="FileUpload1" runat="server" /><br /><br />
-                <asp:Button ID="botonRegistrar" runat="server" Text="Registrar" CssClass="botones" OnClick="botonRegistrar_Click" />
+                <asp:Button ID="botonRegistrar" runat="server" Text="Registrar" CssClass="botones" OnClick="botonRegistrar_Click"/>
                 </div>
             
         </div>
+
+
     </form>
 </body>
 </html>

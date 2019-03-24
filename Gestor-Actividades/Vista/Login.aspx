@@ -6,6 +6,7 @@
 <head runat="server">
     <title>Gestor de Actividades</title>
     <link href="/CSS/StyleSheet1.css" rel="Stylesheet" type="text/css"/>
+ 
 </head>
 <body>
     <form id="form1" runat="server">
@@ -21,7 +22,7 @@
             <br>
             <input type="password" name="password" value="Password"><br>
             <br>
-            <input type="submit" value="Log In">
+            <asp:Button ID="botonLogIn" runat="server" Text="LogIn" CssClass="botones" OnClick="botonLoggear_Click"/>
         </div>
     </form>
 </body>

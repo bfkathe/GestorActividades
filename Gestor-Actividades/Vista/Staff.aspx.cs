@@ -28,5 +28,20 @@ namespace Gestor_Actividades.Vista
         {
             Response.Redirect("Staff.aspx");
         }
+
+        protected void botonStaffNuevo_Click(object sender, EventArgs e)
+        {
+            //MsgBox("Staff Creado", this.Page, this);
+            Response.Write("<script>alert('login successful');</script>");
+            //Hay dos maneras de mandar el mensaje
+        }
+
+        public void MsgBox(String ex, Page pg, Object obj)
+        {
+            string s = "<SCRIPT language='javascript'>alert('" + ex.Replace("\r\n", "\\n").Replace("'", "") + "'); </SCRIPT>";
+            Type cstype = obj.GetType();
+            ClientScriptManager cs = pg.ClientScript;
+            cs.RegisterClientScriptBlock(cstype, s, s.ToString());
+        }
     }
 }
