@@ -10,7 +10,7 @@
 namespace Gestor_Actividades.Vista {
     
     
-    public partial class CrearActividad {
+    public partial class EditarEvento {
         
         /// <summary>
         /// form1 control.
@@ -58,33 +58,6 @@ namespace Gestor_Actividades.Vista {
         protected global::System.Web.UI.WebControls.TextBox txtBox_nombre;
         
         /// <summary>
-        /// DropDownList_Campus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Campus;
-        
-        /// <summary>
-        /// txtBox_lugar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_lugar;
-        
-        /// <summary>
-        /// txtBox_fecha control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_fecha;
-        
-        /// <summary>
         /// txtBox_horario control.
         /// </summary>
         /// <remarks>
@@ -94,13 +67,13 @@ namespace Gestor_Actividades.Vista {
         protected global::System.Web.UI.WebControls.TextBox txtBox_horario;
         
         /// <summary>
-        /// txtBox_cupo control.
+        /// txtBox_expositor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_cupo;
+        protected global::System.Web.UI.WebControls.TextBox txtBox_expositor;
         
         /// <summary>
         /// txtBox_descripcion control.
@@ -112,30 +85,12 @@ namespace Gestor_Actividades.Vista {
         protected global::System.Web.UI.WebControls.TextBox txtBox_descripcion;
         
         /// <summary>
-        /// ListBox1 control.
+        /// botonGuardarCambios control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox1;
-        
-        /// <summary>
-        /// FileUpload1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
-        
-        /// <summary>
-        /// botonRegistrar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonRegistrar;
+        protected global::System.Web.UI.WebControls.Button botonGuardarCambios;
     }
 }

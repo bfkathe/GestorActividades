@@ -10,7 +10,7 @@
 namespace Gestor_Actividades.Vista {
     
     
-    public partial class CrearActividad {
+    public partial class VerEventos {
         
         /// <summary>
         /// form1 control.
@@ -49,93 +49,39 @@ namespace Gestor_Actividades.Vista {
         protected global::System.Web.UI.WebControls.Button botonCrearStaff;
         
         /// <summary>
-        /// txtBox_nombre control.
+        /// CheckBoxList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_nombre;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
         
         /// <summary>
-        /// DropDownList_Campus control.
+        /// botonAgregarEvento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Campus;
+        protected global::System.Web.UI.WebControls.Button botonAgregarEvento;
         
         /// <summary>
-        /// txtBox_lugar control.
+        /// botonEliminarEvento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_lugar;
+        protected global::System.Web.UI.WebControls.Button botonEliminarEvento;
         
         /// <summary>
-        /// txtBox_fecha control.
+        /// botonEditarEvento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_fecha;
-        
-        /// <summary>
-        /// txtBox_horario control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_horario;
-        
-        /// <summary>
-        /// txtBox_cupo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_cupo;
-        
-        /// <summary>
-        /// txtBox_descripcion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_descripcion;
-        
-        /// <summary>
-        /// ListBox1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox1;
-        
-        /// <summary>
-        /// FileUpload1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
-        
-        /// <summary>
-        /// botonRegistrar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonRegistrar;
+        protected global::System.Web.UI.WebControls.Button botonEditarEvento;
     }
 }

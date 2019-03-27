@@ -11,7 +11,7 @@ namespace Gestor_Actividades.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void botonCrearAct_Click(object sender, EventArgs e)
@@ -47,5 +47,9 @@ namespace Gestor_Actividades.Vista
             cs.RegisterClientScriptBlock(cstype, s, s.ToString());
         }
 
+        protected void botonVerEventos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VerEventos.aspx");
+        }
     }
 }

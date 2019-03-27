@@ -10,10 +10,7 @@
         .auto-style1 {
             height: 378px;
         }
-        .auto-style2 {
-            height: 747px;
-        }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -30,15 +27,16 @@
             <br /><br /><br />
 
             <div id="form2" class="auto-style1">
-                <input id="nombre" name="nombre" type="text" value="Nombre"/><br /><br />
-                <label>Campus/Centro Académico</label>
-                <select id="dropdown" name="campus">
-                    <option>Campus Cartago</option>
-                    <option>Campus San Carlos</option>
-                    <option>Centro Académico San José</option>
-                    <option>Centro Académico Alajuela</option>
-                    <option>Centro Académico Limón</option>                 
-                </select><br /><br />
+                <asp:TextBox ID="txtBox_nombre" runat="server" Text="Nombre"></asp:TextBox><br /><br />
+                <label>Campus/Centro Académico&nbsp; </label>
+
+                &nbsp;<asp:DropDownList ID="DropDownList_Campus" runat="server">
+                    <asp:ListItem>Campus Cartago</asp:ListItem>
+                    <asp:ListItem>Campus San Carlos</asp:ListItem>
+                    <asp:ListItem>CA San José</asp:ListItem>
+                    <asp:ListItem>CA Alajuela</asp:ListItem>
+                    <asp:ListItem>CA Limón</asp:ListItem>
+                </asp:DropDownList><br /><br />
 
                 <asp:TextBox ID="txtBox_lugar" runat="server" Text="Lugar"></asp:TextBox><br /><br />
                 <asp:TextBox ID="txtBox_fecha" runat="server" Text="Fecha"></asp:TextBox><br /><br />

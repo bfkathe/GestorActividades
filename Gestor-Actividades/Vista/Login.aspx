@@ -18,9 +18,9 @@
         <img id="imagen" src="/Imagenes/imagen.png" height="150px" width="150px">
 
         <div id="form" align="center">
-            <input type="text" name="username" value="Username"><br>
+            <asp:TextBox ID="txtBox_username" runat="server" Text="Username"></asp:TextBox><br>
             <br>
-            <input type="password" name="password" value="Password"><br>
+            <asp:TextBox ID="txtBox_password" runat="server" TextMode="Password"></asp:TextBox><br>
             <br>
             <asp:Button ID="botonLogIn" runat="server" Text="LogIn" CssClass="botones" OnClick="botonLoggear_Click"/>
         </div>
