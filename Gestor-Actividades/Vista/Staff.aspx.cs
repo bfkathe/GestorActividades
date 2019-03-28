@@ -9,6 +9,7 @@ namespace Gestor_Actividades.Vista
 {
     public partial class Staff : System.Web.UI.Page
     {
+        public DTO.DTO dto = new DTO.DTO();
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -31,6 +32,13 @@ namespace Gestor_Actividades.Vista
 
         protected void botonStaffNuevo_Click(object sender, EventArgs e)
         {
+            String nombre = txtBox_nombre.Text;
+            String contra = txtBox_contrasenna.Text;
+            String usu = txtBox_nombreUsuario.Text;
+
+            dto.setStaffNombre(nombre);
+            dto.setStaffUsuario(usu);
+            dto.setStaffContraseña(contra);
             //MsgBox("Staff Creado", this.Page, this);
             Response.Write("<script>alert('login successful');</script>");
             //Hay dos maneras de mandar el mensaje

@@ -11,6 +11,7 @@ namespace Gestor_Actividades.Vista
     public partial class Login : System.Web.UI.Page
     {
         public Controlador.Controlador controlador = new Controlador.Controlador();
+        public DTO.DTO dto = new DTO.DTO();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -18,12 +19,15 @@ namespace Gestor_Actividades.Vista
 
         protected void botonLoggear_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VerActividades.aspx");
+
             String usuario = txtBox_username.Text;
             String contraseña = txtBox_password.Text;
 
-            System.Diagnostics.Debug.WriteLine(usuario + ","+ contraseña);
+            dto.setLogInUser(usuario);
+            dto.setLogInPassword(contraseña);
 
+            //System.Diagnostics.Debug.WriteLine(dtoLogin.getLogInUser());
+            Response.Redirect("VerActividades.aspx");
         }
     }
 }
