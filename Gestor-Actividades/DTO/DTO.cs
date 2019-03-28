@@ -8,8 +8,8 @@ namespace Gestor_Actividades.DTO
     public class DTO
     {
         //usuario
-        private String UsuarioLogIng { get; set; }
-        private String ContraseñaLogIn { get; set; }
+        private String LogIngUser { get; set; }
+        private String LogInPassword { get; set; }
 
         //actividades
         private DateTime ActividadFecha { get; set; }
