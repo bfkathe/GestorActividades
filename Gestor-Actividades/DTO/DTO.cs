@@ -7,5 +7,7 @@ namespace Gestor_Actividades.DTO
 {
     public class DTO
     {
+        private String Usuario;
+        private String C
     }
 }
