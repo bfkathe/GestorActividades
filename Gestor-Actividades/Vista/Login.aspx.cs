@@ -19,6 +19,10 @@ namespace Gestor_Actividades.Vista
         protected void botonLoggear_Click(object sender, EventArgs e)
         {
             Response.Redirect("VerActividades.aspx");
+            String usuario = txtBox_username.text();
+            String contraseña = txtBox_password.text();
+
+            System.Diagnostics.Debug.WriteLine(usuario + ","+ contraseña);
 
         }
     }
