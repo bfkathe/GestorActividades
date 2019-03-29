@@ -27,7 +27,8 @@ namespace Gestor_Actividades.Conexion
             System.Diagnostics.Debug.WriteLine("Conexion abierta");
         }
 
-            }
+      
+
         public void Abrir()
         {
             try
@@ -46,6 +47,6 @@ namespace Gestor_Actividades.Conexion
             conn.Close();
         }
 
-        
+     }   
 
 }

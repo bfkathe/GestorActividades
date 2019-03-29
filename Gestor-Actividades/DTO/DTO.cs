@@ -36,8 +36,8 @@ namespace Gestor_Actividades.DTO
 
 
 
-        public DTO()
+        /*public DTO()
         {
 
-        }
+        }*/
 }

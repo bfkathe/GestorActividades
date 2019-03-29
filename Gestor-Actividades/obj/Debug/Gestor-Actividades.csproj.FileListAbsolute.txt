@@ -229,4 +229,3 @@ C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\obj\Debug\Ges
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\obj\Debug\Gestor-Actividades.csproj.CopyComplete
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\obj\Debug\Gestor-Actividades.dll
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\obj\Debug\Gestor-Actividades.pdb
-C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\obj\Debug\Gestor-Actividades.csprojAssemblyReference.cache
