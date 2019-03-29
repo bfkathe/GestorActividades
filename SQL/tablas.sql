@@ -1,4 +1,4 @@
-use ProyectoGestorActividades;
+create Database ProyectoGestorActividades;
 
 create table Actividades(
 	ActividadId int identity(1,1) primary key,
