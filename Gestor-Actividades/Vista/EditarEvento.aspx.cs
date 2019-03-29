@@ -9,7 +9,7 @@ namespace Gestor_Actividades.Vista
 {
     public partial class EditarEvento : System.Web.UI.Page
     {
-        public DTO.DTO dto = new DTO.DTO();
+        public DTO1.DTO dto = new DTO1.DTO();
         protected void Page_Load(object sender, EventArgs e)
         {
 

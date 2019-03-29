@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Gestor_Actividades.DTO
+namespace Gestor_Actividades.DTO1
 {
     public class DTO
     {
@@ -33,6 +33,12 @@ namespace Gestor_Actividades.DTO
 
         //archivos
         private String ArchivoPath { get; set; }
+
+
+        /**********************************************************************************/
+        /*Creo que todos esos gets y sets de abajo no son necesarios, se hacen solos con el 
+        {get,set} de cada atributo arriba */
+
 
         //Gets --------------------------
         
@@ -225,12 +231,9 @@ namespace Gestor_Actividades.DTO
         {
             this.ArchivoPath = path;
         }
+
+        public DTO() { }
     }
 
-
-
-    /*public DTO()
-    {
-
-    }*/
+    
 }

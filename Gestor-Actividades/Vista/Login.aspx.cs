@@ -4,14 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Gestor_Actividades.Controlador;
+using Gestor_Actividades.Negocio;
+using Gestor_Actividades.DTO1;
 
 namespace Gestor_Actividades.Vista
 {
     public partial class Login : System.Web.UI.Page
     {
-        public Controlador.Controlador controlador = new Controlador.Controlador();
-        public DTO.DTO dto = new DTO.DTO();
+        public Controlador controlador = new Controlador();
+        public DTO dto = new DTO();
         protected void Page_Load(object sender, EventArgs e)
         {
 
