@@ -9,23 +9,25 @@ namespace Gestor_Actividades.Conexion
 {
     public class Conexion
     {
-<<<<<<< HEAD
-        private string cadena = "Data Source=ANDRE\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
-=======
-        private string cadena = "Data Source=DESKTOP-7K75JTA\\SQLEXPRESS ; Initial Catalog=prueba; Integrated Security=True";
->>>>>>> 2780fb56d7716dc8e5b4a58c545e1648bed0d7d5
+        /*Cadena André*/
+        //private string cadena = "Data Source=ANDRE\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
+
+        /*Cadena Audra*/
+        private string cadena = "Data Source=DESKTOP-7K75JTA\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
+
+        /*Cadena Katherina*/
+        //private string cadena = "Data Source= PONERAQUISTRING; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
+
         public SqlConnection conn = new SqlConnection();
 
         public Conexion()
         {
             conn.ConnectionString = cadena;
-<<<<<<< HEAD
+
             System.Diagnostics.Debug.WriteLine("Conexion abierta");
         }
-=======
-            }
->>>>>>> 2780fb56d7716dc8e5b4a58c545e1648bed0d7d5
 
+            }
         public void Abrir()
         {
             try
@@ -39,36 +41,11 @@ namespace Gestor_Actividades.Conexion
             }
         }
 
-        public void cerrar()
+        public void Cerrar()
         {
             conn.Close();
         }
 
-<<<<<<< HEAD
-        /*public void agregarNombre(string nombre, int edad)
-=======
-        public void agregarNombre(string nombre, int edad)
->>>>>>> 2780fb56d7716dc8e5b4a58c545e1648bed0d7d5
-        {
-            SqlCommand cmd = new SqlCommand("insNombre", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            try
-            {
-                cmd.Parameters.Add("@nombre",SqlDbType
-                    .NChar).Value = nombre;
-                cmd.Parameters.Add("@edad", SqlDbType.Int).Value = edad;
-                Abrir();
-                cmd.ExecuteNonQuery();
-                cerrar();
-            }
-            catch
-            {
-                throw new System.Exception("Error insertando en la base");
-            }
-<<<<<<< HEAD
-        }*/
-=======
-        }
->>>>>>> 2780fb56d7716dc8e5b4a58c545e1648bed0d7d5
-    }
+        
+
 }
