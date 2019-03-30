@@ -9,6 +9,7 @@ namespace Gestor_Actividades.Vista
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        public DTO1.DTO dto = new DTO1.DTO();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -31,7 +32,27 @@ namespace Gestor_Actividades.Vista
 
         protected void botonRegistrar_Click(object sender, EventArgs e)
         {
-            MsgBox("Actividad Editada", this.Page, this);
+            String nombreActividad = txtBox_nombre.Text;
+            String campus = DropDownList_Campus.Text;
+            String fechaString = txtBox_fecha.Text;
+
+            DateTime fecha = Convert.ToDateTime(fechaString);
+
+            //bool cupo
+            String horario = txtBox_horario.Text;
+            String encargado = ListBox1.Text;
+            String descripcion = txtBox_descripcion.Text;
+            //String file = FileUpload1.Text; OJOOOOO NO SE COMO JALAR EL ARCHIVO DE LA ACTIVIDAD
+
+            dto.setActividadNombre(nombreActividad);
+            dto.setActividadCampus(campus);
+            dto.setActividadFecha(fecha);
+            dto.setActividadHorario(horario);
+            dto.setActividadEncargado(encargado);
+            dto.setActividadDescripcion(descripcion);
+
+
+            MsgBox("Actividad Registrada", this.Page, this);
         }
 
         public void MsgBox(String ex, Page pg, Object obj)
