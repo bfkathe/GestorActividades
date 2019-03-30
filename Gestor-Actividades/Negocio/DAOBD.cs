@@ -13,10 +13,10 @@ namespace Gestor_Actividades.Negocio
         //private string cadena = "Data Source=ANDRE\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
 
         /*Cadena Audra*/
-        //private string cadena = "Data Source=DESKTOP-7K75JTA\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
+        private string cadena = "Data Source=DESKTOP-7K75JTA\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
 
         /*Cadena Katherina*/
-        private string cadena = "Data Source = KATHERINA\\KATHERINABD;Initial Catalog = ProyectoGestorActividades; Integrated Security = True";
+        //private string cadena = "Data Source = KATHERINA\\KATHERINABD;Initial Catalog = ProyectoGestorActividades; Integrated Security = True";
         public SqlConnection conn = new SqlConnection();
 
         public DAOBD()
@@ -72,7 +72,35 @@ namespace Gestor_Actividades.Negocio
             }
         }
 
+        public void agregarActividad(string nombre, string nombreUsuario, string contrasenna)
+        {
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("insertarActividad", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@Fecha", nombre));
+                command.Parameters.Add(new SqlParameter("@Nombre", nombreUsuario));
+                command.Parameters.Add(new SqlParameter("@Horario", contrasenna));
+                command.Parameters.Add(new SqlParameter("@Campus", contrasenna));
+                command.Parameters.Add(new SqlParameter("@Restriccion", contrasenna));
+                command.Parameters.Add(new SqlParameter("@Encargado", contrasenna));
+                command.Parameters.Add(new SqlParameter("@CantCupos", contrasenna));
+                command.ExecuteNonQuery();
+                if (conn.State != ConnectionState.Closed)
+                {
+                    Cerrar();
+                }
+                //mensaje confirmacion
+            }
+            catch (SqlException ex)
+            {
+                Console.Write(ex);
+                //mensaje error
+            }
+        }
 
-     }   
+
+    }   
 
 }
