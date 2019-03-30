@@ -85,3 +85,10 @@ foreign key (ActividadId) references Actividades(ActividadId);
 alter table ArhivosxActividad
 add constraint FK_ArchivosAA
 foreign key (ArchivoId) references Archivos(ArchivoId);
+
+--descripción para evento y actividad
+alter table Actividades add Descripcion nvarchar(255);
+alter table Eventos add Descripcion nvarchar(255);
+
+alter table Actividades alter column Descripcion nvarchar(255) not null;
+alter table Eventos alter column Descripcion nvarchar(255) not null;
