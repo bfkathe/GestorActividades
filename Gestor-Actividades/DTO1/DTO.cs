@@ -19,6 +19,7 @@ namespace Gestor_Actividades.DTO1
         private bool ActividadRestriccion { get; set; }
         private String ActividadEncargado { get; set; }
         private String ActividadDescripcion;
+        private int ActividadCupo;
 
         //eventos
         private String EventoNombre { get; set; }
@@ -33,11 +34,6 @@ namespace Gestor_Actividades.DTO1
 
         //archivos
         private String ArchivoPath { get; set; }
-
-
-        /**********************************************************************************/
-        /*Creo que todos esos gets y sets de abajo no son necesarios, se hacen solos con el 
-        {get,set} de cada atributo arriba */
 
 
         //Gets --------------------------
@@ -87,6 +83,11 @@ namespace Gestor_Actividades.DTO1
         public String getActividadDescripcion()
         {
             return this.ActividadDescripcion;
+        }
+
+        public int getActividadCupo()
+        {
+            return this.ActividadCupo;
         }
 
         //Eventos
@@ -184,6 +185,11 @@ namespace Gestor_Actividades.DTO1
         public void setActividadDescripcion(String des)
         {
             this.ActividadDescripcion = des;
+        }
+
+        public void setActividadCupo(int cupo)
+        {
+            this.ActividadCupo = cupo;
         }
 
         //eventos
