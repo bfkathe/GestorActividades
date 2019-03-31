@@ -7,15 +7,13 @@ namespace Gestor_Actividades.Modelo
 {
     public class Actividad
     {
-
-        private String nombre;
         private DateTime fecha;
+        private String nombre;
         private String horario;
         private String campus;
-        private List<String> encargados;
-        private List<Evento> evento;
-        private List<Archivo> archivo;
-        private List<Staff> staff;
+        private Boolean restriccion;
+        private String encargado;
+        private int cantCupos;
 
         public Actividad()
         {
