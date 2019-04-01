@@ -19,6 +19,7 @@ namespace Gestor_Actividades.Negocio
         /*Cadena Katherina*/
         //private string cadena = "Data Source = KATHERINA\\KATHERINABD;Initial Catalog = ProyectoGestorActividades; Integrated Security = True";
         public SqlConnection conn = new SqlConnection();
+        
 
         public DAOBD()
         {
@@ -101,6 +102,100 @@ namespace Gestor_Actividades.Negocio
             }
         }
 
+        public List<Modelo.Lista> llenarActividades()
+        {
+            List<Modelo.Lista> list = new List<Modelo.Lista>();
+            try
+            {
+                Abrir();
+                SqlCommand cmd = new SqlCommand("select ActividadId, Nombre from Actividades", conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    list.Add(new Modelo.Lista {
+                        id = rdr.GetInt32(0),
+                        nombre = rdr.GetString(1) 
+                        
+                    });
+                }
+                rdr.Close();
+                return list;
+            }
+            catch(Exception ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al obtener actividades");
+                list.Add(new Modelo.Lista
+                {
+                    id = -1,
+                    nombre = "Error"
+
+                });
+                return list;
+                
+            }
+        }
+
+        public void agregarEvento(Modelo.Evento evento)
+        {
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("insertarEvento", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@idActividad", evento.getIdActividad()));
+                command.Parameters.Add(new SqlParameter("@Nombre", evento.getNombre()));
+                command.Parameters.Add(new SqlParameter("@Fecha", evento.getHorario()));
+                command.Parameters.Add(new SqlParameter("@Expositor", evento.getExpositor()));
+                command.Parameters.Add(new SqlParameter("@Descripcion", evento.getDescripcion()));
+                command.ExecuteNonQuery();
+                if (conn.State != ConnectionState.Closed)
+                {
+                    Cerrar();
+                }
+                System.Diagnostics.Debug.WriteLine("Evento agregado correctamente");
+            }
+            catch (SqlException ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al insertar evento");
+            }
+        }
+
+        public List<Modelo.Lista> llenarEventos()
+        {
+            List<Modelo.Lista> list = new List<Modelo.Lista>();
+            try
+            {
+                Abrir();
+                SqlCommand cmd = new SqlCommand("select EventosId, Nombre from Actividades", conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    list.Add(new Modelo.Lista
+                    {
+                        id = rdr.GetInt32(0),
+                        nombre = rdr.GetString(1)
+
+                    });
+                }
+                rdr.Close();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al obtener eventos");
+                list.Add(new Modelo.Lista
+                {
+                    id = -1,
+                    nombre = "Error"
+
+                });
+                return list;
+
+            }
+        }
 
     }   
 

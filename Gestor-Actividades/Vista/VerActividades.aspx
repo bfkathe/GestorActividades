@@ -21,7 +21,7 @@
             </div>
             <br /><br /><br />
             <div id="form2">
-                <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                <asp:CheckBoxList ID="CheckBoxList_Actividades" runat="server">
                     <asp:ListItem>Actividad 1</asp:ListItem>
                     <asp:ListItem>Actividad 2</asp:ListItem>
                 </asp:CheckBoxList><br /><br />

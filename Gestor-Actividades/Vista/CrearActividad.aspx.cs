@@ -68,10 +68,25 @@ namespace Gestor_Actividades.Vista
                 String campus = DropDownList_Campus.Text;
                 
 
+<<<<<<< HEAD
                 
 
                 //bool cupo
                 String horario = txtBox_horario.Text;
+=======
+            //bool cupo
+            String horario = txtBox_horario.Text;
+            //String encargado = ListBox1.Text;
+            //String descripcion = txtBox_descripcion.Text;
+            //String file = FileUpload1.Text; OJOOOOO NO SE COMO JALAR EL ARCHIVO DE LA ACTIVIDAD
+
+            dto.setActividadNombre(nombreActividad);
+            dto.setActividadCampus(campus);
+            dto.setActividadFecha(fecha);
+            dto.setActividadHorario(horario);
+           // dto.setActividadEncargado(encargado);
+           // dto.setActividadDescripcion(descripcion);
+>>>>>>> 616aade76f1b5a5568927c105c61e70cfcd0e89b
 
                 //String encargado = ListBox1.Text;
                 //String descripcion = txtBox_descripcion.Text;

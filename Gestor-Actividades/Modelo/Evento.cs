@@ -8,6 +8,7 @@ namespace Gestor_Actividades.Modelo
     public class Evento
     {
 
+        private int idActividad;
         private String nombre;
         private String horario;
         private String expositor;
@@ -18,8 +19,9 @@ namespace Gestor_Actividades.Modelo
 
         }
 
-        public Evento(String nom, String hor, String expo, String descrip)
+        public Evento(int idActividad, String nom, String hor, String expo, String descrip)
         {
+            this.idActividad = idActividad;
             this.nombre = nom;
             this.horario = hor;
             this.expositor = expo;
@@ -64,6 +66,16 @@ namespace Gestor_Actividades.Modelo
         public void setDescripcion(String descrip)
         {
             this.descripcion = descrip;
+        }
+
+        public int getIdActividad()
+        {
+            return this.idActividad;
+        }
+
+        public void setIdActividad(int idActividad)
+        {
+            this.idActividad = idActividad;
         }
     }
 }

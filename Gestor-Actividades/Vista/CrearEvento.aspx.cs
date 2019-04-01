@@ -4,15 +4,22 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Gestor_Actividades.Modelo;
+using Gestor_Actividades.Negocio;
 
 namespace Gestor_Actividades.Vista
 {
     public partial class CrearEvento : System.Web.UI.Page
     {
         public DTO1.DTO dto = new DTO1.DTO();
+        public Negocio.Controlador controlador = new Negocio.Controlador();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            List<Modelo.Lista> lista = controlador.llenarActividades();
+            DropDownList_VerActividades.DataTextField = "nombre";
+            DropDownList_VerActividades.DataValueField = "id";
+            DropDownList_VerActividades.DataSource = lista;
+            DropDownList_VerActividades.DataBind();
         }
 
         protected void botonCrearAct_Click(object sender, EventArgs e)

@@ -13,7 +13,8 @@ exec agregarStaff 'katherina','kattbf','123'
 
 -----------Arregla la tabla de Actividad--------------------
 Alter table Actividades ADD CantCupos int
-Alter table Actividades ADD Lugar varchar(50); 
+Alter table Actividades ADD Lugar varchar(50);
+Alter table Actividades ADD Descripcion varchar(250);  
 
 -----------Insertar Actividades----------------------------------------------
 
@@ -32,6 +33,8 @@ insert into Actividades(Fecha,Nombre,Horario,Campus,Restriccion,Encargado,CantCu
 GO
 
 exec insertarActividad '2019-03-29', 'Actividad1' , '5:00pm', 'Sede Cartago', 0, 'Audra Rodriguez', 28, 'Centro de las Artes'
+exec insertarActividad '2019-03-30', 'Actividad2' , '5:00pm', 'Sede Cartago', 0, 'Audra Rodriguez', 28, 'Centro de las Artes'
+exec insertarActividad '2019-03-30', 'Actividad3' , '5:00pm', 'Sede Cartago', 0, 'Audra Rodriguez', 28, 'Centro de las Artes'
 
 -----------Editar Actividad----------------------------------------------
 alter procedure editarActividad(
@@ -120,6 +123,8 @@ exec eliminarEvento 1
 drop table EventosxActividad
 Alter table Eventos ADD ActividadId int; 
 Alter table Eventos ADD FOREIGN KEY (ActividadId) REFERENCES Actividades(ActividadId); 
+
+
 
 
 
