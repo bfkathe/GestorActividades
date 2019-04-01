@@ -34,7 +34,9 @@
                 <div id="form2" class="auto-style1">
                     Nombre de la actividad:<br />
                 <asp:TextBox ID="txtBox_nombre" runat="server"></asp:TextBox><br />
-                <label>Campus/Centro Académico&nbsp;                 &nbsp;<asp:D&nbsp;<asp:DropDownList ID="DropDownList_Campus" runat="server">
+                <label>Campus/Centro Académico&nbsp;                 &nbsp;
+                    <!----<asp:D&nbsp;--->
+                    <asp:DropDownList ID="DropDownList_Campus" runat="server">
                     <asp:ListItem>Campus Cartago</asp:ListItem>
                     <asp:ListItem>Campus San Carlos</asp:ListItem>
                     <asp:ListItem>CA San José</asp:ListItem>
@@ -43,11 +45,14 @@
                 </asp:DropDownList><br /><br />
                 
                 <br />
-                Lugar:<asp:TextBox ID="txtBox_lugar" runat="server" Text="Lugar"></asp:TextBox><br />Fecha:<br />
-                <asp:TextBox ID="txtBox_fecha" runat="server" Text="Fecha"></asp:TextBox><br /><br />
-        Horario:<asp:TextBox ID="txtBox_horario" runat="server" Text="Horario"></asp:TextBox>
+                Lugar:<asp:TextBox ID="txtBox_lugar" runat="server" ></asp:TextBox><br />
+                Fecha:<br />
+                <asp:TextBox ID="txtBox_fecha" runat="server" placeholder="dd/mm/yyyy format only"></asp:TextBox><br /><br />
+               
+
+        Horario:<asp:TextBox ID="txtBox_horario" runat="server" ></asp:TextBox>
                 <br />
-                Cupo Reservado:<asp:CheckBox ID="CheckBox1" runat="server" />
+                <asp:CheckBox ID="CheckBoxCupo" Text="Cupo Reservado:" runat="server" />
                 <br />
                 <br />
                 <label>Cantidad de cupos:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -98,7 +103,7 @@
                     <asp:ListItem></asp:ListItem>
                 </asp:DropDownList>
                 <br /><br />
-                <label>Encargadoscargados</label><br />
+                <label>Encargados</label><br />
                 <br /><br />
                 <asp:FileUpload ID="FileUpload1" runat="server" /><br /><br />
                 <asp:Button ID="botonRegistrar" runat="server" Text="Registrar" CssClass="botones" OnClick="botonRegistrar_Click" />

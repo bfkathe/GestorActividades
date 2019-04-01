@@ -20,6 +20,7 @@ namespace Gestor_Actividades.DTO1
         private String ActividadEncargado { get; set; }
         private String ActividadDescripcion;
         private int ActividadCupo;
+        private String ActividadLugar;
 
         //eventos
         private String EventoNombre { get; set; }
@@ -37,7 +38,7 @@ namespace Gestor_Actividades.DTO1
 
 
         //Gets --------------------------
-        
+
         //Login
         public String getLogInUser()
         {
@@ -88,6 +89,11 @@ namespace Gestor_Actividades.DTO1
         public int getActividadCupo()
         {
             return this.ActividadCupo;
+        }
+
+        public String getActividadLugar()
+        {
+            return this.ActividadLugar;
         }
 
         //Eventos
@@ -190,6 +196,11 @@ namespace Gestor_Actividades.DTO1
         public void setActividadCupo(int cupo)
         {
             this.ActividadCupo = cupo;
+        }
+
+        public void setActividadLugar(String lugar)
+        {
+            this.ActividadLugar = lugar;
         }
 
         //eventos
