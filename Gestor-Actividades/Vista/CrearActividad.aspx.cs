@@ -63,5 +63,6 @@ namespace Gestor_Actividades.Vista
             ClientScriptManager cs = pg.ClientScript;
             cs.RegisterClientScriptBlock(cstype, s, s.ToString());
         }
+
     }
 }

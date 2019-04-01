@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Data;
+using Gestor_Actividades.Modelo;
 
 namespace Gestor_Actividades.Negocio
 {
@@ -63,40 +64,40 @@ namespace Gestor_Actividades.Negocio
                 {
                     Cerrar();
                 }
-                //mensaje confirmacion
+                System.Diagnostics.Debug.WriteLine("Usuario Staff agregado");
             }
             catch (SqlException ex)
             {
                 Console.Write(ex);
-                //mensaje error
+                System.Diagnostics.Debug.WriteLine("Error al insertar usuario Staff");
             }
         }
 
-        public void agregarActividad(string nombre, string nombreUsuario, string contrasenna)
+        public void agregarActividad(Modelo.Actividad actividad)
         {
             try
             {
                 Abrir();
                 SqlCommand command = new SqlCommand("insertarActividad", conn);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add(new SqlParameter("@Fecha", nombre));
-                command.Parameters.Add(new SqlParameter("@Nombre", nombreUsuario));
-                command.Parameters.Add(new SqlParameter("@Horario", contrasenna));
-                command.Parameters.Add(new SqlParameter("@Campus", contrasenna));
-                command.Parameters.Add(new SqlParameter("@Restriccion", contrasenna));
-                command.Parameters.Add(new SqlParameter("@Encargado", contrasenna));
-                command.Parameters.Add(new SqlParameter("@CantCupos", contrasenna));
+                command.Parameters.Add(new SqlParameter("@Fecha", actividad.getFecha()));
+                command.Parameters.Add(new SqlParameter("@Nombre", actividad.getNombre()));
+                command.Parameters.Add(new SqlParameter("@Horario", actividad.getHorario()));
+                command.Parameters.Add(new SqlParameter("@Campus", actividad.getCampus()));
+                command.Parameters.Add(new SqlParameter("@Restriccion", actividad.getRestriccion()));
+                command.Parameters.Add(new SqlParameter("@Encargado", actividad.getEncargado()));
+                command.Parameters.Add(new SqlParameter("@CantCupos", actividad.getCantCupos()));
                 command.ExecuteNonQuery();
                 if (conn.State != ConnectionState.Closed)
                 {
                     Cerrar();
                 }
-                //mensaje confirmacion
+                System.Diagnostics.Debug.WriteLine("Actividad agregada correctamente");
             }
             catch (SqlException ex)
             {
                 Console.Write(ex);
-                //mensaje error
+                System.Diagnostics.Debug.WriteLine("Error al insertar actividad");
             }
         }
 
