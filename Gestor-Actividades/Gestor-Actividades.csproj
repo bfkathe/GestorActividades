@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="Modelo\Actividad.cs" />
     <Compile Include="Modelo\Archivo.cs" />
+    <Compile Include="Modelo\Lista.cs" />
     <Compile Include="Modelo\Evento.cs" />
     <Compile Include="Modelo\Staff.cs" />
     <Compile Include="Negocio\DAOBD.cs" />

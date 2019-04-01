@@ -35,5 +35,36 @@ namespace Gestor_Actividades.Negocio
             
         }
 
+        public List<Modelo.Lista> llenarActividades()
+        {
+            List<Modelo.Lista> lista = new List<Modelo.Lista>();
+            try
+            {
+                lista = conexion.llenarActividades();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al obtener actividades", ex);
+                return lista;
+            }
+            
+        }
+
+        public List<Modelo.Lista> llenarEventos()
+        {
+            List<Modelo.Lista> lista = new List<Modelo.Lista>();
+            try
+            {
+                lista = conexion.llenarEventos();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al obtener eventos", ex);
+                return lista;
+            }
+
+        }
     }
 }

@@ -40,16 +40,16 @@ namespace Gestor_Actividades.Vista
 
             //bool cupo
             String horario = txtBox_horario.Text;
-            String encargado = ListBox1.Text;
-            String descripcion = txtBox_descripcion.Text;
+            //String encargado = ListBox1.Text;
+            //String descripcion = txtBox_descripcion.Text;
             //String file = FileUpload1.Text; OJOOOOO NO SE COMO JALAR EL ARCHIVO DE LA ACTIVIDAD
 
             dto.setActividadNombre(nombreActividad);
             dto.setActividadCampus(campus);
             dto.setActividadFecha(fecha);
             dto.setActividadHorario(horario);
-            dto.setActividadEncargado(encargado);
-            dto.setActividadDescripcion(descripcion);
+           // dto.setActividadEncargado(encargado);
+           // dto.setActividadDescripcion(descripcion);
 
 
             MsgBox("Actividad Registrada", this.Page, this);

@@ -19,8 +19,14 @@
             <div id="titulo">
                 <h1>Crear evento</h1>
             </div>
-            <br /><br /><br />
+            <br /><br />
             <div id="form2" class="auto-style1">
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Actividad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:DropDownList ID="DropDownList_VerActividades" runat="server" Height="16px" Width="129px">
+                </asp:DropDownList>
+                <br />
+                <br />
                 <asp:TextBox ID="txtBox_nombre" runat="server" Text="Nombre"></asp:TextBox><br /><br />
                 <asp:TextBox ID="txtBox_horario" runat="server" Text="Horario"></asp:TextBox><br /><br />
                 <asp:TextBox ID="txtBox_expositor" runat="server" Text="Expositor"></asp:TextBox><br /><br />
@@ -28,6 +34,8 @@
                 <asp:Button ID="botonRegistrar" runat="server" Text="Registrar" CssClass="botones" />
                 
                 </div>
+            
+            <br />
             
         </div>
     </form>

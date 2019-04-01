@@ -4,14 +4,21 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Gestor_Actividades.Negocio;
+using Gestor_Actividades.Modelo;
 
 namespace Gestor_Actividades.Vista
 {
     public partial class VerActividades : System.Web.UI.Page
     {
+        Controlador controlador = new Controlador();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            List<Lista> lista = controlador.llenarActividades();
+            CheckBoxList_Actividades.DataTextField = "nombre";
+            CheckBoxList_Actividades.DataValueField = "id";
+            CheckBoxList_Actividades.DataSource = lista;
+            CheckBoxList_Actividades.DataBind();
         }
 
         protected void botonCrearAct_Click(object sender, EventArgs e)
