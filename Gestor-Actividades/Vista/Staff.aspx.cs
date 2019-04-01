@@ -41,7 +41,7 @@ namespace Gestor_Actividades.Vista
             String nombre = txtBox_nombre.Text;
 
             //Expresiones regulares para validar
-            String validaCaracteres = "^[a-zA-Z\\s]+$";
+            String validaCaracteres = "[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+";
             Match matchNombre = Regex.Match(validaCaracteres, validaCaracteres);
 
             if (!matchNombre.Success)
