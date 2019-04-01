@@ -1,15 +1,78 @@
 --Procedimientos--
 use ProyectoGestorActividades
 
+
+-----------Crear usuarios de Staff------------------
 go
-create proc agregarStaff @nombre varchar(40),@nombreUsuario varchar(30),@contrasenna varchar(30)
+alter proc agregarStaff @nombre varchar(40),@nombreUsuario varchar(30),@contrasenna nvarchar(30)
 as
 begin
-insert into Staff(Nombre,Usuario,Contraseña) values (@nombre,@nombreUsuario,@contrasenna)
+insert into Staff(Nombre,Usuario,Contraseña) values (@nombre,@nombreUsuario,ENCRYPTBYPASSPHRASE('password',@contrasenna)) --encriptacion
 end
 
+EXEC agregarStaff 'katherina','katbf','hola'
 
-exec agregarStaff 'katherina','kattbf','123'
+-----Alterar columnas Contraseña para Staff y Usuarios
+alter table Staff drop column Contraseña
+alter table Staff add Contraseña varbinary(max)
+
+alter table Usuarios drop column Contraseña
+alter table Usuarios add Contraseña varbinary(max)
+
+
+---Agregar Admin 
+go
+create proc agregarUsuario @usuario varchar(30), @contrasenna nvarchar(30)
+as
+begin
+insert into Usuarios(Usuario,Contraseña) values (@usuario,ENCRYPTBYPASSPHRASE('password',@contrasenna)) --encriptacion
+end
+
+exec agregarUsuario 'Admin','admin'
+
+
+---------Verificar login de los usuarios (Admin)--------------
+go
+create function verificarLoginUsuarios (@Usuario nvarchar(50),@Pass nvarchar(50))
+returns INT
+Begin
+    Declare @PassCodificado As nvarchar(300)
+    Declare @PassDecodificado As nvarchar(50)
+
+    Select @PassCodificado = Contraseña From Usuarios Where Usuario = @Usuario
+    Set @PassDecodificado = CONVERT(NVARCHAR,DECRYPTBYPASSPHRASE('password', @PassCodificado))
+
+    If @PassDecodificado = @Pass
+	begin
+        return 1
+	end
+	return 0
+End
+go
+
+print dbo.verificarLoginUsuarios ('Admin','admin')
+go
+
+---------Verificar login del Staff ------- (para después)
+create function verificarLoginStaff (@Usuario nvarchar(50),@Pass nvarchar(50))
+returns INT
+Begin
+    Declare @PassCodificado As nvarchar(300)
+    Declare @PassDecodificado As nvarchar(50)
+
+    Select @PassCodificado = Contraseña From Staff Where Usuario = @Usuario
+    Set @PassDecodificado = CONVERT(NVARCHAR,DECRYPTBYPASSPHRASE('password', @PassCodificado))
+
+    If @PassDecodificado = @Pass
+	begin
+        return 1
+	end
+	return 0
+End
+go
+------------------------------------------------------
+
+
 
 -----------Arregla la tabla de Actividad--------------------
 Alter table Actividades ADD CantCupos int
