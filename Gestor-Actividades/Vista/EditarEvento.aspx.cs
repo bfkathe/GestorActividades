@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace Gestor_Actividades.Vista
 {
@@ -33,21 +34,30 @@ namespace Gestor_Actividades.Vista
         protected void botonGuardarCambios_Click(object sender, EventArgs e)
         {
             String nombre = txtBox_nombre.Text;
-            String horario = txtBox_horario.Text;
             String expo = txtBox_expositor.Text;
 
-            DateTime fecha = Convert.ToDateTime(horario);
+            //Expresiones regulares para validar
+            String validaCaracteres = "^[a-zA-Z\\s]+$";
+            Match matchNombre = Regex.Match(nombre, validaCaracteres);
+            Match matchExpo = Regex.Match(expo, validaCaracteres);
 
+            if (!matchExpo.Success || !matchNombre.Success)
+            {
+                MsgBox("Nombre o Expositor inválido", this.Page, this);
+            }
+
+            String horario = txtBox_horario.Text;
             String descrip = txtBox_descripcion.Text;
 
             dto.setEventoDescripcion(descrip);
             dto.setEventoExpositor(expo);
-            dto.setEventoFecha(fecha);
+            dto.setEventoHorario(horario);
             dto.setEventoNombre(nombre);
 
 
             MsgBox("Evento Registrado", this.Page, this);
         }
+    }
 
         public void MsgBox(String ex, Page pg, Object obj)
         {

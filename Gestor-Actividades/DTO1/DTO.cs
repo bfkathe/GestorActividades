@@ -24,7 +24,7 @@ namespace Gestor_Actividades.DTO1
 
         //eventos
         private String EventoNombre { get; set; }
-        private DateTime EventoFecha { get; set; }
+        private String EventoHorario{ get; set; }
         private String EventoExpositor { get; set; }
         private String EventoDescripcion;
         private int EventoIdActividad;
@@ -104,9 +104,9 @@ namespace Gestor_Actividades.DTO1
             return this.EventoNombre;
         }
 
-        public DateTime getEventoFecha()
+        public String getEventoHorario()
         {
-            return this.EventoFecha;
+            return this.EventoHorario;
         }
 
         public String getEventoExpositor()
@@ -216,9 +216,9 @@ namespace Gestor_Actividades.DTO1
             this.EventoNombre = nom;
         }
 
-        public void setEventoFecha(DateTime fecha)
+        public void setEventoHorario(String fecha)
         {
-            this.EventoFecha = fecha;
+            this.EventoHorario = fecha;
         }
 
         public void setEventoExpositor(String expo)

@@ -103,13 +103,31 @@ namespace Gestor_Actividades.Vista {
         protected global::System.Web.UI.WebControls.CheckBox CheckBoxCupo;
         
         /// <summary>
-        /// Control DropDownList_CantCupos.
+        /// Control txtBox_cantCupos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList_CantCupos;
+        protected global::System.Web.UI.WebControls.TextBox txtBox_cantCupos;
+        
+        /// <summary>
+        /// Control txtDescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
+        
+        /// <summary>
+        /// Control txtEncargado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEncargado;
         
         /// <summary>
         /// Control FileUpload1.

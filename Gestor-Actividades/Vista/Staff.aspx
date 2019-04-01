@@ -21,9 +21,9 @@
             </div>
             <br /><br /><br />
             <div id="form2">
-                <asp:TextBox ID="txtBox_nombre" runat="server" Text="Nombre"></asp:TextBox><br /><br />
-                <asp:TextBox ID="txtBox_nombreUsuario" runat="server" Text="Nombre de usuario" /><br /><br />
-                <asp:TextBox ID="txtBox_contrasenna" runat="server" TextMode="Password" /><br /><br />
+                Nombre: <asp:TextBox ID="txtBox_nombre" runat="server"></asp:TextBox><br /><br />
+                Nombre Usuario: <asp:TextBox ID="txtBox_nombreUsuario" runat="server"/><br /><br />
+                Contraseña: <asp:TextBox ID="txtBox_contrasenna" runat="server" TextMode="Password" /><br /><br />
                 <asp:Button ID="botonStaffNuevo" runat="server" Text="Crear" CssClass="botones" OnClick="botonStaffNuevo_Click"/>
             </div>
             

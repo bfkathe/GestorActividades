@@ -21,10 +21,10 @@
             </div>
             <br /><br /><br />
             <div id="form2" class="auto-style1">
-                <asp:TextBox ID="txtBox_nombre" runat="server" Text="Nombre"></asp:TextBox><br /><br />
-                <asp:TextBox ID="txtBox_horario" runat="server" Text="Horario"></asp:TextBox><br /><br />
-                <asp:TextBox ID="txtBox_expositor" runat="server" Text="Expositor"></asp:TextBox><br /><br />
-                <asp:TextBox ID="txtBox_descripcion" runat="server" Text="Descripción" Height="100px" Width="300px"></asp:TextBox><br /><br />
+                Nombre: <asp:TextBox ID="txtBox_nombre" runat="server" ></asp:TextBox><br /><br />
+                Horario: <asp:TextBox ID="txtBox_horario" runat="server"  Height="100px" Width="300px"></asp:TextBox><br /><br />
+                Expositor: <asp:TextBox ID="txtBox_expositor" runat="server" ></asp:TextBox><br /><br />
+                Descripcion: <asp:TextBox ID="txtBox_descripcion" runat="server"  Height="100px" Width="300px"></asp:TextBox><br /><br />
                 <asp:Button ID="botonGuardarCambios" runat="server" Text="Guardar cambios" CssClass="botones" />
                 
                 </div>
