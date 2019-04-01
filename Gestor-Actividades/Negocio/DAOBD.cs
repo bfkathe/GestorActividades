@@ -136,6 +136,32 @@ namespace Gestor_Actividades.Negocio
             }
         }
 
+        public void agregarEvento(Modelo.Evento evento)
+        {
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("insertarEvento", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@idActividad", evento.getIdActividad()));
+                command.Parameters.Add(new SqlParameter("@Nombre", evento.getNombre()));
+                command.Parameters.Add(new SqlParameter("@Fecha", evento.getHorario()));
+                command.Parameters.Add(new SqlParameter("@Expositor", evento.getExpositor()));
+                command.Parameters.Add(new SqlParameter("@Descripcion", evento.getDescripcion()));
+                command.ExecuteNonQuery();
+                if (conn.State != ConnectionState.Closed)
+                {
+                    Cerrar();
+                }
+                System.Diagnostics.Debug.WriteLine("Evento agregado correctamente");
+            }
+            catch (SqlException ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al insertar evento");
+            }
+        }
+
         public List<Modelo.Lista> llenarEventos()
         {
             List<Modelo.Lista> list = new List<Modelo.Lista>();

@@ -35,6 +35,20 @@ namespace Gestor_Actividades.Negocio
             
         }
 
+        public void agregarEvento(DTO dto)
+        {
+            Modelo.Evento evento = new Modelo.Evento(dto.getEventoIdActividad(), dto.getEventoNombre(), dto.getEventoFecha().ToString(), dto.getEventoExpositor(), dto.getEventoDescripcion());
+            try
+            {
+                conexion.agregarEvento(evento);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al insertar evento", ex);
+            }
+
+        }
+
         public List<Modelo.Lista> llenarActividades()
         {
             List<Modelo.Lista> lista = new List<Modelo.Lista>();
