@@ -50,16 +50,16 @@ namespace Gestor_Actividades.Negocio
         // -- CONSULTAS --
 
         //Agregar usuarios de staff a la BD 
-        public void agregarStaff(string nombre, string nombreUsuario, string contrasenna)
+        public void agregarStaff(Staff usuarioStaff)
         {
             try
             {
                 Abrir();
                 SqlCommand command = new SqlCommand("agregarStaff", conn);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add(new SqlParameter("@nombre", nombre));
-                command.Parameters.Add(new SqlParameter("@nombreUsuario", nombreUsuario));
-                command.Parameters.Add(new SqlParameter("@contrasenna", contrasenna));
+                command.Parameters.Add(new SqlParameter("@nombre", usuarioStaff.getNombre()));
+                command.Parameters.Add(new SqlParameter("@nombreUsuario", usuarioStaff.getUsuario()));
+                command.Parameters.Add(new SqlParameter("@contrasenna", usuarioStaff.getContraseña()));
                 command.ExecuteNonQuery();
                 if(conn.State != ConnectionState.Closed)
                 {
@@ -323,6 +323,36 @@ namespace Gestor_Actividades.Negocio
             }
             return resultado;
         }
+
+
+        public int verificarStaffUnico(string nombreUsuario)
+        {
+            int resultado = 0;
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("staffUnico", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@nombreUsuario", nombreUsuario));
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                    resultado = 1;
+                else
+                    resultado = 0;
+                if (conn.State != ConnectionState.Closed)
+                {
+                    Cerrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+            }
+            return resultado;
+        }
+
+
+
     }   
 
 }

@@ -62,9 +62,15 @@ begin
 	select * from Staff where @PassDecodificado = @Pass and Usuario = @Usuario COLLATE SQL_Latin1_General_CP1_CS_AS
 end
 go
-------------------------------------------------------
 
+-------usuarios de staff unicos-----------
+create proc staffUnico(@nombreUsuario varchar(40))
+as
+begin
+	select * from Staff where Usuario = @nombreUsuario
+end
 
+exec staffUnico 'k'
 
 -----------Arregla la tabla de Actividad--------------------
 Alter table Actividades ADD CantCupos int

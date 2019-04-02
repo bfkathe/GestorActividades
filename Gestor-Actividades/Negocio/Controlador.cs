@@ -13,13 +13,11 @@ namespace Gestor_Actividades.Negocio
         
         public Controlador(){}
 
-        //Agregar staff
+
         public void agregarStaff(DTO dto)
         {
-            conexion.agregarStaff(
-                dto.getStaffNombre(),
-                dto.getStaffUsuario(),
-                dto.getStaffContraseña());
+            Staff usuarioStaff = new Staff(dto.getStaffNombre(), dto.getStaffUsuario(), dto.getStaffContraseña());
+            conexion.agregarStaff(usuarioStaff);
         }
 
         public void agregarActividad(DTO dto)
@@ -141,6 +139,17 @@ namespace Gestor_Actividades.Negocio
             string usuario = dto.getLogInUser();
             string contrasenna = dto.getLogInPassword();
             int resultado = conexion.VerificarLogin(usuario, contrasenna);
+            if (resultado == 0)
+                return false;
+            else
+                return true;
+        }
+
+
+        public Boolean verificarStaff(DTO dto)
+        {
+            string usuario = dto.getStaffUsuario();
+            int resultado = conexion.verificarStaffUnico(usuario);
             if (resultado == 0)
                 return false;
             else
