@@ -44,7 +44,7 @@ namespace Gestor_Actividades.Vista
             String expo = txtBox_expositor.Text;
 
             //Expresiones regulares para validar
-            String validaCaracteres = "^[a-zA-Z\\s]+$";
+            String validaCaracteres = "[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+";
             Match matchNombre = Regex.Match(nombre, validaCaracteres);
             Match matchExpo = Regex.Match(expo, validaCaracteres);
 
