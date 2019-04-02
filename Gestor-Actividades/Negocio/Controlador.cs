@@ -71,7 +71,7 @@ namespace Gestor_Actividades.Negocio
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine("Error al insertar evento", ex);
+                System.Diagnostics.Debug.WriteLine("Error al insertar evento CONTROLADOR", ex);
             }
 
         }
@@ -119,12 +119,12 @@ namespace Gestor_Actividades.Negocio
             
         }
 
-        public List<Modelo.Lista> llenarEventos()
+        public List<Modelo.Lista> llenarEventos(int idActividad)
         {
             List<Modelo.Lista> lista = new List<Modelo.Lista>();
             try
             {
-                lista = conexion.llenarEventos();
+                lista = conexion.llenarEventos(idActividad);
                 return lista;
             }
             catch (Exception ex)

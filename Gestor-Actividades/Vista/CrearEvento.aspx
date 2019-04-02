@@ -21,17 +21,14 @@
             </div>
             <br /><br />
             <div id="form2" class="auto-style1">
-                <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Actividad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:DropDownList ID="DropDownList_VerActividades" runat="server" Height="16px" Width="129px">
-                </asp:DropDownList>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br />
                 <br />
                 Nombre: <asp:TextBox ID="txtBox_nombre" runat="server" ></asp:TextBox><br /><br />
                 Horario: <asp:TextBox ID="txtBox_horario" runat="server" Height="100px" Width="300px"></asp:TextBox><br /><br />
                 Expositor: <asp:TextBox ID="txtBox_expositor" runat="server" ></asp:TextBox><br /><br />
                 Descripcion: <asp:TextBox ID="txtBox_descripcion" runat="server" Height="100px" Width="300px"></asp:TextBox><br /><br />
-                <asp:Button ID="botonRegistrar" runat="server" Text="Registrar" CssClass="botones" />
+                <asp:Button ID="botonRegistrar" runat="server" Text="Registrar" CssClass="botones" OnClick="botonRegistrar_Click1" />
                 
                 </div>
             

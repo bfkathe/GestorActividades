@@ -21,12 +21,13 @@
             </div>
             <br /><br /><br />
             <div id="form2">
-                <asp:CheckBoxList ID="CheckBoxList_Actividades" runat="server">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:CheckBoxList ID="CheckBoxList_Actividades" runat="server" OnSelectedIndexChanged="CheckBoxList_Actividades_SelectedIndexChanged" Width="82px">
                     <asp:ListItem>Actividad 1</asp:ListItem>
                     <asp:ListItem>Actividad 2</asp:ListItem>
                 </asp:CheckBoxList><br /><br />
                 <asp:Button ID="botonEliminar" runat="server" Text="Eliminar" CssClass="botones" Width="100px"  OnClick ="botonEliminarActividad_Click"/><br /><br />
-                <asp:Button ID="botonEditar" runat="server" Text="Editar" CssClass="botones" Width="100px" OnClick="botonEditarActividad_Click"/><br /><br />
+                <asp:Button ID="botonEditar" runat="server" Text="Editar" CssClass="botones" Width="100px" OnClick="botonEditarActividad_Click" OnClientClick="True"/><br /><br />
                 <asp:Button ID="botonVerEventos" runat="server" Text="Eventos" CssClass="botones" Width="100px" OnClick="botonVerEventos_Click"/> 
             </div>
             

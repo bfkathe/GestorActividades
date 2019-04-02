@@ -89,6 +89,7 @@
     <Compile Include="Negocio\DAOBD.cs" />
     <Compile Include="Negocio\Controlador.cs" />
     <Compile Include="DTO1\DTO.cs" />
+    <Compile Include="Negocio\Singleton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vista\CrearActividad.aspx.cs">
       <DependentUpon>CrearActividad.aspx</DependentUpon>

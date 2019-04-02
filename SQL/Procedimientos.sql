@@ -81,15 +81,16 @@ alter procedure insertarActividad(
 	@Restriccion bit,
 	@Encargado varchar(125),
 	@cantCupos int,
-	@lugar varchar(50)
+	@lugar varchar(50),
+	@Descripcion varchar(250)
 )
 AS 
-insert into Actividades(Fecha,Nombre,Horario,Campus,Restriccion,Encargado,CantCupos,Lugar) values(@Fecha,@Nombre,@Horario,@Campus,@Restriccion,@Encargado,@cantCupos,@lugar)
+insert into Actividades(Fecha,Nombre,Horario,Campus,Restriccion,Encargado,CantCupos,Lugar,Descripcion) values(@Fecha,@Nombre,@Horario,@Campus,@Restriccion,@Encargado,@cantCupos,@lugar,@Descripcion)
 GO
 
-exec insertarActividad '2019-03-29', 'Actividad1' , '5:00pm', 'Sede Cartago', 0, 'Audra Rodriguez', 28, 'Centro de las Artes'
-exec insertarActividad '2019-03-30', 'Actividad2' , '5:00pm', 'Sede Cartago', 0, 'Audra Rodriguez', 28, 'Centro de las Artes'
-exec insertarActividad '2019-03-30', 'Actividad3' , '5:00pm', 'Sede Cartago', 0, 'Audra Rodriguez', 28, 'Centro de las Artes'
+exec insertarActividad '2019-03-29', 'Actividad1' , '5:00pm', 'Sede Cartago', 0, 'Audra Rodriguez', 28, 'Centro de las Artes', 'Descripcion'
+exec insertarActividad '2019-03-30', 'Actividad2' , '5:00pm', 'Sede Cartago', 0, 'Audra Rodriguez', 28, 'Centro de las Artes', 'Descripcion'
+exec insertarActividad '2019-03-30', 'Actividad3' , '5:00pm', 'Sede Cartago', 0, 'Audra Rodriguez', 28, 'Centro de las Artes', 'Descripcion'
 
 -----------Editar Actividad----------------------------------------------
 alter procedure editarActividad(
@@ -101,7 +102,8 @@ alter procedure editarActividad(
 	@Restriccion bit,
 	@Encargado varchar(125),
 	@cantCupos int,
-	@lugar varchar(50)
+	@lugar varchar(50),
+	@Despcripcion varchar(250)
 )
 AS 
 UPDATE Actividades
@@ -112,11 +114,12 @@ SET Fecha = @Fecha,
 	Restriccion = @Restriccion,
 	Encargado = @Encargado,
 	CantCupos = @cantCupos,
-	Lugar = @lugar
+	Lugar = @lugar,
+	Descripcion = @Despcripcion
 WHERE ActividadId = @id
 GO
 
-exec editarActividad 1,'2019-03-29', 'Actividad1' , '4:00pm', 'Sede SJ', 0, 'Audra Rodriguez Mora', 27, 'Casa Verde'
+exec editarActividad 1,'2019-03-29', 'Actividad1' , '4:00pm', 'Sede SJ', 0, 'Audra Rodriguez Mora', 27, 'Casa Verde', 'Descripcion'
 
 ---------------------Eliminar Actividad----------------------------------
 create procedure eliminarActividad(
@@ -130,33 +133,36 @@ exec eliminarActividad 1
 
 -----------Arregla la tabla de eventos--------------------
 Alter table Eventos ADD Descripcion varchar(150)
-
+ALTER TABLE Eventos DROP COLUMN Fecha
+Alter table Eventos ADD Horario varchar(150)
+Alter table Eventos ADD ActividadId int; 
+Alter table Eventos ADD FOREIGN KEY (ActividadId) REFERENCES Actividades(ActividadId); 
 -----------Insertar Eventos----------------------------------------------
 
 alter procedure insertarEvento(
 	@idActividad int,
 	@Nombre varchar(125),
-	@Fecha date,	
+	@Horario varchar(50),	
 	@Expositor varchar(125),
 	@Descripcion varchar(150)
 )
 AS 
-insert into Eventos(ActividadId,Nombre,Fecha,Expositor,Descripcion) values(@idActividad,@Nombre,@Fecha,@Expositor,@Descripcion)
+insert into Eventos(ActividadId,Nombre,Horario,Expositor,Descripcion) values(@idActividad,@Nombre,@Horario,@Expositor,@Descripcion)
 GO
 
 exec insertarEvento 'Evento1', '2019-03-29', 'Audra Rodriguez', 'Conferencia'
 
 -----------Editar Actividad----------------------------------------------
-create procedure editarEvento(
+alter procedure editarEvento(
 	@id int,
 	@Nombre varchar(125),
-	@Fecha date,
+	@Horario varchar(125),
 	@Expositor varchar(125),
 	@Descripcion varchar(150)
 )
 AS 
 UPDATE Eventos
-SET Fecha = @Fecha,
+SET Horario = @Horario,
 	Nombre = @Nombre,
 	Expositor = @Expositor,
 	Descripcion = @Descripcion
@@ -176,8 +182,7 @@ GO
 exec eliminarEvento 1
 
 drop table EventosxActividad
-Alter table Eventos ADD ActividadId int; 
-Alter table Eventos ADD FOREIGN KEY (ActividadId) REFERENCES Actividades(ActividadId); 
+
 
 
 
