@@ -12,7 +12,7 @@ end
 
 EXEC agregarStaff 'katherina','katbf','hola'
 
------Alterar columnas Contraseña para Staff y Usuarios
+------------Alterar columnas Contraseña para Staff y Usuarios-----------------
 alter table Staff drop column Contraseña
 alter table Staff add Contraseña varbinary(max)
 
@@ -20,7 +20,7 @@ alter table Usuarios drop column Contraseña
 alter table Usuarios add Contraseña varbinary(max)
 
 
----Agregar Admin 
+----------------Agregar Admin--------------------- 
 go
 create proc agregarUsuario @usuario varchar(30), @contrasenna nvarchar(30)
 as
@@ -33,42 +33,34 @@ exec agregarUsuario 'Admin','admin'
 
 ---------Verificar login de los usuarios (Admin)--------------
 go
-create function verificarLoginUsuarios (@Usuario nvarchar(50),@Pass nvarchar(50))
-returns INT
-Begin
-    Declare @PassCodificado As nvarchar(300)
+create proc verificarLoginUsuarios(@Usuario nvarchar(50),@Pass nvarchar(50))
+as
+begin
+	Declare @PassCodificado As nvarchar(300)
     Declare @PassDecodificado As nvarchar(50)
 
-    Select @PassCodificado = Contraseña From Usuarios Where Usuario = @Usuario
+	Select @PassCodificado = Contraseña From Usuarios Where Usuario = @Usuario
     Set @PassDecodificado = CONVERT(NVARCHAR,DECRYPTBYPASSPHRASE('password', @PassCodificado))
 
-    If @PassDecodificado = @Pass
-	begin
-        return 1
-	end
-	return 0
-End
+	select * from Usuarios where @PassDecodificado = @Pass and Usuario = @Usuario COLLATE SQL_Latin1_General_CP1_CS_AS
+end
 go
 
-print dbo.verificarLoginUsuarios ('Admin','admin')
+exec verificarLoginUsuarios 'admin','admin'
 go
 
 ---------Verificar login del Staff ------- (para después)
-create function verificarLoginStaff (@Usuario nvarchar(50),@Pass nvarchar(50))
-returns INT
-Begin
-    Declare @PassCodificado As nvarchar(300)
+create proc verificarLoginStaff(@Usuario nvarchar(50),@Pass nvarchar(50))
+as
+begin
+	Declare @PassCodificado As nvarchar(300)
     Declare @PassDecodificado As nvarchar(50)
 
-    Select @PassCodificado = Contraseña From Staff Where Usuario = @Usuario
+	Select @PassCodificado = Contraseña From Staff Where Usuario = @Usuario
     Set @PassDecodificado = CONVERT(NVARCHAR,DECRYPTBYPASSPHRASE('password', @PassCodificado))
 
-    If @PassDecodificado = @Pass
-	begin
-        return 1
-	end
-	return 0
-End
+	select * from Staff where @PassDecodificado = @Pass and Usuario = @Usuario COLLATE SQL_Latin1_General_CP1_CS_AS
+end
 go
 ------------------------------------------------------
 

@@ -13,7 +13,7 @@ namespace Gestor_Actividades.Negocio
         
         public Controlador(){}
 
-        //Agregar staff (Prueba)
+        //Agregar staff
         public void agregarStaff(DTO dto)
         {
             conexion.agregarStaff(
@@ -134,5 +134,19 @@ namespace Gestor_Actividades.Negocio
             }
 
         }
+
+
+        public Boolean verificarLogin(DTO dto)
+        {
+            string usuario = dto.getLogInUser();
+            string contrasenna = dto.getLogInPassword();
+            int resultado = conexion.VerificarLogin(usuario, contrasenna);
+            if (resultado == 0)
+                return false;
+            else
+                return true;
+        }
+
+
     }
 }

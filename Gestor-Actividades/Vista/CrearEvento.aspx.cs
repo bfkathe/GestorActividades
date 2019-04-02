@@ -44,7 +44,7 @@ namespace Gestor_Actividades.Vista
             String expo = txtBox_expositor.Text;
 
             //Expresiones regulares para validar
-            String validaCaracteres = "[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+";
+            String validaCaracteres = "[a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]+";
             Match matchNombre = Regex.Match(nombre, validaCaracteres);
             Match matchExpo = Regex.Match(expo, validaCaracteres);
 
@@ -71,6 +71,11 @@ namespace Gestor_Actividades.Vista
             Type cstype = obj.GetType();
             ClientScriptManager cs = pg.ClientScript;
             cs.RegisterClientScriptBlock(cstype, s, s.ToString());
+        }
+
+        protected void botonRegistrar_Click1(object sender, EventArgs e)
+        {
+
         }
     }
 }
