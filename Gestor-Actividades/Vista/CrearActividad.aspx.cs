@@ -5,12 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
+using Gestor_Actividades.Negocio;
 
 namespace Gestor_Actividades.Vista
 {
     public partial class CrearActividad : System.Web.UI.Page
     {
         public DTO1.DTO dto = new DTO1.DTO();
+        Controlador controlador = new Controlador();
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -32,14 +34,7 @@ namespace Gestor_Actividades.Vista
         }
 
         protected void botonRegistrar_Click(object sender, EventArgs e)
-        {
-            if (CheckBoxCupo.Checked)
-            {
-                //MsgBox("Hola",this.Page,this);
-                //Codigo del check
-            }
-
-            
+        {            
             String lugarActividad = txtBox_lugar.Text;
             String fechaString = txtBox_fecha.Text;
             String cantCupo = txtBox_cantCupos.Text;
@@ -94,14 +89,22 @@ namespace Gestor_Actividades.Vista
                 dto.setActividadRestriccion(restriccion);
                 dto.setActividadEncargado(encargado);
                 dto.setActividadDescripcion(descripcion);
+                dto.setActividadCupo(Convert.ToInt32(cantCupo));
+                dto.setActividadLugar(lugarActividad);
 
-                //String encargado = ListBox1.Text;
-                //String descripcion = txtBox_descripcion.Text;
 
                 //String file = FileUpload1.Text; OJOOOOO NO SE COMO JALAR EL ARCHIVO DE LA ACTIVIDAD
 
-
-                MsgBox("Actividad Registrada", this.Page, this);
+                try
+                {
+                    controlador.agregarActividad(dto);
+                    MsgBox("Actividad Registrada", this.Page, this);
+                }
+                catch(Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Error al insertar actividad", ex);
+                }
+                
             }
 
         }

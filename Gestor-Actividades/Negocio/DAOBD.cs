@@ -88,6 +88,8 @@ namespace Gestor_Actividades.Negocio
                 command.Parameters.Add(new SqlParameter("@Restriccion", actividad.getRestriccion()));
                 command.Parameters.Add(new SqlParameter("@Encargado", actividad.getEncargado()));
                 command.Parameters.Add(new SqlParameter("@CantCupos", actividad.getCantCupos()));
+                command.Parameters.Add(new SqlParameter("@lugar", actividad.getLugar()));
+                command.Parameters.Add(new SqlParameter("@Descripcion", actividad.getDescripcion()));
                 command.ExecuteNonQuery();
                 if (conn.State != ConnectionState.Closed)
                 {
@@ -99,6 +101,59 @@ namespace Gestor_Actividades.Negocio
             {
                 Console.Write(ex);
                 System.Diagnostics.Debug.WriteLine("Error al insertar actividad");
+            }
+        }
+
+        public void editarActividad(Modelo.Actividad actividad, int id)
+        {
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("editarActividad", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@id", id));
+                command.Parameters.Add(new SqlParameter("@Fecha", actividad.getFecha()));
+                command.Parameters.Add(new SqlParameter("@Nombre", actividad.getNombre()));
+                command.Parameters.Add(new SqlParameter("@Horario", actividad.getHorario()));
+                command.Parameters.Add(new SqlParameter("@Campus", actividad.getCampus()));
+                command.Parameters.Add(new SqlParameter("@Restriccion", actividad.getRestriccion()));
+                command.Parameters.Add(new SqlParameter("@Encargado", actividad.getEncargado()));
+                command.Parameters.Add(new SqlParameter("@CantCupos", actividad.getCantCupos()));
+                command.Parameters.Add(new SqlParameter("@lugar", actividad.getLugar()));
+                command.Parameters.Add(new SqlParameter("@Descripcion", actividad.getDescripcion()));
+                command.ExecuteNonQuery();
+                if (conn.State != ConnectionState.Closed)
+                {
+                    Cerrar();
+                }
+                System.Diagnostics.Debug.WriteLine("Actividad editada correctamente");
+            }
+            catch (SqlException ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al editar actividad");
+            }
+        }
+
+        public void eliminarActividad(int id)
+        {
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("eliminarActividad", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@id", id));
+                command.ExecuteNonQuery();
+                if (conn.State != ConnectionState.Closed)
+                {
+                    Cerrar();
+                }
+                System.Diagnostics.Debug.WriteLine("Actividad eliminada correctamente");
+            }
+            catch (SqlException ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al eliminar actividad");
             }
         }
 
@@ -162,6 +217,54 @@ namespace Gestor_Actividades.Negocio
             }
         }
 
+        public void editarEvento(Modelo.Evento evento, int id)
+        {
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("editarEvento", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@id", id));
+                command.Parameters.Add(new SqlParameter("@idActividad", evento.getIdActividad()));
+                command.Parameters.Add(new SqlParameter("@Nombre", evento.getNombre()));
+                command.Parameters.Add(new SqlParameter("@Fecha", evento.getHorario()));
+                command.Parameters.Add(new SqlParameter("@Expositor", evento.getExpositor()));
+                command.Parameters.Add(new SqlParameter("@Descripcion", evento.getDescripcion()));
+                command.ExecuteNonQuery();
+                if (conn.State != ConnectionState.Closed)
+                {
+                    Cerrar();
+                }
+                System.Diagnostics.Debug.WriteLine("Evento editado correctamente");
+            }
+            catch (SqlException ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al editar evento");
+            }
+        }
+
+        public void eliminarEvento(int id)
+        {
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("eliminarEvento", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@id", id));
+                command.ExecuteNonQuery();
+                if (conn.State != ConnectionState.Closed)
+                {
+                    Cerrar();
+                }
+                System.Diagnostics.Debug.WriteLine("Evento eliminado correctamente");
+            }
+            catch (SqlException ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al eliminar evento");
+            }
+        }
         public List<Modelo.Lista> llenarEventos()
         {
             List<Modelo.Lista> list = new List<Modelo.Lista>();

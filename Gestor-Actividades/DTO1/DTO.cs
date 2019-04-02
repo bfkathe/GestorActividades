@@ -21,6 +21,7 @@ namespace Gestor_Actividades.DTO1
         private String ActividadDescripcion;
         private int ActividadCupo;
         private String ActividadLugar;
+        private int ActividadId;
 
         //eventos
         private String EventoNombre { get; set; }
@@ -28,6 +29,7 @@ namespace Gestor_Actividades.DTO1
         private String EventoExpositor { get; set; }
         private String EventoDescripcion;
         private int EventoIdActividad;
+        private int EventoId;
 
         //staff
         private String StaffNombre { get; set; }
@@ -97,6 +99,10 @@ namespace Gestor_Actividades.DTO1
             return this.ActividadLugar;
         }
 
+        public int getActividadId()
+        {
+            return this.ActividadId;
+        }
         //Eventos
 
         public String getEventoNombre()
@@ -122,6 +128,11 @@ namespace Gestor_Actividades.DTO1
         public int getEventoIdActividad()
         {
             return this.EventoIdActividad;
+        }
+
+        public int getEventoId()
+        {
+            return this.EventoId;
         }
 
         //staff
@@ -209,6 +220,11 @@ namespace Gestor_Actividades.DTO1
             this.ActividadLugar = lugar;
         }
 
+        public void setActividadId(int id)
+        {
+            this.ActividadId = id;
+        }
+
         //eventos
 
         public void setEventoNombre(String nom)
@@ -234,6 +250,11 @@ namespace Gestor_Actividades.DTO1
         public void setEventoIdActividad(int id)
         {
             this.EventoIdActividad = id;
+        }
+
+        public void setEventoId(int id)
+        {
+            this.EventoId = id;
         }
 
         //staff

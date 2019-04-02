@@ -57,7 +57,6 @@ namespace Gestor_Actividades.Vista
 
             MsgBox("Evento Registrado", this.Page, this);
         }
-    }
 
         public void MsgBox(String ex, Page pg, Object obj)
         {
@@ -67,4 +66,7 @@ namespace Gestor_Actividades.Vista
             cs.RegisterClientScriptBlock(cstype, s, s.ToString());
         }
     }
+
+        
+    
 }
