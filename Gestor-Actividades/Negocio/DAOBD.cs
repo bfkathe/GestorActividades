@@ -200,7 +200,7 @@ namespace Gestor_Actividades.Negocio
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add(new SqlParameter("@idActividad", evento.getIdActividad()));
                 command.Parameters.Add(new SqlParameter("@Nombre", evento.getNombre()));
-                command.Parameters.Add(new SqlParameter("@Fecha", evento.getHorario()));
+                command.Parameters.Add(new SqlParameter("@Horario", evento.getHorario()));
                 command.Parameters.Add(new SqlParameter("@Expositor", evento.getExpositor()));
                 command.Parameters.Add(new SqlParameter("@Descripcion", evento.getDescripcion()));
                 command.ExecuteNonQuery();
@@ -213,7 +213,7 @@ namespace Gestor_Actividades.Negocio
             catch (SqlException ex)
             {
                 Console.Write(ex);
-                System.Diagnostics.Debug.WriteLine("Error al insertar evento");
+                System.Diagnostics.Debug.WriteLine("Error al insertar evento DAODB");
             }
         }
 
@@ -227,7 +227,7 @@ namespace Gestor_Actividades.Negocio
                 command.Parameters.Add(new SqlParameter("@id", id));
                 command.Parameters.Add(new SqlParameter("@idActividad", evento.getIdActividad()));
                 command.Parameters.Add(new SqlParameter("@Nombre", evento.getNombre()));
-                command.Parameters.Add(new SqlParameter("@Fecha", evento.getHorario()));
+                command.Parameters.Add(new SqlParameter("@Horario", evento.getHorario()));
                 command.Parameters.Add(new SqlParameter("@Expositor", evento.getExpositor()));
                 command.Parameters.Add(new SqlParameter("@Descripcion", evento.getDescripcion()));
                 command.ExecuteNonQuery();
@@ -265,13 +265,13 @@ namespace Gestor_Actividades.Negocio
                 System.Diagnostics.Debug.WriteLine("Error al eliminar evento");
             }
         }
-        public List<Modelo.Lista> llenarEventos()
+        public List<Modelo.Lista> llenarEventos(int idActividad)
         {
             List<Modelo.Lista> list = new List<Modelo.Lista>();
             try
             {
                 Abrir();
-                SqlCommand cmd = new SqlCommand("select EventosId, Nombre from Actividades", conn);
+                SqlCommand cmd = new SqlCommand("select EventosId, Nombre from Eventos where ActividadId = "+ idActividad, conn);
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
