@@ -24,7 +24,7 @@ namespace Gestor_Actividades.Negocio
 
         public void agregarActividad(DTO dto)
         {
-            Modelo.Actividad actividad = new Modelo.Actividad(dto.getActividadFecha(), dto.getActividadNombre(), dto.getActividadHorario(), dto.getActividadCampus(), dto.getActividadRestriccion(), dto.getActividadEncargado(), dto.getActividadCupo());
+            Modelo.Actividad actividad = new Modelo.Actividad(dto.getActividadFecha(), dto.getActividadNombre(), dto.getActividadHorario(), dto.getActividadCampus(), dto.getActividadRestriccion(), dto.getActividadEncargado(), dto.getActividadCupo(), dto.getActividadLugar(), dto.getActividadDescripcion());
             try
             {
                 conexion.agregarActividad(actividad);
@@ -35,9 +35,36 @@ namespace Gestor_Actividades.Negocio
             
         }
 
+        public void editarActividad(DTO dto)
+        {
+            Modelo.Actividad actividad = new Modelo.Actividad(dto.getActividadFecha(), dto.getActividadNombre(), dto.getActividadHorario(), dto.getActividadCampus(), dto.getActividadRestriccion(), dto.getActividadEncargado(), dto.getActividadCupo(), dto.getActividadLugar(), dto.getActividadDescripcion());
+            try
+            {
+                conexion.editarActividad(actividad, dto.getActividadId());
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al editar actividad", ex);
+            }
+
+        }
+
+        public void eliminarActividad(DTO dto)
+        {
+            
+            try
+            {
+                conexion.eliminarActividad(dto.getActividadId());
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al eliminar actividad", ex);
+            }
+
+        }
         public void agregarEvento(DTO dto)
         {
-            Modelo.Evento evento = new Modelo.Evento(dto.getEventoIdActividad(), dto.getEventoNombre(), dto.getEventoFecha().ToString(), dto.getEventoExpositor(), dto.getEventoDescripcion());
+            Modelo.Evento evento = new Modelo.Evento(dto.getEventoIdActividad(), dto.getEventoNombre(), dto.getEventoHorario(), dto.getEventoExpositor(), dto.getEventoDescripcion());
             try
             {
                 conexion.agregarEvento(evento);
@@ -45,6 +72,33 @@ namespace Gestor_Actividades.Negocio
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Error al insertar evento", ex);
+            }
+
+        }
+
+        public void editarEvento(DTO dto)
+        {
+            Modelo.Evento evento = new Modelo.Evento(dto.getEventoIdActividad(), dto.getEventoNombre(), dto.getEventoHorario(), dto.getEventoExpositor(), dto.getEventoDescripcion());
+            try
+            {
+                conexion.editarEvento(evento, dto.getEventoId());
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al editar evento", ex);
+            }
+
+        }
+
+        public void eliminarEvento(DTO dto)
+        {
+            try
+            {
+                conexion.eliminarEvento(dto.getEventoId());
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al eliminar evento", ex);
             }
 
         }

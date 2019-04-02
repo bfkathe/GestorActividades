@@ -14,8 +14,10 @@ namespace Gestor_Actividades.Modelo
         private Boolean restriccion;
         private String encargado;
         private int cantCupos;
+        private String lugar;
+        private String descripcion;
 
-        public Actividad(DateTime Fecha,String Nombre,String Horario,String Campus,Boolean Restriccion, String Encargado, int CantCupos)
+        public Actividad(DateTime Fecha,String Nombre,String Horario,String Campus,Boolean Restriccion, String Encargado, int CantCupos, String Lugar, String Descripcion)
         {
             fecha = Fecha;
             nombre = Nombre;
@@ -24,6 +26,8 @@ namespace Gestor_Actividades.Modelo
             restriccion = Restriccion;
             encargado = Encargado;
             cantCupos = CantCupos;
+            lugar = Lugar;
+            descripcion = Descripcion;
 
         }
 
@@ -96,7 +100,25 @@ namespace Gestor_Actividades.Modelo
             cantCupos = cantCupos1;
         }
 
+        public String getLugar()
+        {
+            return lugar;
+        }
 
+        public void setLugar(String lugar1)
+        {
+            lugar = lugar1;
+        }
+
+        public String getDescripcion()
+        {
+            return descripcion;
+        }
+
+        public void setDescripcion(String Descripcion1)
+        {
+            descripcion = Descripcion1;
+        }
 
 
 

@@ -21,13 +21,15 @@ namespace Gestor_Actividades.DTO1
         private String ActividadDescripcion;
         private int ActividadCupo;
         private String ActividadLugar;
+        private int ActividadId;
 
         //eventos
         private String EventoNombre { get; set; }
-        private DateTime EventoFecha { get; set; }
+        private String EventoHorario{ get; set; }
         private String EventoExpositor { get; set; }
         private String EventoDescripcion;
         private int EventoIdActividad;
+        private int EventoId;
 
         //staff
         private String StaffNombre { get; set; }
@@ -97,6 +99,10 @@ namespace Gestor_Actividades.DTO1
             return this.ActividadLugar;
         }
 
+        public int getActividadId()
+        {
+            return this.ActividadId;
+        }
         //Eventos
 
         public String getEventoNombre()
@@ -104,9 +110,9 @@ namespace Gestor_Actividades.DTO1
             return this.EventoNombre;
         }
 
-        public DateTime getEventoFecha()
+        public String getEventoHorario()
         {
-            return this.EventoFecha;
+            return this.EventoHorario;
         }
 
         public String getEventoExpositor()
@@ -122,6 +128,11 @@ namespace Gestor_Actividades.DTO1
         public int getEventoIdActividad()
         {
             return this.EventoIdActividad;
+        }
+
+        public int getEventoId()
+        {
+            return this.EventoId;
         }
 
         //staff
@@ -209,6 +220,11 @@ namespace Gestor_Actividades.DTO1
             this.ActividadLugar = lugar;
         }
 
+        public void setActividadId(int id)
+        {
+            this.ActividadId = id;
+        }
+
         //eventos
 
         public void setEventoNombre(String nom)
@@ -216,9 +232,9 @@ namespace Gestor_Actividades.DTO1
             this.EventoNombre = nom;
         }
 
-        public void setEventoFecha(DateTime fecha)
+        public void setEventoHorario(String fecha)
         {
-            this.EventoFecha = fecha;
+            this.EventoHorario = fecha;
         }
 
         public void setEventoExpositor(String expo)
@@ -234,6 +250,11 @@ namespace Gestor_Actividades.DTO1
         public void setEventoIdActividad(int id)
         {
             this.EventoIdActividad = id;
+        }
+
+        public void setEventoId(int id)
+        {
+            this.EventoId = id;
         }
 
         //staff

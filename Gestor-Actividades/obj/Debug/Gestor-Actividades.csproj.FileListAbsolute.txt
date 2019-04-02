@@ -172,6 +172,7 @@ C:\Users\Andre\Documents\GitHub\Gestor-Actividades\Gestor-Actividades\obj\Debug\
 C:\Users\Andre\Documents\GitHub\Gestor-Actividades\Gestor-Actividades\obj\Debug\Gestor-Actividades.csproj.CopyComplete
 C:\Users\Andre\Documents\GitHub\Gestor-Actividades\Gestor-Actividades\obj\Debug\Gestor-Actividades.dll
 C:\Users\Andre\Documents\GitHub\Gestor-Actividades\Gestor-Actividades\obj\Debug\Gestor-Actividades.pdb
+C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\obj\Debug\Gestor-Actividades.csproj.CoreCompileInputs.cache
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\Gestor-Actividades.dll.config
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\Gestor-Actividades.dll
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\Gestor-Actividades.pdb
@@ -225,7 +226,6 @@ C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\roslyn\VB
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\obj\Debug\Gestor-Actividades.csproj.CoreCompileInputs.cache
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\obj\Debug\Gestor-Actividades.csproj.CopyComplete
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\obj\Debug\Gestor-Actividades.dll
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\obj\Debug\Gestor-Actividades.pdb

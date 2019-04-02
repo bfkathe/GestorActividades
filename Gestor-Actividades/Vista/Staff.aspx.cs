@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Gestor_Actividades.DTO1;
 using Gestor_Actividades.Negocio;
+using System.Text.RegularExpressions;
 
 namespace Gestor_Actividades.Vista
 {
@@ -38,29 +39,40 @@ namespace Gestor_Actividades.Vista
         protected void botonStaffNuevo_Click(object sender, EventArgs e)
         {
             String nombre = txtBox_nombre.Text;
-            String contra = txtBox_contrasenna.Text;
-            String usu = txtBox_nombreUsuario.Text;
 
-            if(txtBox_nombre.Text.Equals("") | txtBox_nombreUsuario.Text.Equals("") 
-                | txtBox_contrasenna.Text.Equals(""))
+            //Expresiones regulares para validar
+            String validaCaracteres = "[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+";
+            Match matchNombre = Regex.Match(validaCaracteres, validaCaracteres);
+
+            if (!matchNombre.Success)
             {
-                Response.Write("<script>alert('Todos los campos son requeridos');</script>");
-                
+                MsgBox("Nombre Invalido",this.Page,this);
             }
             else
             {
-                dtoStaff.setStaffNombre(nombre);
-                dtoStaff.setStaffUsuario(usu);
-                dtoStaff.setStaffContraseña(contra);
+                String contra = txtBox_contrasenna.Text;
+                String usu = txtBox_nombreUsuario.Text;
 
-                //Enviar el dto al controlador
-                controlador.agregarStaff(dtoStaff);
+                if (txtBox_nombre.Text.Equals("") | txtBox_nombreUsuario.Text.Equals("")
+                    | txtBox_contrasenna.Text.Equals(""))
+                {
+                    Response.Write("<script>alert('Todos los campos son requeridos');</script>");
 
-                //MsgBox("Staff Creado", this.Page, this);
-                Response.Write("<script>alert('Usuario creado exitosamente');</script>");
-                //Hay dos maneras de mandar el mensaje
+                }
+                else
+                {
+                    dtoStaff.setStaffNombre(nombre);
+                    dtoStaff.setStaffUsuario(usu);
+                    dtoStaff.setStaffContraseña(contra);
+
+                    //Enviar el dto al controlador
+                    controlador.agregarStaff(dtoStaff);
+
+                    //MsgBox("Staff Creado", this.Page, this);
+                    Response.Write("<script>alert('Usuario creado exitosamente');</script>");
+                    //Hay dos maneras de mandar el mensaje
+                }
             }
-
 
         }
 
