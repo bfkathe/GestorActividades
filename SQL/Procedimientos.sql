@@ -196,6 +196,31 @@ ALTER TABLE Eventos
 DROP CONSTRAINT FK__Eventos__Activid__14270015
 Alter table Eventos ADD FOREIGN KEY (ActividadId) REFERENCES Actividades(ActividadId) ON DELETE CASCADE; 
 
+----ARCHIVOS------------------------------
+Drop table ArhivosxActividad
 
+Alter table Archivos DROP Column Archivo
 
+Alter table Archivos ADD Name nvarchar(50)
+Alter table Archivos ADD FileType nvarchar(50)
+Alter table Archivos ADD Data varbinary(MAX)
+Alter table Archivos ADD ActividadId int; 
+Alter table Archivos ADD FOREIGN KEY (ActividadId) REFERENCES Actividades(ActividadId) ON DELETE CASCADE; 
+
+create procedure agregarArchivo(
+	@Name nvarchar(50),
+	@FileType nvarchar(50),
+	@Data varbinary(MAX),
+	@ActividadId int
+)
+AS
+	insert into Archivos(Name,FileType,Data,ActividadId) Values(@Name,@FileType,@Data,@ActividadId)
+GO
+
+create procedure eliminarArchivo(
+	@id int
+)
+AS
+	DELETE FROM Archivos WHERE ArchivoId = @id
+GO
 
