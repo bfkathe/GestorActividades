@@ -10,18 +10,20 @@ namespace Gestor_Actividades.Modelo
 
         private String nombre;
         private String formato;
-        private String ruta;
+        private byte[] ruta;
+        private int ActividadId;
 
         public Archivo()
         {
 
         }
 
-        public Archivo(string nom, string form, string path)
+        public Archivo(string nom, string form, byte[] path,int actividadId)
         {
             this.nombre = nom;
             this.formato = form;
             this.ruta = path;
+            this.ActividadId = actividadId;
         }
 
         public String getNombre()
@@ -34,7 +36,7 @@ namespace Gestor_Actividades.Modelo
             return this.formato;
         }
 
-        public String getRuta()
+        public byte[] getRuta()
         {
             return this.ruta;
         }
@@ -49,10 +51,19 @@ namespace Gestor_Actividades.Modelo
             this.formato = form;
         }
 
-        public void setRuta(String rut)
+        public void setRuta(byte[] rut)
         {
             this.ruta = rut;
         }
 
+        public int getIdActividad()
+        {
+            return this.ActividadId;
+        }
+
+        public void setIdActividad(int idActividad)
+        {
+            this.ActividadId = idActividad;
+        }
     }
 }
