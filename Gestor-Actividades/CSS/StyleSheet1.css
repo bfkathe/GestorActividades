@@ -1,8 +1,10 @@
 ﻿#imagen {
     float: right;
-    margin: 40px 10px 0 0;
+    margin-right: 200px;
+    
     border-radius: 5px;
 }
+
 
 #titulo {
     background-color: #0f3470;

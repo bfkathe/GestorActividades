@@ -14,10 +14,10 @@ namespace Gestor_Actividades.Negocio
         //private string cadena = "Data Source=ANDRE\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
 
         /*Cadena Audra*/
-        private string cadena = "Data Source=DESKTOP-7K75JTA\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
+        //private string cadena = "Data Source=DESKTOP-7K75JTA\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
 
         /*Cadena Katherina*/
-        //private string cadena = "Data Source = KATHERINA\\KATHERINABD;Initial Catalog = ProyectoGestorActividades; Integrated Security = True";
+        private string cadena = "Data Source = KATHERINA\\KATHERINABD;Initial Catalog = ProyectoGestorActividades; Integrated Security = True";
         public SqlConnection conn = new SqlConnection();
         
 
@@ -49,17 +49,17 @@ namespace Gestor_Actividades.Negocio
 
         // -- CONSULTAS --
 
-        //Agregar usuarios de staff a la BD (Prueba)
-        public void agregarStaff(string nombre, string nombreUsuario, string contrasenna)
+        //Agregar usuarios de staff a la BD 
+        public void agregarStaff(Staff usuarioStaff)
         {
             try
             {
                 Abrir();
                 SqlCommand command = new SqlCommand("agregarStaff", conn);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add(new SqlParameter("@nombre", nombre));
-                command.Parameters.Add(new SqlParameter("@nombreUsuario", nombreUsuario));
-                command.Parameters.Add(new SqlParameter("@contrasenna", contrasenna));
+                command.Parameters.Add(new SqlParameter("@nombre", usuarioStaff.getNombre()));
+                command.Parameters.Add(new SqlParameter("@nombreUsuario", usuarioStaff.getUsuario()));
+                command.Parameters.Add(new SqlParameter("@contrasenna", usuarioStaff.getContraseña()));
                 command.ExecuteNonQuery();
                 if(conn.State != ConnectionState.Closed)
                 {
@@ -299,6 +299,59 @@ namespace Gestor_Actividades.Negocio
 
             }
         }
+
+
+        public int VerificarLogin(string pUsuario, string pContrasenna)
+        {
+            int resultado = 0;
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("verificarLoginUsuarios", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@Usuario", pUsuario));
+                command.Parameters.Add(new SqlParameter("@Pass", pContrasenna));
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                    resultado = 1;
+                else
+                    resultado = 0;                         
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+            }
+            return resultado;
+        }
+
+
+        public int verificarStaffUnico(string nombreUsuario)
+        {
+            int resultado = 0;
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("staffUnico", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@nombreUsuario", nombreUsuario));
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                    resultado = 1;
+                else
+                    resultado = 0;
+                if (conn.State != ConnectionState.Closed)
+                {
+                    Cerrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+            }
+            return resultado;
+        }
+
+
 
     }   
 
