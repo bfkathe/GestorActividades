@@ -140,7 +140,6 @@ namespace Gestor_Actividades.Vista {
         
         /// <summary>
         /// botonRegistrar control.
-        /// Control botonRegistrar.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.

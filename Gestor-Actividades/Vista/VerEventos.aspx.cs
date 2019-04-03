@@ -86,7 +86,6 @@ namespace Gestor_Actividades.Vista
 
         protected void CheckBoxList_Eventos_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

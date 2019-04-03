@@ -58,11 +58,6 @@
                 <br /><br />
                 Archivos: <asp:FileUpload ID="FileUpload1" runat="server" /><br /><br />
                 <asp:Button ID="botonRegistrar" runat="server" Text="Guardar Cambios" CssClass="botones" OnClick="botonRegistrar_Click" />
-
-                    <br /><br />
-                <asp:Button ID="botonRegistrar" runat="server" Text="Registrar" CssClass="botones" OnClick="botonRegistrar_Click" Width="202px" />
-                    <br />
-
                 </div>
             
         </div>

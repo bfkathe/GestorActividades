@@ -166,10 +166,10 @@ namespace Gestor_Actividades.DTO1
 
         //Archivos
 
-        public String getArchivoPath()
+        /*public String getArchivoPath()
         {
             return this.ArchivoPath ;
-        }
+        }*/
 
 
         //Sets-----------------
@@ -302,7 +302,7 @@ namespace Gestor_Actividades.DTO1
         public Byte[] getArchivoPath()
         {
             return this.ArchivoRuta;
-        }
+        } 
 
         public void setArchivoNombre(String nombre)
         {
