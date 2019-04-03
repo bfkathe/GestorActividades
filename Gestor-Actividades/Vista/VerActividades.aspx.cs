@@ -99,9 +99,16 @@ namespace Gestor_Actividades.Vista
             Response.Redirect("VerEventos.aspx");
         }
 
-        protected void CheckBoxList_Actividades_SelectedIndexChanged(object sender, EventArgs e)
+        protected void botonArchivos_Click(object sender, EventArgs e)
         {
-
+            foreach (ListItem item in CheckBoxList_Actividades.Items)
+            {
+                if (item.Selected)
+                {
+                    singleton.setActividadId(Convert.ToInt32(item.Value));
+                }
+            }
+            Response.Redirect("VerArchivos.aspx");
         }
     }
 }
