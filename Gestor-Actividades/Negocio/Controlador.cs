@@ -188,6 +188,31 @@ namespace Gestor_Actividades.Negocio
                 return true;
         }
 
+        public void agregarArchivo(DTO dto)
+        {
+            Modelo.Archivo archivo = new Modelo.Archivo(dto.getArchivoNombre(), dto.getArchivoFormato(), dto.getArchivoPath(),dto.getArchivoActividadId());
+            try
+            {
+                conexion.agregarArchivo(archivo);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al insertar archivo CONTROLADOR", ex);
+            }
 
+        }
+
+        public void eliminarArchivo(DTO dto)
+        {
+            try
+            {
+                conexion.eliminarArchivo(dto.getArchivoId());
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al eliminar archivo", ex);
+            }
+
+        }
     }
 }

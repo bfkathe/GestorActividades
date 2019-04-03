@@ -10,7 +10,7 @@
 namespace Gestor_Actividades.Vista {
     
     
-    public partial class VerActividades {
+    public partial class VerArchivos {
         
         /// <summary>
         /// Control form1.
@@ -49,48 +49,30 @@ namespace Gestor_Actividades.Vista {
         protected global::System.Web.UI.WebControls.Button botonCrearStaff;
         
         /// <summary>
-        /// Control CheckBoxList_Actividades.
+        /// Control CheckBoxList_Archivos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList_Actividades;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList_Archivos;
         
         /// <summary>
-        /// Control botonEliminar.
+        /// Control FileUpload_VerArchivos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonEliminar;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload_VerArchivos;
         
         /// <summary>
-        /// Control botonEditar.
+        /// Control btn_EliminarArchivo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonEditar;
-        
-        /// <summary>
-        /// Control botonVerEventos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonVerEventos;
-        
-        /// <summary>
-        /// Control botonArchivos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonArchivos;
+        protected global::System.Web.UI.WebControls.Button btn_EliminarArchivo;
     }
 }

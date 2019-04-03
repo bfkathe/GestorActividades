@@ -20,15 +20,17 @@
                 <h1>Ver Actividades</h1>
             </div>
             <br /><br /><br />
-            <div id="form2">
+            <div id="form2" aria-orientation="vertical">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:CheckBoxList ID="CheckBoxList_Actividades" runat="server" OnSelectedIndexChanged="CheckBoxList_Actividades_SelectedIndexChanged" Width="82px">
+                <asp:CheckBoxList ID="CheckBoxList_Actividades" runat="server" Width="82px">
                     <asp:ListItem>Actividad 1</asp:ListItem>
                     <asp:ListItem>Actividad 2</asp:ListItem>
-                </asp:CheckBoxList><br /><br />
+                </asp:CheckBoxList>
                 <asp:Button ID="botonEliminar" runat="server" Text="Eliminar" CssClass="botones" Width="100px"  OnClick ="botonEliminarActividad_Click"/><br /><br />
                 <asp:Button ID="botonEditar" runat="server" Text="Editar" CssClass="botones" Width="100px" OnClick="botonEditarActividad_Click" OnClientClick="True"/><br /><br />
                 <asp:Button ID="botonVerEventos" runat="server" Text="Eventos" CssClass="botones" Width="100px" OnClick="botonVerEventos_Click"/> 
+                <br />
+                <asp:Button ID="botonArchivos" runat="server" Text="Archivos" CssClass="botones" Width="100px" OnClick="botonArchivos_Click"/> 
             </div>
             
         </div>
