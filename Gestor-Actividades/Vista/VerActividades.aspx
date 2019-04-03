@@ -19,16 +19,22 @@
             <div id="titulo">
                 <h1>Ver Actividades</h1>
             </div>
-            <br /><br /><br />
-            <div id="form2">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:CheckBoxList ID="CheckBoxList_Actividades" runat="server" OnSelectedIndexChanged="CheckBoxList_Actividades_SelectedIndexChanged" Width="82px">
-                    <asp:ListItem>Actividad 1</asp:ListItem>
-                    <asp:ListItem>Actividad 2</asp:ListItem>
-                </asp:CheckBoxList><br /><br />
-                <asp:Button ID="botonEliminar" runat="server" Text="Eliminar" CssClass="botones" Width="100px"  OnClick ="botonEliminarActividad_Click"/><br /><br />
-                <asp:Button ID="botonEditar" runat="server" Text="Editar" CssClass="botones" Width="100px" OnClick="botonEditarActividad_Click" OnClientClick="True"/><br /><br />
-                <asp:Button ID="botonVerEventos" runat="server" Text="Eventos" CssClass="botones" Width="100px" OnClick="botonVerEventos_Click"/> 
+            <br />
+            <div id="form2">             
+                <table align="center" style="text-align:left;margin:auto;">
+                    <tr>
+                        <td>
+                            <asp:CheckBoxList ID="CheckBoxList_Actividades" runat="server" OnSelectedIndexChanged="CheckBoxList_Actividades_SelectedIndexChanged" Width="361px" CellSpacing="30" TextAlign="Left">
+                                <asp:ListItem>Actividad 1</asp:ListItem>
+                                <asp:ListItem>Actividad 2</asp:ListItem>
+                            </asp:CheckBoxList>
+                        </td>
+                    </tr>
+                </table>
+                <br /><br />
+                <asp:Button ID="botonEliminar" runat="server" Text="Eliminar" CssClass="botones" Width="170px"  OnClick ="botonEliminarActividad_Click"/><br /><br />
+                <asp:Button ID="botonEditar" runat="server" Text="Editar" CssClass="botones" Width="170px" OnClick="botonEditarActividad_Click" OnClientClick="True"/><br /><br />
+                <asp:Button ID="botonVerEventos" runat="server" Text="Eventos" CssClass="botones" Width="170px" OnClick="botonVerEventos_Click"/> 
             </div>
             
         </div>

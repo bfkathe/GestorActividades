@@ -83,5 +83,10 @@ namespace Gestor_Actividades.Vista
                 System.Diagnostics.Debug.WriteLine("Error al eliminar evento", ex);
             }
         }
+
+        protected void CheckBoxList_Eventos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

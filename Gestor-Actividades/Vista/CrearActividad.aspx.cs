@@ -106,7 +106,10 @@ namespace Gestor_Actividades.Vista
                 {
                     controlador.agregarActividad(dto);
                     MsgBox("Actividad Registrada", this.Page, this);
-                    Response.Redirect("VerActividades.aspx");
+
+
+                    //Una vez creada la actividad redirigir de una vez a la asignación de staff
+                    Response.Redirect("Staff-Actividad.aspx");
                 }
                 catch(Exception ex)
                 {

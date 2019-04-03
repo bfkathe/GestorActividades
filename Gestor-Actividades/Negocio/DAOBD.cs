@@ -14,10 +14,10 @@ namespace Gestor_Actividades.Negocio
         //private string cadena = "Data Source=ANDRE\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
 
         /*Cadena Audra*/
-        private string cadena = "Data Source=DESKTOP-7K75JTA\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
+        //private string cadena = "Data Source=DESKTOP-7K75JTA\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
 
         /*Cadena Katherina*/
-        //private string cadena = "Data Source = KATHERINA\\KATHERINABD;Initial Catalog = ProyectoGestorActividades; Integrated Security = True";
+        private string cadena = "Data Source = KATHERINA\\KATHERINABD;Initial Catalog = ProyectoGestorActividades; Integrated Security = True";
         public SqlConnection conn = new SqlConnection();
         
 
@@ -411,6 +411,82 @@ namespace Gestor_Actividades.Negocio
             }
             return resultado;
         }
+
+
+
+
+
+        public List<Modelo.Lista> llenarStaff()
+        {
+            List<Lista> list = new List<Lista>();
+            try
+            {
+                Abrir();
+                SqlCommand cmd = new SqlCommand("select StaffId,Nombre from Staff", conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    list.Add(new Lista
+                    {
+                        id = rdr.GetInt32(0),
+                        nombre = rdr.GetString(1)
+
+                    });
+                }
+                rdr.Close();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al obtener usuarios de Staff");
+                list.Add(new Lista
+                {
+                    id = -1,
+                    nombre = "Error"
+
+                });
+                return list;
+
+            }
+        }
+
+
+
+        public void agregarStaffXActividad(int idActividad,List<int> listaStaff)
+        {
+            foreach (int idStaff in listaStaff)
+            {
+                try
+                {
+                    Abrir();
+                    SqlCommand command = new SqlCommand("staffXActividadProc", conn);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add(new SqlParameter("@idActividad", idActividad));
+                    command.Parameters.Add(new SqlParameter("@idStaff", idStaff));
+                    command.ExecuteNonQuery();
+
+
+                    if (conn.State != ConnectionState.Closed)
+                    {
+                        Cerrar();
+                    }
+                    //Response.Write("<script>alert('correcto');</script>");
+                    System.Diagnostics.Debug.WriteLine("Staff agregado a la actividad");
+                }
+                catch (SqlException ex)
+                {
+                    Console.Write(ex);
+                    System.Diagnostics.Debug.WriteLine("Error al agregar staff a actividad DAO");
+                }
+            }
+                
+        }
+
+
+
+
 
 
 

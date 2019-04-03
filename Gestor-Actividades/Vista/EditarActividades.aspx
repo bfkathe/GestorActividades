@@ -56,7 +56,7 @@
                 Encargados: <asp:TextBox ID="txtEncargado" runat="server"></asp:TextBox>
                 <br /><br />
                 Archivos: <asp:FileUpload ID="FileUpload1" runat="server" /><br /><br />
-                <asp:Button ID="botonRegistrar" runat="server" Text="Registrar" CssClass="botones" OnClick="botonRegistrar_Click" />
+                <asp:Button ID="botonRegistrar" runat="server" Text="Guardar Cambios" CssClass="botones" OnClick="botonRegistrar_Click" />
                 </div>
             
         </div>
