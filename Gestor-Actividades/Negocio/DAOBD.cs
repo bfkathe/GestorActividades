@@ -412,6 +412,52 @@ namespace Gestor_Actividades.Negocio
             return resultado;
         }
 
+        public void agregarArchivo(Modelo.Archivo archivo)
+        {
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("agregarArchivo", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@Name", archivo.getNombre()));
+                command.Parameters.Add(new SqlParameter("@FileType", archivo.getFormato()));
+                command.Parameters.Add(new SqlParameter("@Data", archivo.getRuta()));
+                command.Parameters.Add(new SqlParameter("@ActividadId", archivo.getIdActividad()));
+                command.ExecuteNonQuery();
+                if (conn.State != ConnectionState.Closed)
+                {
+                    Cerrar();
+                }
+                System.Diagnostics.Debug.WriteLine("Archivo agregado correctamente");
+            }
+            catch (SqlException ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al insertar archivo");
+            }
+        }
+
+        public void eliminarArchivo(int id)
+        {
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("eliminarArchivo", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@id", id));
+                command.ExecuteNonQuery();
+                if (conn.State != ConnectionState.Closed)
+                {
+                    Cerrar();
+                }
+                System.Diagnostics.Debug.WriteLine("Archivo eliminado correctamente");
+            }
+            catch (SqlException ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al eliminar archivo");
+            }
+        }
 
 
 

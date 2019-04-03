@@ -38,7 +38,11 @@ namespace Gestor_Actividades.DTO1
         private List<int> listaStaff { get; set; }
 
         //archivos
-        private String ArchivoPath { get; set; }
+        private byte[] ArchivoRuta;
+        private string ArchivoNombre;
+        private string ArchivoFormato;
+        private int ArchivoActividadId;
+        private int ArchivoId;
 
 
         //Gets --------------------------
@@ -153,6 +157,7 @@ namespace Gestor_Actividades.DTO1
             return this.StaffNombre ;
         }
 
+
         public List<int> getListaStaff()
         {
             return this.listaStaff;
@@ -165,6 +170,7 @@ namespace Gestor_Actividades.DTO1
         {
             return this.ArchivoPath ;
         }
+
 
         //Sets-----------------
 
@@ -288,9 +294,54 @@ namespace Gestor_Actividades.DTO1
 
         //archivos
 
-        public void setArchivoPath(String path)
+        public void setArchivoPath(Byte[] path)
         {
-            this.ArchivoPath = path;
+            this.ArchivoRuta = path;
+        }
+
+        public Byte[] getArchivoPath()
+        {
+            return this.ArchivoRuta;
+        }
+
+        public void setArchivoNombre(String nombre)
+        {
+            this.ArchivoNombre = nombre;
+        }
+
+        public String getArchivoNombre()
+        {
+            return this.ArchivoNombre;
+        }
+
+        public void setArchivoFormato(String formato)
+        {
+            this.ArchivoFormato = formato;
+        }
+
+        public String getArchivoFormato()
+        {
+            return this.ArchivoFormato;
+        }
+
+        public void setArchivoActividadId(int id)
+        {
+            this.ArchivoActividadId = id;
+        }
+
+        public int getArchivoActividadId()
+        {
+            return this.ArchivoActividadId;
+        }
+
+        public void setArchivoId(int id)
+        {
+            this.ArchivoId = id;
+        }
+
+        public int getArchivoId()
+        {
+            return this.ArchivoId;
         }
 
         public DTO() { }
