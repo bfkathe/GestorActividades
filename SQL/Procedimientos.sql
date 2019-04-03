@@ -125,7 +125,7 @@ SET Fecha = @Fecha,
 WHERE ActividadId = @id
 GO
 
-exec editarActividad 1,'2019-03-29', 'Actividad1' , '4:00pm', 'Sede SJ', 0, 'Audra Rodriguez Mora', 27, 'Casa Verde', 'Descripcion'
+exec editarActividad 9,'2019-03-29', 'Actividad1' , '4:00pm', 'Sede SJ', 0, 'Audra Rodriguez Mora', 27, 'Casa Verde', 'Descripcion'
 
 ---------------------Eliminar Actividad----------------------------------
 create procedure eliminarActividad(
@@ -189,7 +189,12 @@ exec eliminarEvento 1
 
 drop table EventosxActividad
 
+select * from Eventos
 
+----CORRER ESTA PARTE---------------------------------------------------------------------
+ALTER TABLE Eventos
+DROP CONSTRAINT FK__Eventos__Activid__14270015
+Alter table Eventos ADD FOREIGN KEY (ActividadId) REFERENCES Actividades(ActividadId) ON DELETE CASCADE; 
 
 
 

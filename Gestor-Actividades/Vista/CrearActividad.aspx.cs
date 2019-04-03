@@ -34,10 +34,10 @@ namespace Gestor_Actividades.Vista
         }
 
         protected void botonRegistrar_Click(object sender, EventArgs e)
-        {            
+        {
+            String cantCupo = txtBox_cantCupos.Text;       
             String lugarActividad = txtBox_lugar.Text;
             String fechaString = txtBox_fecha.Text;
-            String cantCupo = txtBox_cantCupos.Text;
             String encargado = txtEncargado.Text;
 
             //Expresiones regulares para validar
@@ -48,7 +48,7 @@ namespace Gestor_Actividades.Vista
             String validaFecha = @"(((0|1)[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/((19|20)\d\d))$";
             Match matchFecha = Regex.Match(fechaString,validaFecha);
 
-            String validaNumero = "^[0-9]+$";
+            String validaNumero = "^[0-9]*$";
             Match matchNumero = Regex.Match(cantCupo,validaNumero);
 
             if (!matchLugar.Success || !matchEncargado.Success)
@@ -66,17 +66,24 @@ namespace Gestor_Actividades.Vista
             }
             else
             {
-
-
+                System.Diagnostics.Debug.WriteLine(fechaString); 
                 DateTime fecha = Convert.ToDateTime(fechaString);
+
                 String campus = DropDownList_Campus.Text;
                 bool restriccion = false;
                 if (CheckBoxCupo.Checked == true)
                 {
                     restriccion = true;
                 }
-
+                else
+                {
+                    cantCupo = "-1";
+                }
                 String descripcion = txtDescripcion.Text;
+                if(descripcion == "")
+                {
+                    descripcion = "Actividad sin descripcion";
+                }
                 String nombreActividad = txtBox_nombre.Text;
                 String horario = txtBox_horario.Text;
 
@@ -99,6 +106,7 @@ namespace Gestor_Actividades.Vista
                 {
                     controlador.agregarActividad(dto);
                     MsgBox("Actividad Registrada", this.Page, this);
+                    Response.Redirect("VerActividades.aspx");
                 }
                 catch(Exception ex)
                 {

@@ -25,7 +25,7 @@
                 Horario: <asp:TextBox ID="txtBox_horario" runat="server"  Height="100px" Width="300px"></asp:TextBox><br /><br />
                 Expositor: <asp:TextBox ID="txtBox_expositor" runat="server" ></asp:TextBox><br /><br />
                 Descripcion: <asp:TextBox ID="txtBox_descripcion" runat="server"  Height="100px" Width="300px"></asp:TextBox><br /><br />
-                <asp:Button ID="botonGuardarCambios" runat="server" Text="Guardar cambios" CssClass="botones" />
+                <asp:Button ID="botonGuardarCambios" runat="server" Text="Guardar cambios" CssClass="botones" OnClick="botonGuardarCambios_Click1" />
                 
                 </div>
             

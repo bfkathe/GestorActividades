@@ -14,18 +14,16 @@ namespace Gestor_Actividades.Negocio
         //private string cadena = "Data Source=ANDRE\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
 
         /*Cadena Audra*/
-        //private string cadena = "Data Source=DESKTOP-7K75JTA\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
+        private string cadena = "Data Source=DESKTOP-7K75JTA\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
 
         /*Cadena Katherina*/
-        private string cadena = "Data Source = KATHERINA\\KATHERINABD;Initial Catalog = ProyectoGestorActividades; Integrated Security = True";
+        //private string cadena = "Data Source = KATHERINA\\KATHERINABD;Initial Catalog = ProyectoGestorActividades; Integrated Security = True";
         public SqlConnection conn = new SqlConnection();
         
 
         public DAOBD()
         {
             conn.ConnectionString = cadena;
-
-            System.Diagnostics.Debug.WriteLine("Conexion abierta");
         }
 
         public void Abrir()
@@ -33,7 +31,6 @@ namespace Gestor_Actividades.Negocio
             try
             {
                 conn.Open();
-                System.Diagnostics.Debug.WriteLine("Conexion abierta");
             }
             catch (Exception ex)
             {
@@ -118,7 +115,7 @@ namespace Gestor_Actividades.Negocio
                 command.Parameters.Add(new SqlParameter("@Campus", actividad.getCampus()));
                 command.Parameters.Add(new SqlParameter("@Restriccion", actividad.getRestriccion()));
                 command.Parameters.Add(new SqlParameter("@Encargado", actividad.getEncargado()));
-                command.Parameters.Add(new SqlParameter("@CantCupos", actividad.getCantCupos()));
+                command.Parameters.Add(new SqlParameter("@cantCupos", actividad.getCantCupos()));
                 command.Parameters.Add(new SqlParameter("@lugar", actividad.getLugar()));
                 command.Parameters.Add(new SqlParameter("@Descripcion", actividad.getDescripcion()));
                 command.ExecuteNonQuery();
@@ -191,6 +188,41 @@ namespace Gestor_Actividades.Negocio
             }
         }
 
+        public List<Actividad> datosActividades(int id)
+        {
+            List<Actividad> list = new List<Actividad>();
+            try
+            {
+                Abrir();
+                SqlCommand cmd = new SqlCommand("select Fecha, Nombre, Horario, Campus, Restriccion, Encargado, CantCupos, Lugar, Descripcion from Actividades where ActividadId = " + id, conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    list.Add(new Actividad
+                        (
+                        rdr.GetDateTime(0),
+                        rdr.GetString(1),
+                        rdr.GetString(2),
+                        rdr.GetString(3),
+                        rdr.GetBoolean(4),
+                        rdr.GetString(5),
+                        rdr.GetInt32(6),
+                        rdr.GetString(7),
+                        rdr.GetString(8)
+                        ));
+                }
+                rdr.Close();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al obtener actividades");
+                return list;
+
+            }
+        }
+
         public void agregarEvento(Modelo.Evento evento)
         {
             try
@@ -225,7 +257,6 @@ namespace Gestor_Actividades.Negocio
                 SqlCommand command = new SqlCommand("editarEvento", conn);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add(new SqlParameter("@id", id));
-                command.Parameters.Add(new SqlParameter("@idActividad", evento.getIdActividad()));
                 command.Parameters.Add(new SqlParameter("@Nombre", evento.getNombre()));
                 command.Parameters.Add(new SqlParameter("@Horario", evento.getHorario()));
                 command.Parameters.Add(new SqlParameter("@Expositor", evento.getExpositor()));
@@ -240,7 +271,7 @@ namespace Gestor_Actividades.Negocio
             catch (SqlException ex)
             {
                 Console.Write(ex);
-                System.Diagnostics.Debug.WriteLine("Error al editar evento");
+                System.Diagnostics.Debug.WriteLine("Error al editar evento DAODB");
             }
         }
 
@@ -300,6 +331,36 @@ namespace Gestor_Actividades.Negocio
             }
         }
 
+        public List<Evento> datosEventos(int id)
+        {
+            List<Evento> list = new List<Evento>();
+            try
+            {
+                Abrir();
+                SqlCommand cmd = new SqlCommand("select ActividadId,Nombre, Horario, Expositor, Descripcion from Eventos where EventosId = " + id, conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    list.Add(new Evento
+                        (
+                        rdr.GetInt32(0),
+                        rdr.GetString(1),
+                        rdr.GetString(2),
+                        rdr.GetString(3),
+                        rdr.GetString(4)
+                        ));
+                }
+                rdr.Close();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al obtener eventos");
+                return list;
+
+            }
+        }
 
         public int VerificarLogin(string pUsuario, string pContrasenna)
         {

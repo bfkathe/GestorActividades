@@ -83,7 +83,7 @@ namespace Gestor_Actividades.Negocio
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine("Error al editar evento", ex);
+                System.Diagnostics.Debug.WriteLine("Error al editar evento CONTROLADOR", ex);
             }
 
         }
@@ -115,6 +115,38 @@ namespace Gestor_Actividades.Negocio
                 return lista;
             }
             
+        }
+
+        public List<Modelo.Actividad> datosActividades(DTO dto)
+        {
+            List<Modelo.Actividad> lista = new List<Modelo.Actividad>();
+            try
+            {
+                lista = conexion.datosActividades(dto.getActividadId());
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al obtener actividades", ex);
+                return lista;
+            }
+
+        }
+
+        public List<Modelo.Evento> datosEventos(DTO dto)
+        {
+            List<Modelo.Evento> lista = new List<Modelo.Evento>();
+            try
+            {
+                lista = conexion.datosEventos(dto.getEventoId());
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al obtener eventos", ex);
+                return lista;
+            }
+
         }
 
         public List<Modelo.Lista> llenarEventos(int idActividad)
