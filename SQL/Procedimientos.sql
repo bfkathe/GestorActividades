@@ -10,7 +10,7 @@ begin
 insert into Staff(Nombre,Usuario,Contraseña) values (@nombre,@nombreUsuario,ENCRYPTBYPASSPHRASE('password',@contrasenna)) --encriptacion
 end
 
-EXEC agregarStaff 'Katherina Bonilla','katherinabf','789'
+EXEC agregarStaff 'Katherina Bonilla','katherinabf', '789' 
 EXEC agregarStaff 'Audra Rodriguez','audrar','123'
 EXEC agregarStaff 'André Arroyo','andrearr','456'
 
@@ -210,7 +210,7 @@ insert into StaffxActividad(ActividadId,StaffId) values (@idActividad,@idStaff)
 end
 
 
-exec staffXActividadProc 1,2
+exec staffXActividadProc 2,2
 
 ----ARCHIVOS------------------------------
 Drop table ArhivosxActividad

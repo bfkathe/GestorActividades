@@ -67,6 +67,15 @@ namespace Gestor_Actividades.Vista {
         protected global::System.Web.UI.WebControls.FileUpload FileUpload_VerArchivos;
         
         /// <summary>
+        /// Control btn_UploadArchivo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_UploadArchivo;
+        
+        /// <summary>
         /// Control btn_EliminarArchivo.
         /// </summary>
         /// <remarks>

@@ -29,9 +29,10 @@
                 <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:FileUpload ID="FileUpload_VerArchivos" runat="server" OnDataBinding="FileUpload_VerArchivos_DataBinding" />
                 </label>
                 <p style="margin-left: 40px">
+                <asp:Button ID="btn_UploadArchivo" runat="server" CssClass="botones" OnClick="btn_UploadArchivo_Click" Text="Upload" Width="101px" Height="43px" />
+                <asp:Button ID="btn_EliminarArchivo" runat="server" CssClass="botones" OnClick="btn_EliminarArchivo_Click" Text="Eliminar" Width="101px" Height="43px" />
                 <br />
                 </p>
-                <asp:Button ID="btn_EliminarArchivo" runat="server" CssClass="botones" OnClick="btn_EliminarArchivo_Click" Text="Eliminar" Width="101px" />
                 <br />
                 <br /><br />
                 

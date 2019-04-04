@@ -202,7 +202,21 @@ namespace Gestor_Actividades.Negocio
 
         }
 
+        public List<Modelo.Lista> llenarArchivos(int idActividad)
+        {
+            List<Modelo.Lista> lista = new List<Modelo.Lista>();
+            try
+            {
+                lista = conexion.llenarArchivos(idActividad);
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al obtener archivos", ex);
+                return lista;
+            }
 
+        }
 
         public List<Lista> llenarStaff()
         {
