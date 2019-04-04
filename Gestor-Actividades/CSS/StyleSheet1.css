@@ -1,7 +1,6 @@
 ﻿#imagen {
     float: right;
     margin-right: 200px;
-    
     border-radius: 5px;
 }
 
@@ -46,26 +45,27 @@ h1 {
     display: block;
     margin-left:auto;
     margin-right:auto;
+    width: 300px;
+    height: 50px;
     }
 
 #form2 {
     background-color: #ffffff;
     margin: 0 auto;
     width: 495px;
-    height: 702px;
     padding: 0 20px 0 0;
 }
 
 #seccion{
     float:left;
     width:70%;
-    height:1028px;
 }
 
-input {
+
+
+#form2 input {
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0px;
 }
-
