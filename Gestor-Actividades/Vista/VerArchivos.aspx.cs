@@ -5,14 +5,28 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Gestor_Actividades.DTO1;
+using Gestor_Actividades.Modelo;
+using Gestor_Actividades.Negocio;
 
 namespace Gestor_Actividades.Vista
 {
     public partial class VerArchivos : System.Web.UI.Page
     {
+        Controlador controlador = new Controlador();
+        Singleton singleton = Singleton.Instance;
+        DTO dto = new DTO();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                System.Diagnostics.Debug.WriteLine(singleton.getActividadId());
+                List<Lista> lista = controlador.llenarArchivos(singleton.getActividadId());
+                CheckBoxList_Archivos.DataTextField = "nombre";
+                CheckBoxList_Archivos.DataValueField = "id";
+                CheckBoxList_Archivos.DataSource = lista;
+                CheckBoxList_Archivos.DataBind();
+            }
         }
 
         protected void botonCrearAct_Click(object sender, EventArgs e)
@@ -30,66 +44,64 @@ namespace Gestor_Actividades.Vista
             Response.Redirect("Staff.aspx");
         }
 
-        protected void btn_EliminarArchivo_Click(object sender, EventArgs e)
-        {
-            string path = Server.MapPath(FileUpload_VerArchivos.PostedFile.FileName);
-           System.Diagnostics.Debug.WriteLine(path);
-           System.Diagnostics.Debug.WriteLine(databaseFilePut(path));
-        }
-
         public byte[] databaseFilePut(string varFilePath)
         {
-            
-            using (FileStream fs = new FileStream(varFilePath, FileMode.Open, FileAccess.Read))
-            {
-                byte[] file = File.ReadAllBytes(varFilePath);
-                fs.Read(file, 0, System.Convert.ToInt32(fs.Length));
-                fs.Close();
-                return file;
-
-            }
-            
+           
+            byte[] file = File.ReadAllBytes(varFilePath);
+            return file;
         }
 
         protected void FileUpload_VerArchivos_DataBinding(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("escogí un archivo");
         }
-        /*
 
-   // Read the file and convert it to Byte Array
-   byte[] data;
-   //get file extension
-   string extension = FileName.Substring(FileName.LastIndexOf(".") + 1);
-   string fileType = "";
-   //set the file type based on File Extension
-   switch (extension)
-   {
-       case "doc":
-           fileType = "application/vnd.ms-word";
-           break;
-       case "docx":
-           fileType = "application/vnd.ms-word";
-           break;
-       case "xls":
-           fileType = "application/vnd.ms-excel";
-           break;
-       case "xlsx":
-           fileType = "application/vnd.ms-excel";
-           break;
-       case "jpg":
-           fileType = "image/jpg";
-           break;
-       case "png":
-           fileType = "image/png";
-           break;
-       case "gif":
-           fileType = "image/gif";
-           break;
-       case "pdf":
-           fileType = "application/pdf";
-           break;
-   }
-*/
+        protected void btn_UploadArchivo_Click(object sender, EventArgs e)
+        {
+            var fileName = "";
+            var fileSavePath = "";
+            string extension = "";
+            byte[] ruta;
+            var uploadedFile = Request.Files[0];
+            fileName = Path.GetFileName(uploadedFile.FileName);
+            extension = Path.GetExtension(uploadedFile.FileName);
+            fileSavePath = Server.MapPath("~//UploadedFiles//" + fileName);
+            uploadedFile.SaveAs(fileSavePath);
+            ruta = databaseFilePut(fileSavePath);
+            System.Diagnostics.Debug.WriteLine(fileName);
+            System.Diagnostics.Debug.WriteLine(extension);
+            System.Diagnostics.Debug.WriteLine(ruta.ToString());
+            dto.setArchivoActividadId(singleton.getActividadId());
+            dto.setArchivoNombre(fileName);
+            dto.setArchivoPath(ruta);
+            dto.setArchivoFormato(extension);
+            controlador.agregarArchivo(dto);
+            Response.Redirect("VerArchivos.aspx");
+
+        }
+
+        protected void btn_EliminarArchivo_Click(object sender, EventArgs e)
+        {
+            foreach (ListItem item in CheckBoxList_Archivos.Items)
+            {
+                if (item.Selected)
+                {
+                    singleton.setArchivoId(Convert.ToInt32(item.Value));
+                }
+            }
+
+            dto.setArchivoId(singleton.getArchivoId());
+
+            try
+            {
+                controlador.eliminarArchivo(dto);
+                System.Diagnostics.Debug.WriteLine("Archivo eliminado");
+                Response.Redirect("VerArchivos.aspx");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al eliminar archivo", ex);
+            }
+        }
     }
 }
