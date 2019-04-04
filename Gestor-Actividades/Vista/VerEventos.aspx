@@ -7,9 +7,8 @@
     <title>Eventos de Actividad</title>
     <link href="/CSS/StyleSheet1.css" rel="Stylesheet" type="text/css"/>
     <style type="text/css">
-        .auto-style2 {
-            width: 292px;
-            height: 137px;
+        .auto-style3 {
+            width: 401px;
         }
     </style>
 </head>
@@ -21,23 +20,19 @@
             <asp:Button ID="botonCrearStaff" runat="server" Text="Crear Staff" CssClass="botones" OnClick="botonCrearStaff_Click"/>
         </div>
 
-        <div id="seccion"><br />
+        <div id="seccion" align="center"><br />
             <div id="titulo">
                 <h1>Eventos</h1>
             </div>
             <br />
             <div id="form2">
-                <table align="center" style="text-align:left;margin:auto;">
-                    <tr>
-                        <td>
-                            <asp:CheckBoxList ID="CheckBoxList_Eventos" runat="server" Width="361px" OnSelectedIndexChanged="CheckBoxList_Eventos_SelectedIndexChanged" CellSpacing="30" TextAlign="Left">
-                                <asp:ListItem>Evento 1</asp:ListItem>
-                                <asp:ListItem>Evento 2</asp:ListItem>
-                            </asp:CheckBoxList>
-                        </td>
-                    </tr>
-                </table>
 
+                <div style="font-weight: 600; border: ridge" class="auto-style3" align="center">
+                    <asp:CheckBoxList ID="CheckBoxList_Eventos" runat="server" RepeatDirection="Vertical" TextAlign="Right" CellSpacing="20">
+                        <asp:ListItem>Evento 1</asp:ListItem>
+                        <asp:ListItem>Evento 2</asp:ListItem>
+                    </asp:CheckBoxList>
+                </div>
 
                 <br />
                 <br />

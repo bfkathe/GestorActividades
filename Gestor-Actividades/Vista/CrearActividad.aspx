@@ -11,10 +11,10 @@
     <link href="/CSS/StyleSheet1.css" rel="Stylesheet" type="text/css"/>
     <style type="text/css">
         .auto-style1 {
-            height: 378px;
+            height: 1062px;
         }
         .auto-style2 {
-            height: 747px;
+            height: 1290px;
         }
     </style>
 </head>

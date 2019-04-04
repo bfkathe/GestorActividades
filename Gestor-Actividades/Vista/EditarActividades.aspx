@@ -8,7 +8,10 @@
     <link href="../CSS/StyleSheet1.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style1 {
-            height: 378px;
+            height: 1074px;
+        }
+        .auto-style2 {
+            height: 1291px;
         }
         </style>
 </head>
