@@ -35,6 +35,7 @@ namespace Gestor_Actividades.DTO1
         private String StaffNombre { get; set; }
         private String StaffUsuario { get; set; }
         private String StaffContraseña { get; set; }
+        private List<int> listaStaff { get; set; }
 
         //archivos
         private byte[] ArchivoRuta;
@@ -156,6 +157,21 @@ namespace Gestor_Actividades.DTO1
             return this.StaffNombre ;
         }
 
+
+        public List<int> getListaStaff()
+        {
+            return this.listaStaff;
+        }
+
+
+        //Archivos
+
+        /*public String getArchivoPath()
+        {
+            return this.ArchivoPath ;
+        }*/
+
+
         //Sets-----------------
 
         //login
@@ -271,6 +287,11 @@ namespace Gestor_Actividades.DTO1
             this.StaffContraseña = pass;
         }
 
+        public void setListaStaff(List<int> listaStaff)
+        {
+            this.listaStaff = listaStaff;
+        }
+
         //archivos
 
         public void setArchivoPath(Byte[] path)
@@ -281,7 +302,7 @@ namespace Gestor_Actividades.DTO1
         public Byte[] getArchivoPath()
         {
             return this.ArchivoRuta;
-        }
+        } 
 
         public void setArchivoNombre(String nombre)
         {

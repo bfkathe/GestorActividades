@@ -9,5 +9,6 @@ namespace Gestor_Actividades.Modelo
     {
         public String nombre { get; set; }
         public int id { get; set; }
-    }
+
+        }
 }

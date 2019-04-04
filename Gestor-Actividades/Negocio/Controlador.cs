@@ -202,6 +202,34 @@ namespace Gestor_Actividades.Negocio
 
         }
 
+
+
+        public List<Lista> llenarStaff()
+        {
+            List<Lista> lista = new List<Lista>();
+            try
+            {
+                lista = conexion.llenarStaff();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al obtener usuarios de Staff", ex);
+                return lista;
+            }
+
+        }
+
+
+        public void agregarStaffXActividad(DTO dto)
+        {
+            int idAct = dto.getActividadId();
+            List<int> listaStaff = dto.getListaStaff();
+
+            conexion.agregarStaffXActividad(idAct,listaStaff);
+        }
+
+
         public void eliminarArchivo(DTO dto)
         {
             try

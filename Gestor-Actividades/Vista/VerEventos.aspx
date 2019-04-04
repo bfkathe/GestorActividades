@@ -6,6 +6,12 @@
 <head runat="server">
     <title>Eventos de Actividad</title>
     <link href="/CSS/StyleSheet1.css" rel="Stylesheet" type="text/css"/>
+    <style type="text/css">
+        .auto-style2 {
+            width: 292px;
+            height: 137px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -19,17 +25,29 @@
             <div id="titulo">
                 <h1>Eventos</h1>
             </div>
-            <br /><br /><br />
+            <br />
             <div id="form2">
-                <asp:CheckBoxList ID="CheckBoxList_Eventos" runat="server">
-                    <asp:ListItem>Evento 1</asp:ListItem>
-                    <asp:ListItem>Evento 2</asp:ListItem>
-                </asp:CheckBoxList><br /><br />
-                <asp:Button ID="botonAgregarEvento" runat="server" Text="Agregar" CssClass="botones" Width="100px" OnClick="botonAgregarEvento_Click"/> <br /><br />
-                <asp:Button ID="botonEliminarEvento" runat="server" Text="Eliminar" CssClass="botones" Width="100px" OnClick="botonEliminarEvento_Click"/><br /><br />
-                <asp:Button ID="botonEditarEvento" runat="server" Text="Editar" CssClass="botones" Width="100px" OnClick="botonEditarEvento_Click"/><br /><br />
+                <table align="center" style="text-align:left;margin:auto;">
+                    <tr>
+                        <td>
+                            <asp:CheckBoxList ID="CheckBoxList_Eventos" runat="server" Width="361px" OnSelectedIndexChanged="CheckBoxList_Eventos_SelectedIndexChanged" CellSpacing="30" TextAlign="Left">
+                                <asp:ListItem>Evento 1</asp:ListItem>
+                                <asp:ListItem>Evento 2</asp:ListItem>
+                            </asp:CheckBoxList>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <br />
+                <br />
+                <asp:Button ID="botonAgregarEvento" runat="server" Text="Agregar" CssClass="botones" Width="170px" OnClick="botonAgregarEvento_Click"/> <br /><br />
+                <asp:Button ID="botonEliminarEvento" runat="server" Text="Eliminar" CssClass="botones" Width="170px" OnClick="botonEliminarEvento_Click"/><br /><br />
+                <asp:Button ID="botonEditarEvento" runat="server" Text="Editar" CssClass="botones" Width="170px" OnClick="botonEditarEvento_Click"/><br /><br />
                 
             </div>
+
+             
             
         </div>
 

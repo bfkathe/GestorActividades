@@ -10,7 +10,7 @@
 namespace Gestor_Actividades.Vista {
     
     
-    public partial class VerActividades {
+    public partial class Staff_Actividad {
         
         /// <summary>
         /// form1 control.
@@ -58,39 +58,21 @@ namespace Gestor_Actividades.Vista {
         protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList_Actividades;
         
         /// <summary>
-        /// botonEliminar control.
+        /// CheckBoxList_Staff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonEliminar;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList_Staff;
         
         /// <summary>
-        /// botonEditar control.
+        /// botonConfirmar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonEditar;
-        
-        /// <summary>
-        /// botonVerEventos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonVerEventos;
-        
-        /// <summary>
-        /// botonArchivos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonArchivos;
+        protected global::System.Web.UI.WebControls.Button botonConfirmar;
     }
 }

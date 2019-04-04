@@ -10,7 +10,9 @@ begin
 insert into Staff(Nombre,Usuario,Contraseña) values (@nombre,@nombreUsuario,ENCRYPTBYPASSPHRASE('password',@contrasenna)) --encriptacion
 end
 
-EXEC agregarStaff 'katherina','katbf','hola'
+EXEC agregarStaff 'Katherina Bonilla','katherinabf','789'
+EXEC agregarStaff 'Audra Rodriguez','audrar','123'
+EXEC agregarStaff 'André Arroyo','andrearr','456'
 
 ------------Alterar columnas Contraseña para Staff y Usuarios-----------------
 alter table Staff drop column Contraseña
@@ -46,7 +48,7 @@ begin
 end
 go
 
-exec verificarLoginUsuarios 'admin','admin'
+exec verificarLoginUsuarios 'Admin','admin'
 go
 
 ---------Verificar login del Staff ------- (para después)
@@ -193,8 +195,22 @@ select * from Eventos
 
 ----CORRER ESTA PARTE---------------------------------------------------------------------
 ALTER TABLE Eventos
-DROP CONSTRAINT FK__Eventos__Activid__14270015
+DROP CONSTRAINT FK__Eventos__Activid__45F365D3
+
 Alter table Eventos ADD FOREIGN KEY (ActividadId) REFERENCES Actividades(ActividadId) ON DELETE CASCADE; 
+
+SELECT * FROM sys.objects WHERE type_desc LIKE '%CONSTRAINT'
+
+
+go
+create proc staffXActividadProc (@idActividad int, @idStaff int)
+as
+begin
+insert into StaffxActividad(ActividadId,StaffId) values (@idActividad,@idStaff)
+end
+
+
+exec staffXActividadProc 1,2
 
 ----ARCHIVOS------------------------------
 Drop table ArhivosxActividad
@@ -223,4 +239,5 @@ create procedure eliminarArchivo(
 AS
 	DELETE FROM Archivos WHERE ArchivoId = @id
 GO
+
 

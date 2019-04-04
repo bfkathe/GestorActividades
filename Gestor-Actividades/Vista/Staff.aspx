@@ -25,6 +25,10 @@
                 Nombre Usuario: <asp:TextBox ID="txtBox_nombreUsuario" runat="server"/><br /><br />
                 Contraseña: <asp:TextBox ID="txtBox_contrasenna" runat="server" TextMode="Password" /><br /><br />
                 <asp:Button ID="botonStaffNuevo" runat="server" Text="Crear" CssClass="botones" OnClick="botonStaffNuevo_Click"/>
+                <br /><br /><br /><br />
+                <br />
+                <br />
+                <asp:Button ID="botonAsignarStaff" runat="server" Text="Asignar Staff-Actividad" CssClass="botones" OnClick="botonAsignarStaff_Click"/>
             </div>
             
         </div>

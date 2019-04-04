@@ -72,6 +72,12 @@ namespace Gestor_Actividades.Vista
             {
                 controlador.agregarEvento(dto);
                 MsgBox("Evento Registrado", this.Page, this);
+
+                //limpiar campos
+                txtBox_nombre.Text = "";
+                txtBox_expositor.Text = "";
+                txtBox_horario.Text = "";
+                txtBox_descripcion.Text = "";
             }
             catch (Exception ex)
             {
