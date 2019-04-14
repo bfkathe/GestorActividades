@@ -31,7 +31,7 @@
                 <div id="form2" class="auto-style1">
                     Nombre de la actividad:<br />
                 <asp:TextBox ID="txtBox_nombre" runat="server"></asp:TextBox><br />
-                <label>Campus/Centro Académico&nbsp;                 &nbsp;
+                <label>Campus/Centro Académico&nbsp;                 &nbsp;</label>
                     <!----<asp:D&nbsp;--->
                     <asp:DropDownList ID="DropDownList_Campus" runat="server">
                     <asp:ListItem>Campus Cartago</asp:ListItem>
