@@ -25,9 +25,9 @@
         <nav id="barraNav">
             <ul>
                 <li style="font-size:large">Escuela de Ingeniería en Computación</li>
-                <li style="font-size:large">Sistema Gestor de Actividades</li>
+                <li style="font-size:large;margin-left:300px">Sistema Gestor de Actividades</li>
             </ul>
-            <asp:Button ID="boton_inicioSesion" runat="server" Text="Iniciar Sesión" Style="background-color: #ffffff; margin-top: 15px; width: 150px; border-radius: 3px 4px" OnClick="boton_inicioSesion_Click" />
+            <asp:Button ID="boton_inicioSesion" runat="server" Text="Iniciar Sesión" Style="background-color: #ffffff; margin-top: 18px; width: 150px; border-radius: 3px 4px;margin-left:450px" OnClick="boton_inicioSesion_Click" />
         </nav>
 
         <div style="text-align: center; align: center" class="auto-style2">

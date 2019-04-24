@@ -18,8 +18,6 @@ nav li{
     float: left;
     list-style: none;
     padding-top: 20px;
-    padding-right: 0px;
-    padding-left: 40px;
     text-align: center;
 }
 
@@ -32,15 +30,12 @@ nav li{
 
 
 #titulo {
-    background-color: #0f3470;
     margin: 0 0 10px 0px;
-    border-radius: 7px;
-    border: 1px solid #499ec8;
     font-family: "Tahoma", "Geneva", sans-serif;
 }
 
     #titulo h1 {
-        color: #ffffff;
+        color: #000000;
         font-family: sans-serif;
         text-align: center;
     }
