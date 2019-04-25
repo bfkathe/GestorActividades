@@ -49,13 +49,13 @@ namespace Gestor_Actividades.Vista {
         protected global::System.Web.UI.WebControls.Button botonCrearStaff;
         
         /// <summary>
-        /// CheckBoxList1 control.
+        /// CheckBoxList_Eventos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList_Eventos;
         
         /// <summary>
         /// botonAgregarEvento control.

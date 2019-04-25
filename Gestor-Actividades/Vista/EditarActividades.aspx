@@ -5,15 +5,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Editar Actividad</title>
-    <link href="../CSS/StyleSheet1.css" rel="stylesheet" />
+    <link href="../CSS/StyleSheet2.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style1 {
-            height: 378px;
+            height: 1074px;
+        }
+        .auto-style2 {
+            height: 1291px;
         }
         </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <nav id="barraNav">
+            <ul>
+                <li style="font-size:large">Escuela de Ingeniería en Computación</li>
+                <li style="font-size:large;margin-left:300px">Sistema Gestor de Actividades</li>
+            </ul>
+        </nav>
+
          <div id="menuOpciones"><br />
             <asp:Button ID="botonCrearAct" runat="server" Text="Crear Actividad" CssClass="botones" OnClick="botonCrearAct_Click"/><br />
             <asp:Button ID="botonVerAct" runat="server" Text="Ver Actividades" CssClass="botones" OnClick="botonVerAct_Click"/><br />
@@ -28,7 +38,7 @@
                 <div id="form2" class="auto-style1">
                     Nombre de la actividad:<br />
                 <asp:TextBox ID="txtBox_nombre" runat="server"></asp:TextBox><br />
-                <label>Campus/Centro Académico&nbsp;                 &nbsp;
+                <label>Campus/Centro Académico&nbsp;                 &nbsp;</label>
                     <!----<asp:D&nbsp;--->
                     <asp:DropDownList ID="DropDownList_Campus" runat="server">
                     <asp:ListItem>Campus Cartago</asp:ListItem>
@@ -54,9 +64,10 @@
                 Descripcion: <asp:TextBox ID="txtDescripcion" runat="server" Height="100px" Width="300px"></asp:TextBox>
                 <br /><br />
                 Encargados: <asp:TextBox ID="txtEncargado" runat="server"></asp:TextBox>
+
                 <br /><br />
                 Archivos: <asp:FileUpload ID="FileUpload1" runat="server" /><br /><br />
-                <asp:Button ID="botonRegistrar" runat="server" Text="Registrar" CssClass="botones" OnClick="botonRegistrar_Click" />
+                <asp:Button ID="botonRegistrar" runat="server" Text="Guardar Cambios" CssClass="botones" OnClick="botonRegistrar_Click" />
                 </div>
             
         </div>

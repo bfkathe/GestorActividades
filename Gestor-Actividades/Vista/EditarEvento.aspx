@@ -5,10 +5,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Editar Evento</title>
-    <link href="/CSS/StyleSheet1.css" rel="Stylesheet" type="text/css"/>
+    <link href="/CSS/StyleSheet2.css" rel="Stylesheet" type="text/css"/>
 </head>
 <body>
     <form id="form1" runat="server">
+        <nav id="barraNav">
+            <ul>
+                <li style="font-size:large">Escuela de Ingeniería en Computación</li>
+                <li style="font-size:large;margin-left:300px">Sistema Gestor de Actividades</li>
+            </ul>
+        </nav>
+
         <div id="menuOpciones"><br />
             <asp:Button ID="botonCrearAct" runat="server" Text="Crear Actividad" CssClass="botones" OnClick="botonCrearAct_Click"/><br />
             <asp:Button ID="botonVerAct" runat="server" Text="Ver Actividades" CssClass="botones" OnClick="botonVerAct_Click"/><br />
@@ -25,7 +32,7 @@
                 Horario: <asp:TextBox ID="txtBox_horario" runat="server"  Height="100px" Width="300px"></asp:TextBox><br /><br />
                 Expositor: <asp:TextBox ID="txtBox_expositor" runat="server" ></asp:TextBox><br /><br />
                 Descripcion: <asp:TextBox ID="txtBox_descripcion" runat="server"  Height="100px" Width="300px"></asp:TextBox><br /><br />
-                <asp:Button ID="botonGuardarCambios" runat="server" Text="Guardar cambios" CssClass="botones" />
+                <asp:Button ID="botonGuardarCambios" runat="server" Text="Guardar cambios" CssClass="botones" OnClick="botonGuardarCambios_Click1" />
                 
                 </div>
             

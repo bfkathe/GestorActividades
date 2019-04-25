@@ -21,6 +21,7 @@ namespace Gestor_Actividades.DTO1
         private String ActividadDescripcion;
         private int ActividadCupo;
         private String ActividadLugar;
+        private int ActividadId;
 
         //eventos
         private String EventoNombre { get; set; }
@@ -28,14 +29,20 @@ namespace Gestor_Actividades.DTO1
         private String EventoExpositor { get; set; }
         private String EventoDescripcion;
         private int EventoIdActividad;
+        private int EventoId;
 
         //staff
         private String StaffNombre { get; set; }
         private String StaffUsuario { get; set; }
         private String StaffContraseña { get; set; }
+        private List<int> listaStaff { get; set; }
 
         //archivos
-        private String ArchivoPath { get; set; }
+        private byte[] ArchivoRuta;
+        private string ArchivoNombre;
+        private string ArchivoFormato;
+        private int ArchivoActividadId;
+        private int ArchivoId;
 
 
         //Gets --------------------------
@@ -97,6 +104,10 @@ namespace Gestor_Actividades.DTO1
             return this.ActividadLugar;
         }
 
+        public int getActividadId()
+        {
+            return this.ActividadId;
+        }
         //Eventos
 
         public String getEventoNombre()
@@ -124,6 +135,11 @@ namespace Gestor_Actividades.DTO1
             return this.EventoIdActividad;
         }
 
+        public int getEventoId()
+        {
+            return this.EventoId;
+        }
+
         //staff
 
         public String getStaffUsuario()
@@ -141,12 +157,20 @@ namespace Gestor_Actividades.DTO1
             return this.StaffNombre ;
         }
 
+
+        public List<int> getListaStaff()
+        {
+            return this.listaStaff;
+        }
+
+
         //Archivos
 
-        public String getArchivoPath()
+        /*public String getArchivoPath()
         {
             return this.ArchivoPath ;
-        }
+        }*/
+
 
         //Sets-----------------
 
@@ -209,6 +233,11 @@ namespace Gestor_Actividades.DTO1
             this.ActividadLugar = lugar;
         }
 
+        public void setActividadId(int id)
+        {
+            this.ActividadId = id;
+        }
+
         //eventos
 
         public void setEventoNombre(String nom)
@@ -236,6 +265,11 @@ namespace Gestor_Actividades.DTO1
             this.EventoIdActividad = id;
         }
 
+        public void setEventoId(int id)
+        {
+            this.EventoId = id;
+        }
+
         //staff
 
         public void setStaffNombre(String nom)
@@ -253,11 +287,61 @@ namespace Gestor_Actividades.DTO1
             this.StaffContraseña = pass;
         }
 
+        public void setListaStaff(List<int> listaStaff)
+        {
+            this.listaStaff = listaStaff;
+        }
+
         //archivos
 
-        public void setArchivoPath(String path)
+        public void setArchivoPath(Byte[] path)
         {
-            this.ArchivoPath = path;
+            this.ArchivoRuta = path;
+        }
+
+        public Byte[] getArchivoPath()
+        {
+            return this.ArchivoRuta;
+        } 
+
+        public void setArchivoNombre(String nombre)
+        {
+            this.ArchivoNombre = nombre;
+        }
+
+        public String getArchivoNombre()
+        {
+            return this.ArchivoNombre;
+        }
+
+        public void setArchivoFormato(String formato)
+        {
+            this.ArchivoFormato = formato;
+        }
+
+        public String getArchivoFormato()
+        {
+            return this.ArchivoFormato;
+        }
+
+        public void setArchivoActividadId(int id)
+        {
+            this.ArchivoActividadId = id;
+        }
+
+        public int getArchivoActividadId()
+        {
+            return this.ArchivoActividadId;
+        }
+
+        public void setArchivoId(int id)
+        {
+            this.ArchivoId = id;
+        }
+
+        public int getArchivoId()
+        {
+            return this.ArchivoId;
         }
 
         public DTO() { }

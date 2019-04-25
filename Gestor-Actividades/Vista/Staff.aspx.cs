@@ -41,7 +41,7 @@ namespace Gestor_Actividades.Vista
             String nombre = txtBox_nombre.Text;
 
             //Expresiones regulares para validar
-            String validaCaracteres = "[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+";
+            String validaCaracteres = "[a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]+";
             Match matchNombre = Regex.Match(validaCaracteres, validaCaracteres);
 
             if (!matchNombre.Success)
@@ -61,20 +61,29 @@ namespace Gestor_Actividades.Vista
                 }
                 else
                 {
+
                     dtoStaff.setStaffNombre(nombre);
                     dtoStaff.setStaffUsuario(usu);
                     dtoStaff.setStaffContraseña(contra);
 
-                    //Enviar el dto al controlador
-                    controlador.agregarStaff(dtoStaff);
+                    Boolean existe = controlador.verificarStaff(dtoStaff);
 
-                    //MsgBox("Staff Creado", this.Page, this);
-                    Response.Write("<script>alert('Usuario creado exitosamente');</script>");
-                    //Hay dos maneras de mandar el mensaje
+                    if (existe) {
+                        MsgBox("Nombre de usuario ya existente", this.Page, this);
+                    }
+                    else
+                    {
+                        //Enviar el dto al controlador
+                        controlador.agregarStaff(dtoStaff);
+                        Response.Write("<script>alert('Usuario creado exitosamente');</script>");
+                    }
+                        
                 }
             }
 
         }
+
+
 
         public void MsgBox(String ex, Page pg, Object obj)
         {
@@ -82,6 +91,11 @@ namespace Gestor_Actividades.Vista
             Type cstype = obj.GetType();
             ClientScriptManager cs = pg.ClientScript;
             cs.RegisterClientScriptBlock(cstype, s, s.ToString());
+        }
+
+        protected void botonAsignarStaff_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Staff-Actividad.aspx");
         }
     }
 }

@@ -10,7 +10,7 @@
 namespace Gestor_Actividades.Vista {
     
     
-    public partial class CrearEvento {
+    public partial class VerArchivos {
         
         /// <summary>
         /// form1 control.
@@ -49,48 +49,39 @@ namespace Gestor_Actividades.Vista {
         protected global::System.Web.UI.WebControls.Button botonCrearStaff;
         
         /// <summary>
-        /// txtBox_nombre control.
+        /// CheckBoxList_Archivos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_nombre;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList_Archivos;
         
         /// <summary>
-        /// txtBox_horario control.
+        /// FileUpload_VerArchivos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_horario;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload_VerArchivos;
         
         /// <summary>
-        /// txtBox_expositor control.
+        /// btn_UploadArchivo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_expositor;
+        protected global::System.Web.UI.WebControls.Button btn_UploadArchivo;
         
         /// <summary>
-        /// txtBox_descripcion control.
+        /// btn_EliminarArchivo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_descripcion;
-        
-        /// <summary>
-        /// botonRegistrar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonRegistrar;
+        protected global::System.Web.UI.WebControls.Button btn_EliminarArchivo;
     }
 }
