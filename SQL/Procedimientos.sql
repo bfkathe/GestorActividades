@@ -4,7 +4,7 @@ use ProyectoGestorActividades
 
 -----------Crear usuarios de Staff------------------
 go
-alter proc agregarStaff @nombre varchar(40),@nombreUsuario varchar(30),@contrasenna nvarchar(30)
+create proc agregarStaff @nombre varchar(40),@nombreUsuario varchar(30),@contrasenna nvarchar(30)
 as
 begin
 insert into Staff(Nombre,Usuario,Contraseña) values (@nombre,@nombreUsuario,ENCRYPTBYPASSPHRASE('password',@contrasenna)) --encriptacion
@@ -81,7 +81,7 @@ Alter table Actividades ADD Descripcion varchar(250);
 
 -----------Insertar Actividades----------------------------------------------
 
-alter procedure insertarActividad(
+create procedure insertarActividad(
 	@Fecha date,
 	@Nombre varchar(125),
 	@Horario varchar(125),
@@ -101,7 +101,7 @@ exec insertarActividad '2019-03-30', 'Actividad2' , '5:00pm', 'Sede Cartago', 0,
 exec insertarActividad '2019-03-30', 'Actividad3' , '5:00pm', 'Sede Cartago', 0, 'Audra Rodriguez', 28, 'Centro de las Artes', 'Descripcion'
 
 -----------Editar Actividad----------------------------------------------
-alter procedure editarActividad(
+create procedure editarActividad(
 	@id int,
 	@Fecha date,
 	@Nombre varchar(125),
@@ -147,7 +147,7 @@ Alter table Eventos ADD ActividadId int;
 Alter table Eventos ADD FOREIGN KEY (ActividadId) REFERENCES Actividades(ActividadId); 
 -----------Insertar Eventos----------------------------------------------
 
-alter procedure insertarEvento(
+create procedure insertarEvento(
 	@idActividad int,
 	@Nombre varchar(125),
 	@Horario varchar(50),	
@@ -158,10 +158,11 @@ AS
 insert into Eventos(ActividadId,Nombre,Horario,Expositor,Descripcion) values(@idActividad,@Nombre,@Horario,@Expositor,@Descripcion)
 GO
 
-exec insertarEvento 'Evento1', '2019-03-29', 'Audra Rodriguez', 'Conferencia'
+
+exec insertarEvento 2,'Evento1', '2019-03-29', 'Audra Rodriguez', 'Conferencia'
 
 -----------Editar Actividad----------------------------------------------
-alter procedure editarEvento(
+create procedure editarEvento(
 	@id int,
 	@Nombre varchar(125),
 	@Horario varchar(125),
@@ -177,7 +178,7 @@ SET Horario = @Horario,
 WHERE EventosId = @id
 GO
 
-exec editarEvento 1,'Evento1', '2019-03-29', 'Audra Rodriguez Mora', 'Conferencia Nueva'
+exec editarEvento 2,'Evento1', '2019-03-29', 'Audra Rodriguez Mora', 'Conferencia Nueva'
 
 ---------------------Eliminar Actividad----------------------------------
 create procedure eliminarEvento(
@@ -187,7 +188,7 @@ AS
 DELETE FROM Eventos WHERE EventosId = @id
 GO
 
-exec eliminarEvento 1
+exec eliminarEvento 2
 
 drop table EventosxActividad
 
