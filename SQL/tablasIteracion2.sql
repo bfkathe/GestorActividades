@@ -56,3 +56,33 @@ foreign key (ParticipanteId) references Participantes(ParticipanteId);
 alter table ParticipantesxActividad
 add constraint FK_TipoPA
 foreign key (tipoParticipanteId) references TipoParticipante(TipoId);
+
+
+--------Insertar en Tipo de Participante---------------
+
+create procedure insertarTipos(
+	@Nombre varchar(125)
+
+)
+AS 
+insert into TipoParticipante(Nombre) values(@Nombre)
+GO
+
+exec insertarTipos 'Estudiante'
+exec insertarTipos 'Externo'
+exec insertarTipos 'Profesor'
+
+--------Insertar en Cursos---------------
+
+create procedure insertarCursos(
+	@Nombre varchar(125),
+	@Numero int
+
+)
+AS 
+insert into Curso(Nombre,Numero) values(@Nombre,@Numero)
+GO
+
+exec insertarCursos 'Proyecto',1
+exec insertarCursos 'Diseño de Software',1
+exec insertarCursos 'Administración de Proyectos',3
