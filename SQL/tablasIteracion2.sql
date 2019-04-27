@@ -27,6 +27,13 @@ create table ParticipantesxActividad(
 	NumeroCurso int,
 );
 
+alter table ParticipantesxActividad add tipoParticipanteId int
+
+create table TipoParticipante(
+	TipoId int identity(1,1) primary key,
+	Nombre varchar(30)
+);
+
 
 --Llaves foraneas
 
@@ -44,3 +51,8 @@ foreign key (CursoId) references Curso(CursoId);
 alter table ParticipantesxActividad
 add constraint FK_ParticipantePA
 foreign key (ParticipanteId) references Participantes(ParticipanteId);
+
+--Llave de tipo en participantes por actividad
+alter table ParticipantesxActividad
+add constraint FK_TipoPA
+foreign key (tipoParticipanteId) references TipoParticipante(TipoId);
