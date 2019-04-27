@@ -41,6 +41,8 @@
                     <asp:ListItem>Actividad 2</asp:ListItem>
                 </asp:CheckBoxList>
             </div>
+            <br /><br />
+            <asp:Button ID="ButtonVer" runat="server" Text="Ver" class="botones" width="100px" OnClick="ButtonVer_Click"/>
         </div>
     </form>
 
