@@ -1,8 +1,4 @@
 <resources>
     <string name="app_name">ProyectoGestorActividades</string>
-    <string-array name="tipoParticipante">
-        <item>Estudiante</item>
-        <item>Externo</item>
-        <item>Profesor</item>
-    </string-array>
+
 </resources>

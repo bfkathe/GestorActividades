@@ -10,6 +10,8 @@ create table Participantes(
 	Correo nvarchar(255) not null
 );
 
+select * from Participantes
+
 
 create table Curso(
 	CursoId int identity(1,1) primary key,
@@ -86,3 +88,7 @@ GO
 exec insertarCursos 'Proyecto',1
 exec insertarCursos 'Diseño de Software',1
 exec insertarCursos 'Administración de Proyectos',3
+
+create table Pruebas(
+	Nombre varchar(125)
+);
