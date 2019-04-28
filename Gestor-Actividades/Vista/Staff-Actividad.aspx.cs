@@ -59,7 +59,7 @@ namespace Gestor_Actividades.Vista
             {
                 controlador.agregarStaffXActividad(dto);
                 //Response.Redirect("VerActividades.aspx");
-                //MsgBox("Exito", this.Page, this);
+                MsgBox("Guardado", this.Page, this);
             }
             catch (Exception ex)
             {

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Ver Actividades</title>
-    <link href="../CSS/StyleSheet1.css" rel="stylesheet" />
+    <link href="../CSS/StyleSheet2.css" rel="stylesheet" />
     <script runat="server">
     </script>
     <style type="text/css">
@@ -16,6 +16,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <nav id="barraNav">
+            <ul>
+                <li style="font-size:large">Escuela de Ingeniería en Computación</li>
+                <li style="font-size:large;margin-left:300px">Sistema Gestor de Actividades</li>
+            </ul>
+        </nav>
+
         <div id="menuOpciones">
             <br />
             <asp:Button ID="botonCrearAct" runat="server" Text="Crear Actividad" CssClass="botones" OnClick="botonCrearAct_Click" /><br />

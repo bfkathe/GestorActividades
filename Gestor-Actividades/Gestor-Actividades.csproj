@@ -69,10 +69,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\StyleSheet1.css" />
+    <Content Include="CSS\StyleSheet2.css" />
+    <Content Include="Imagenes\actividad.jpg" />
+    <Content Include="Imagenes\bombillo.png" />
     <Content Include="Imagenes\imagen.png" />
     <Content Include="Vista\CrearActividad.aspx" />
     <Content Include="Vista\CrearEvento.aspx" />
     <Content Include="Vista\EditarEvento.aspx" />
+    <Content Include="Vista\InformacionActividad.aspx" />
+    <Content Include="Vista\Inicio.aspx" />
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\Staff-Actividad.aspx" />
     <Content Include="Vista\Staff.aspx" />
@@ -113,6 +118,20 @@
     </Compile>
     <Compile Include="Vista\EditarEvento.aspx.designer.cs">
       <DependentUpon>EditarEvento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\InformacionActividad.aspx.cs">
+      <DependentUpon>InformacionActividad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\InformacionActividad.aspx.designer.cs">
+      <DependentUpon>InformacionActividad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

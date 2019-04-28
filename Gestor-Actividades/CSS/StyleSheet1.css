@@ -1,4 +1,18 @@
-﻿#imagen {
+﻿body {
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: #0f3470;
+}
+
+nav h1{
+    color: white; 
+}
+
+
+#imagen {
     float: right;
     margin-right: 200px;
     border-radius: 5px;
@@ -13,7 +27,7 @@
     font-family: "Tahoma", "Geneva", sans-serif;
 }
 
-h1 {
+#titulo h1 {
     color: #ffffff;
     font-family: sans-serif;
     text-align: center;
@@ -69,3 +83,6 @@ h1 {
     margin-right: auto;
     margin-bottom: 0px;
 }
+
+
+
