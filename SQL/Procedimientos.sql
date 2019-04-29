@@ -242,13 +242,15 @@ AS
 GO
 
 
+
+
 --Nuevo 28/4/19
 
 --Renombrar columna en participantes que esta mal escrita
 exec sp_rename 'Participantes.Identidicacion','Identificacion','COLUMN'
 go
 --Consultar actividades de un participante
-create procedure actividadesXparticipante(@id int)
+alter procedure actividadesXparticipante(@id int)
 as
 begin
 	select A.Nombre 
@@ -258,4 +260,15 @@ begin
 end
 go
 
-exec actividadesXparticipante 201409639
+exec actividadesXparticipante 2014096399
+
+go
+alter procedure cargarImagen(@idActividad int)
+as
+begin
+	select A.Data from Archivos A where A.ActividadId=@idActividad and (A.FileType='.jpg' or A.FileType='.jpg') 
+end
+
+exec cargarImagen 2
+
+

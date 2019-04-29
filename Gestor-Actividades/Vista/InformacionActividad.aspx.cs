@@ -22,6 +22,11 @@ namespace Gestor_Actividades.Vista
                 dto.setActividadId(singleton.getActividadId());
                 List<Actividad> lista = controlador.datosActividades(dto);
                 cargarInformacion(lista);
+
+                //Cargar imagen de la actividad
+                byte[] bytes = (controlador.cargarImagen(dto))[0];
+                string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
+                Image1.ImageUrl = "data:image/png;base64," + base64String;
             }
         }
 

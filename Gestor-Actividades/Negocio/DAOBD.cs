@@ -437,6 +437,35 @@ namespace Gestor_Actividades.Negocio
             }
         }
 
+        public void agregarArchivo2(byte[] contenido,string nombre,string extension)
+        {
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("agregarArchivo", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@Name",nombre));
+                command.Parameters.Add(new SqlParameter("@FileType", extension));
+                command.Parameters.Add(new SqlParameter("@Data", contenido));
+                command.Parameters.Add(new SqlParameter("@ActividadId",2));
+                command.ExecuteNonQuery();
+                if (conn.State != ConnectionState.Closed)
+                {
+                    Cerrar();
+                }
+                System.Diagnostics.Debug.WriteLine("Archivo agregado correctamente");
+            }
+            catch (SqlException ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al insertar archivo");
+            }
+        }
+
+
+
+
+
         public void eliminarArchivo(int id)
         {
             try
@@ -587,6 +616,32 @@ namespace Gestor_Actividades.Negocio
                 Console.Write(ex);
                 System.Diagnostics.Debug.WriteLine("Error al obtener actividades");
                 list.Add("Error");
+                return list;
+            }
+        }
+
+
+        public List<byte[]> cargarImagen(int idActividad)
+        {
+            List<byte[]> list = new List<byte[]>();
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("cargarImagen", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@idActividad", idActividad));
+                SqlDataReader rdr = command.ExecuteReader();
+                while (rdr.Read())
+                {
+                    list.Add((byte[])rdr["Data"]);
+                }
+                rdr.Close();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al obtener actividades");
                 return list;
             }
         }
