@@ -44,6 +44,9 @@ namespace Gestor_Actividades.DTO1
         private int ArchivoActividadId;
         private int ArchivoId;
 
+        //busqueda de actividadesXparticipante
+        private int idParticipante;
+
 
         //Gets --------------------------
 
@@ -171,6 +174,12 @@ namespace Gestor_Actividades.DTO1
             return this.ArchivoPath ;
         }*/
 
+        //busqueda de actividadesXparticipante
+        public int getIdParticipante()
+        {
+            return this.idParticipante;
+        }
+
 
         //Sets-----------------
 
@@ -291,6 +300,15 @@ namespace Gestor_Actividades.DTO1
         {
             this.listaStaff = listaStaff;
         }
+
+        //busqueda de actividadesXparticipante
+        public void setIdParticipante(int id)
+        {
+            this.idParticipante = id;
+        }
+
+
+
 
         //archivos
 

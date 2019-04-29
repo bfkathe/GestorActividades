@@ -22,15 +22,6 @@ namespace Gestor_Actividades.Vista {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// boton_inicioSesion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button boton_inicioSesion;
-        
-        /// <summary>
         /// imagenActividad control.
         /// </summary>
         /// <remarks>

@@ -72,7 +72,9 @@
     <Content Include="CSS\StyleSheet2.css" />
     <Content Include="Imagenes\actividad.jpg" />
     <Content Include="Imagenes\bombillo.png" />
+    <Content Include="Imagenes\engranaje.png" />
     <Content Include="Imagenes\imagen.png" />
+    <Content Include="Vista\ActividadesXParticipante.aspx" />
     <Content Include="Vista\CrearActividad.aspx" />
     <Content Include="Vista\CrearEvento.aspx" />
     <Content Include="Vista\EditarEvento.aspx" />
@@ -98,6 +100,13 @@
     <Compile Include="DTO1\DTO.cs" />
     <Compile Include="Negocio\Singleton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\ActividadesXParticipante.aspx.cs">
+      <DependentUpon>ActividadesXParticipante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\ActividadesXParticipante.aspx.designer.cs">
+      <DependentUpon>ActividadesXParticipante.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\CrearActividad.aspx.cs">
       <DependentUpon>CrearActividad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

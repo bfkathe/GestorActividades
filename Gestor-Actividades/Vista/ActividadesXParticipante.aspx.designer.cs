@@ -10,7 +10,7 @@
 namespace Gestor_Actividades.Vista {
     
     
-    public partial class Inicio {
+    public partial class ActividadesXParticipante {
         
         /// <summary>
         /// form1 control.
@@ -22,21 +22,30 @@ namespace Gestor_Actividades.Vista {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// CheckBoxList_Actividades control.
+        /// txt_ID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList_Actividades;
+        protected global::System.Web.UI.WebControls.TextBox txt_ID;
         
         /// <summary>
-        /// ButtonVer control.
+        /// botonBuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonVer;
+        protected global::System.Web.UI.WebControls.Button botonBuscar;
+        
+        /// <summary>
+        /// ListBox_Actividades control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBox_Actividades;
     }
 }

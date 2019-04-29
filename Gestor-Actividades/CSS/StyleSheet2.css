@@ -21,6 +21,25 @@ nav li{
     text-align: center;
 }
 
+#menuInicio ul {
+    margin: 0;    
+}
+
+#menuInicio li{
+    list-style:none;
+    float:left;
+    padding-right: 240px;
+    padding-left: 150px;
+    padding-top: 10px;
+}
+
+#menuInicio a{
+    text-decoration:none;
+    color:#444;
+}
+
+
+
 
 #imagen {
     float: right;

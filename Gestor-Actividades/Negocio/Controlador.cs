@@ -256,5 +256,23 @@ namespace Gestor_Actividades.Negocio
             }
 
         }
+
+        public List<string> actividadesXparticipante(DTO dto)
+        {
+            List<string> lista = new List<string>();
+            int idParticipante = dto.getIdParticipante();
+            try
+            {
+                lista = conexion.actividadesXParticipante(idParticipante);
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al obtener actividades", ex);
+                return lista;
+            }
+        }
+
+
     }
 }
