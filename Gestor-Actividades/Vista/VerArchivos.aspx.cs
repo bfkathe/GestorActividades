@@ -61,19 +61,19 @@ namespace Gestor_Actividades.Vista
             var fileName = "";
             var fileSavePath = "";
             string extension = "";
-            byte[] ruta;
+            byte[] contenido;
             var uploadedFile = Request.Files[0];
             fileName = Path.GetFileName(uploadedFile.FileName);
             extension = Path.GetExtension(uploadedFile.FileName);
             fileSavePath = Server.MapPath("~//UploadedFiles//" + fileName);
             uploadedFile.SaveAs(fileSavePath);
-            ruta = databaseFilePut(fileSavePath);
+            contenido = databaseFilePut(fileSavePath);
             System.Diagnostics.Debug.WriteLine(fileName);
             System.Diagnostics.Debug.WriteLine(extension);
-            System.Diagnostics.Debug.WriteLine(ruta.ToString());
+            System.Diagnostics.Debug.WriteLine(contenido.ToString());
             dto.setArchivoActividadId(singleton.getActividadId());
             dto.setArchivoNombre(fileName);
-            dto.setArchivoPath(ruta);
+            dto.setArchivoContenido(contenido);
             dto.setArchivoFormato(extension);
             controlador.agregarArchivo(dto);
             Response.Redirect("VerArchivos.aspx");
@@ -103,5 +103,9 @@ namespace Gestor_Actividades.Vista
                 System.Diagnostics.Debug.WriteLine("Error al eliminar archivo", ex);
             }
         }
+
+
+
+
     }
 }

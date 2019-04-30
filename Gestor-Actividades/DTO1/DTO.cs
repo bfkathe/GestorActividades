@@ -38,11 +38,15 @@ namespace Gestor_Actividades.DTO1
         private List<int> listaStaff { get; set; }
 
         //archivos
-        private byte[] ArchivoRuta;
+        private byte[] ArchivoContenido;
         private string ArchivoNombre;
         private string ArchivoFormato;
         private int ArchivoActividadId;
         private int ArchivoId;
+
+
+        //busqueda de actividadesXparticipante
+        private int idParticipante;
 
 
         //Gets --------------------------
@@ -164,12 +168,11 @@ namespace Gestor_Actividades.DTO1
         }
 
 
-        //Archivos
-
-        /*public String getArchivoPath()
+        //busqueda de actividadesXparticipante
+        public int getIdParticipante()
         {
-            return this.ArchivoPath ;
-        }*/
+            return this.idParticipante;
+        }
 
 
         //Sets-----------------
@@ -292,16 +295,23 @@ namespace Gestor_Actividades.DTO1
             this.listaStaff = listaStaff;
         }
 
-        //archivos
-
-        public void setArchivoPath(Byte[] path)
+        //busqueda de actividadesXparticipante
+        public void setIdParticipante(int id)
         {
-            this.ArchivoRuta = path;
+            this.idParticipante = id;
         }
 
-        public Byte[] getArchivoPath()
+
+        //archivos
+
+        public void setArchivoContenido(Byte[] path)
         {
-            return this.ArchivoRuta;
+            this.ArchivoContenido = path;
+        }
+
+        public Byte[] getArchivoContenido()
+        {
+            return this.ArchivoContenido;
         } 
 
         public void setArchivoNombre(String nombre)

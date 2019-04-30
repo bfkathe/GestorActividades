@@ -85,12 +85,13 @@ namespace Gestor_Actividades.Vista
             dto.setEventoNombre(nombre);
             dto.setEventoId(singleton.getEventoId());
 
+
+
             try
             {
                 controlador.editarEvento(dto);
                 Response.Redirect("VerActividades.aspx");
-            }
-            catch(Exception ex)
+            }catch(Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Error al editar evento GUI" + ex.Message);
             }

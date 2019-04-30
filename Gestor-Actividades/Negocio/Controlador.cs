@@ -29,8 +29,7 @@ namespace Gestor_Actividades.Negocio
             }catch(Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Error al insertar actividad",ex);
-            }
-            
+            }      
         }
 
         public void editarActividad(DTO dto)
@@ -188,9 +187,9 @@ namespace Gestor_Actividades.Negocio
                 return true;
         }
 
-        public void agregarArchivo(DTO dto)
+       public void agregarArchivo(DTO dto)
         {
-            Modelo.Archivo archivo = new Modelo.Archivo(dto.getArchivoNombre(), dto.getArchivoFormato(), dto.getArchivoPath(),dto.getArchivoActividadId());
+            Archivo archivo = new Archivo(dto.getArchivoNombre(), dto.getArchivoFormato(), dto.getArchivoContenido(),dto.getArchivoActividadId());
             try
             {
                 conexion.agregarArchivo(archivo);
@@ -201,6 +200,7 @@ namespace Gestor_Actividades.Negocio
             }
 
         }
+
 
         public List<Modelo.Lista> llenarArchivos(int idActividad)
         {
@@ -256,5 +256,31 @@ namespace Gestor_Actividades.Negocio
             }
 
         }
+
+        public List<string> actividadesXparticipante(DTO dto)
+        {
+            List<string> lista = new List<string>();
+            int idParticipante = dto.getIdParticipante();
+            try
+            {
+                lista = conexion.actividadesXParticipante(idParticipante);
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al obtener actividades", ex);
+                return lista;
+            }
+        }
+
+        //Cargar imagen de una actividad
+        public List<byte []> cargarImagen(DTO dto)
+        {
+            List<byte[]> lista = new List<byte[]>();
+            int idActividad = dto.getActividadId();
+            lista = conexion.cargarImagen(idActividad);
+            return lista;
+        }
+
     }
 }

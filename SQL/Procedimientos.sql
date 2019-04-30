@@ -242,3 +242,33 @@ AS
 GO
 
 
+
+
+--Nuevo 28/4/19
+
+--Renombrar columna en participantes que esta mal escrita
+exec sp_rename 'Participantes.Identidicacion','Identificacion','COLUMN'
+go
+--Consultar actividades de un participante
+alter procedure actividadesXparticipante(@id int)
+as
+begin
+	select A.Nombre 
+	from ParticipantesXActividad PA inner join Actividades A on PA.ActividadId=A.ActividadId 
+	inner join Participantes P on PA.ParticipanteId=P.ParticipanteId
+	where P.Identificacion = @id
+end
+go
+
+exec actividadesXparticipante 2014096399
+
+go
+alter procedure cargarImagen(@idActividad int)
+as
+begin
+	select A.Data from Archivos A where A.ActividadId=@idActividad and (A.FileType='.jpg' or A.FileType='.jpg') 
+end
+
+exec cargarImagen 2
+
+

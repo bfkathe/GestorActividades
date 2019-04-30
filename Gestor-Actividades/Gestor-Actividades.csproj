@@ -72,13 +72,16 @@
     <Content Include="CSS\StyleSheet2.css" />
     <Content Include="Imagenes\actividad.jpg" />
     <Content Include="Imagenes\bombillo.png" />
+    <Content Include="Imagenes\engranaje.png" />
     <Content Include="Imagenes\imagen.png" />
+    <Content Include="Vista\ActividadesXParticipante.aspx" />
     <Content Include="Vista\CrearActividad.aspx" />
     <Content Include="Vista\CrearEvento.aspx" />
     <Content Include="Vista\EditarEvento.aspx" />
     <Content Include="Vista\InformacionActividad.aspx" />
     <Content Include="Vista\Inicio.aspx" />
     <Content Include="Vista\Login.aspx" />
+    <Content Include="Vista\PRUEBA.aspx" />
     <Content Include="Vista\Staff-Actividad.aspx" />
     <Content Include="Vista\Staff.aspx" />
     <Content Include="Vista\VerActividades.aspx" />
@@ -98,6 +101,13 @@
     <Compile Include="DTO1\DTO.cs" />
     <Compile Include="Negocio\Singleton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\ActividadesXParticipante.aspx.cs">
+      <DependentUpon>ActividadesXParticipante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\ActividadesXParticipante.aspx.designer.cs">
+      <DependentUpon>ActividadesXParticipante.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\CrearActividad.aspx.cs">
       <DependentUpon>CrearActividad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -139,6 +149,13 @@
     </Compile>
     <Compile Include="Vista\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PRUEBA.aspx.cs">
+      <DependentUpon>PRUEBA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PRUEBA.aspx.designer.cs">
+      <DependentUpon>PRUEBA.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Staff-Actividad.aspx.cs">
       <DependentUpon>Staff-Actividad.aspx</DependentUpon>
