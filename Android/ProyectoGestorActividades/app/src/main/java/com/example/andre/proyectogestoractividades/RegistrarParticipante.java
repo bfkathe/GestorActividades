@@ -49,7 +49,7 @@ public class RegistrarParticipante extends AppCompatActivity {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
             Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
-            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.100.2;datebaseName=ProyectoGestorActividades;user=ANDRE\\SQLEXPRESS;");
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.109;datebaseName=ProyectoGestorActividades;user=DESKTOP-7K75JTA\\SQLEXPRESS;");
 
         }catch(Exception e){
             Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
