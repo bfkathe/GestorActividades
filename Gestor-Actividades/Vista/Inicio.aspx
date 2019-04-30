@@ -24,12 +24,19 @@
     <form id="form1" runat="server">
         <nav id="barraNav">
             <ul>
-                <li style="font-size:large">Escuela de Ingeniería en Computación</li>
-                <li style="font-size:large;margin-left:300px">Sistema Gestor de Actividades</li>
+                <li><img src="../Imagenes/engranaje.png" width="30px" height="30px"/>&nbsp;&nbsp;&nbsp; </li>
+                <li style="font-size:large">Escuela de Ingeniería en Computación</li>  
+                <li style="font-size:large;padding-left:260px">&nbsp; Sistema Gestor de Actividades&nbsp;&nbsp;</li>              
             </ul>
-            <asp:Button ID="boton_inicioSesion" runat="server" Text="Iniciar Sesión" Style="background-color: #ffffff; margin-top: 18px; width: 150px; border-radius: 3px 4px;margin-left:450px" OnClick="boton_inicioSesion_Click" />
         </nav>
-
+        <div id="menuInicio" style="background-color:#adadad;margin:0;width:auto;height:40px">
+            <ul>
+                <li><a href="Inicio.aspx">Inicio</a></li>
+                <li><a href="ActividadesXParticipante.aspx">Actividades por participante</a></li>
+                <li><a href="Login.aspx">Iniciar Sesión</a></li>
+            </ul>
+        </div>
+        
         <div style="text-align: center; align: center" class="auto-style2">
             <br />
             <h1>Actividades</h1>

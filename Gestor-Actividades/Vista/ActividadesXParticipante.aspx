@@ -1,16 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InformacionActividad.aspx.cs" Inherits="Gestor_Actividades.Vista.InformacionActividad" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ActividadesXParticipante.aspx.cs" Inherits="Gestor_Actividades.Vista.ActividadesXParticipante" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Información de Actividad</title>
+    <title>Actividades por participante</title>
     <link href="../CSS/StyleSheet2.css" rel="stylesheet" runat="server" type="text/css" />
-    <style type="text/css">
-        .auto-style1 {
-            margin-top: 41px;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -28,18 +23,14 @@
                 <li><a href="Login.aspx">Iniciar Sesión</a></li>
             </ul>
         </div>
-
-        <div align="center" class="auto-style1">
+        <div align="center">
             <br>
-            <asp:Image ID="imagenActividad" runat="server" src="/Imagenes/actividad.jpg" Width="350px" Height="500px"/>
-            <br />
-            <asp:TextBox ID="txt_informacion" runat="server" Height="146px" Width="300px" BorderStyle="Dotted" TextMode="MultiLine" ></asp:TextBox>
-            <br /><br />
-            <asp:Button ID="boton_Inscripcion" runat="server" Text="Inscripción" CssClass="botones" Width="120px"/>
-            <br />
-            <asp:Image ID="Image1" runat="server" width="350" Height="500px"/>
+            <h3>Carné/Identificación</h3>
+            <asp:TextBox ID="txt_ID" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;
+            <asp:Button ID="botonBuscar" runat="server" Text="Buscar" OnClick="botonBuscar_Click" /><br /><br />
+            <asp:ListBox ID="ListBox_Actividades" runat="server"></asp:ListBox>
         </div>
-        
     </form>
 </body>
 </html>

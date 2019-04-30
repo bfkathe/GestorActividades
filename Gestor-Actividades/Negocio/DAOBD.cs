@@ -14,11 +14,10 @@ namespace Gestor_Actividades.Negocio
         //private string cadena = "Data Source=ANDRE\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
 
         /*Cadena Audra*/
-        private string cadena = "Data Source=DESKTOP-7K75JTA\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; " +
-        "Integrated Security=True";
+        //private string cadena = "Data Source=DESKTOP-7K75JTA\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
 
         /*Cadena Katherina*/
-        //private string cadena = "Data Source = KATHERINA\\KATHERINABD;Initial Catalog = ProyectoGestorActividades; Integrated Security = True";
+        private string cadena = "Data Source = KATHERINA\\KATHERINABD;Initial Catalog = ProyectoGestorActividades; Integrated Security = True";
         public SqlConnection conn = new SqlConnection();
         
 
@@ -438,6 +437,35 @@ namespace Gestor_Actividades.Negocio
             }
         }
 
+        public void agregarArchivo2(byte[] contenido,string nombre,string extension)
+        {
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("agregarArchivo", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@Name",nombre));
+                command.Parameters.Add(new SqlParameter("@FileType", extension));
+                command.Parameters.Add(new SqlParameter("@Data", contenido));
+                command.Parameters.Add(new SqlParameter("@ActividadId",2));
+                command.ExecuteNonQuery();
+                if (conn.State != ConnectionState.Closed)
+                {
+                    Cerrar();
+                }
+                System.Diagnostics.Debug.WriteLine("Archivo agregado correctamente");
+            }
+            catch (SqlException ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al insertar archivo");
+            }
+        }
+
+
+
+
+
         public void eliminarArchivo(int id)
         {
             try
@@ -563,6 +591,61 @@ namespace Gestor_Actividades.Negocio
             }
                 
         }
+
+
+
+        public List<string> actividadesXParticipante(int idParticipante)
+        {
+            List<string> list = new List<string>();
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("actividadesXparticipante", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@id", idParticipante));
+                SqlDataReader rdr = command.ExecuteReader();
+                while (rdr.Read())
+                {
+                    list.Add(rdr.GetString(0));
+                }
+                rdr.Close();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al obtener actividades");
+                list.Add("Error");
+                return list;
+            }
+        }
+
+
+        public List<byte[]> cargarImagen(int idActividad)
+        {
+            List<byte[]> list = new List<byte[]>();
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("cargarImagen", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@idActividad", idActividad));
+                SqlDataReader rdr = command.ExecuteReader();
+                while (rdr.Read())
+                {
+                    list.Add((byte[])rdr["Data"]);
+                }
+                rdr.Close();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al obtener actividades");
+                return list;
+            }
+        }
+
 
 
 

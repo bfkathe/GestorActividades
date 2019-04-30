@@ -10,7 +10,7 @@
 namespace Gestor_Actividades.Vista {
     
     
-    public partial class InformacionActividad {
+    public partial class ActividadesXParticipante {
         
         /// <summary>
         /// form1 control.
@@ -22,39 +22,30 @@ namespace Gestor_Actividades.Vista {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// imagenActividad control.
+        /// txt_ID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imagenActividad;
+        protected global::System.Web.UI.WebControls.TextBox txt_ID;
         
         /// <summary>
-        /// txt_informacion control.
+        /// botonBuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_informacion;
+        protected global::System.Web.UI.WebControls.Button botonBuscar;
         
         /// <summary>
-        /// boton_Inscripcion control.
+        /// ListBox_Actividades control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button boton_Inscripcion;
-        
-        /// <summary>
-        /// Image1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.ListBox ListBox_Actividades;
     }
 }

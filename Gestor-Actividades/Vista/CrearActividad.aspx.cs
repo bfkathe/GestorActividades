@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
 using Gestor_Actividades.Negocio;
+using System.IO;
 
 namespace Gestor_Actividades.Vista
 {
@@ -88,6 +89,11 @@ namespace Gestor_Actividades.Vista
                 String horario = txtBox_horario.Text;
 
                 //String file = FileUpload1.Text; OJOOOOO NO SE COMO JALAR EL ARCHIVO DE LA ACTIVIDAD
+                //Archivos
+                FileInfo fi = new FileInfo(FileUpload1.FileName);
+                byte[] docContent = FileUpload1.FileBytes;
+                string name = fi.Name;
+                string extension = fi.Extension;
 
                 dto.setActividadNombre(nombreActividad);
                 dto.setActividadCampus(campus);
@@ -99,6 +105,9 @@ namespace Gestor_Actividades.Vista
                 dto.setActividadCupo(Convert.ToInt32(cantCupo));
                 dto.setActividadLugar(lugarActividad);
 
+               /* dto.setContenidoDoc(docContent);
+                dto.setNombreDoc(name);
+                dto.setExtensionDoc(extension);*/
 
                 //String file = FileUpload1.Text; OJOOOOO NO SE COMO JALAR EL ARCHIVO DE LA ACTIVIDAD
 
