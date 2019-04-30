@@ -92,3 +92,5 @@ exec insertarCursos 'Administración de Proyectos',3
 create table Pruebas(
 	Nombre varchar(125)
 );
+
+select * from Pruebas
