@@ -52,9 +52,15 @@ public class RegistrarParticipante extends AppCompatActivity {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //comentario
             Class.forName("net.sourceforge.jtds.jdbc.Driver");//newInstance();
             conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.109:1433/ProyectoGestorActividades;user=test;password=test");
+=======
+            Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.109;datebaseName=ProyectoGestorActividades;user=DESKTOP-7K75JTA\\SQLEXPRESS;");
+
+>>>>>>> parent of db78dff... Conexion con Android Studio
 =======
             Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
             conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.109;datebaseName=ProyectoGestorActividades;user=DESKTOP-7K75JTA\\SQLEXPRESS;");
