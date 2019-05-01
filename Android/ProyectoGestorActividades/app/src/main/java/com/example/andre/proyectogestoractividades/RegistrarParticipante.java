@@ -13,7 +13,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class RegistrarParticipante extends AppCompatActivity {
 
@@ -49,9 +48,27 @@ public class RegistrarParticipante extends AppCompatActivity {
         try{
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
             //comentario
             Class.forName("net.sourceforge.jtds.jdbc.Driver");//newInstance();
             conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.109:1433/ProyectoGestorActividades;user=test;password=test");
+=======
+            Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.109;datebaseName=ProyectoGestorActividades;user=DESKTOP-7K75JTA\\SQLEXPRESS;");
+
+>>>>>>> parent of db78dff... Conexion con Android Studio
+=======
+            Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.109;datebaseName=ProyectoGestorActividades;user=DESKTOP-7K75JTA\\SQLEXPRESS;");
+
+>>>>>>> parent of db78dff... Conexion con Android Studio
+=======
+            Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.109;datebaseName=ProyectoGestorActividades;user=DESKTOP-7K75JTA\\SQLEXPRESS;");
+
+>>>>>>> parent of db78dff... Conexion con Android Studio
         }catch(Exception e){
             Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
 
@@ -61,9 +78,8 @@ public class RegistrarParticipante extends AppCompatActivity {
 
     public void agregarParticipante(){
         try{
-            Statement pst = conexionBD().createStatement();
-            pst.execute("insert into Pruebas values('Pruebas')");
-        //setString(1,edApellido1.getText().toString());
+            PreparedStatement pst = conexionBD().prepareStatement("insert into Pruebas values(?)");
+            pst.setString(1,edApellido1.getText().toString());
             //pst.setString(2,edApellido2.getText().toString());
             //pst.setString(3,edNombre.getText().toString());
             //pst.setInt(4,Integer.parseInt(edIdentificacion.getText().toString()));
