@@ -49,6 +49,7 @@ public class RegistrarParticipante extends AppCompatActivity {
         try{
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
+            //comentario
             Class.forName("net.sourceforge.jtds.jdbc.Driver");//newInstance();
             conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.109:1433/ProyectoGestorActividades;user=test;password=test");
         }catch(Exception e){
