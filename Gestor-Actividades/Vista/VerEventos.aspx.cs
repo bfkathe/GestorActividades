@@ -87,5 +87,10 @@ namespace Gestor_Actividades.Vista
         protected void CheckBoxList_Eventos_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
+
+        protected void botonDesinscribir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Desinscribir.aspx");
+        }
     }
 }

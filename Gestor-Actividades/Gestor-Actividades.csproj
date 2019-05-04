@@ -77,6 +77,7 @@
     <Content Include="Vista\ActividadesXParticipante.aspx" />
     <Content Include="Vista\CrearActividad.aspx" />
     <Content Include="Vista\CrearEvento.aspx" />
+    <Content Include="Vista\Desinscribir.aspx" />
     <Content Include="Vista\EditarEvento.aspx" />
     <Content Include="Vista\InformacionActividad.aspx" />
     <Content Include="Vista\Inicio.aspx" />
@@ -121,6 +122,13 @@
     </Compile>
     <Compile Include="Vista\CrearEvento.aspx.designer.cs">
       <DependentUpon>CrearEvento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Desinscribir.aspx.cs">
+      <DependentUpon>Desinscribir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Desinscribir.aspx.designer.cs">
+      <DependentUpon>Desinscribir.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\EditarEvento.aspx.cs">
       <DependentUpon>EditarEvento.aspx</DependentUpon>

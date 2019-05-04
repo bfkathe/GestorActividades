@@ -263,7 +263,7 @@ go
 exec actividadesXparticipante 2014096399
 
 go
-alter procedure cargarImagen(@idActividad int)
+create procedure cargarImagen(@idActividad int)
 as
 begin
 	select A.Data from Archivos A where A.ActividadId=@idActividad and (A.FileType='.jpg' or A.FileType='.jpg') 

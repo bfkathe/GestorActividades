@@ -110,5 +110,10 @@ namespace Gestor_Actividades.Vista
             }
             Response.Redirect("VerArchivos.aspx");
         }
+
+        protected void botonDesinscribir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Desinscribir.aspx");
+        }
     }
 }

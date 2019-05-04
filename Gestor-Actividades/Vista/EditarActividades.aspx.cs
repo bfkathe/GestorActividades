@@ -186,5 +186,10 @@ namespace Gestor_Actividades.Vista
             ClientScriptManager cs = pg.ClientScript;
             cs.RegisterClientScriptBlock(cstype, s, s.ToString());
         }
+
+        protected void botonDesinscribir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Desinscribir.aspx");
+        }
     }
 }

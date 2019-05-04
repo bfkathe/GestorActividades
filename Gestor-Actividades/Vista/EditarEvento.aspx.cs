@@ -100,6 +100,11 @@ namespace Gestor_Actividades.Vista
 
             MsgBox("Evento Registrado", this.Page, this);
         }
+
+        protected void botonDesinscribir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Desinscribir.aspx");
+        }
     }
 
         
