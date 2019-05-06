@@ -647,7 +647,64 @@ namespace Gestor_Actividades.Negocio
         }
 
 
+        public List<Modelo.Lista> llenarParticipantes(int idActividad)
+        {
+            List<Modelo.Lista> list = new List<Modelo.Lista>();
+            try
+            {
+                Abrir();
+                SqlCommand cmd = new SqlCommand("select Identificacion, Nombre, Apellido1, Apellido2 from ParticipantesxActividad where ActividadId = " + idActividad, conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    list.Add(new Modelo.Lista
+                    {
+                        id = rdr.GetInt32(0),
+                        nombre = rdr.GetString(1) + " " + rdr.GetString(2) + " "+ rdr.GetString(3)
 
+                    });
+                }
+                rdr.Close();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al obtener Participantes");
+                list.Add(new Modelo.Lista
+                {
+                    id = -1,
+                    nombre = "Error"
+
+                });
+                return list;
+
+            }
+        }
+
+
+        public void desinscribirParticipante(int idActividad, int identificacion)
+        {
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("desinscribirParticipante", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@idActividad", idActividad));
+                command.Parameters.Add(new SqlParameter("@identificacion", identificacion));
+                command.ExecuteNonQuery();
+                if (conn.State != ConnectionState.Closed)
+                {
+                    Cerrar();
+                }
+                System.Diagnostics.Debug.WriteLine("Se desinscribió correctamente");
+            }
+            catch (SqlException ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al desinscribir participante");
+            }
+        }
 
 
 

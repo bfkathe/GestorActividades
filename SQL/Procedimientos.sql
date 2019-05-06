@@ -271,4 +271,13 @@ end
 
 exec cargarImagen 2
 
+create procedure desinscribirParticipante (
+@idActividad int,
+@identificacion int
+)
+AS 
+BEGIN
+	DELETE FROM ParticipantesxActividad WHERE Identificacion = @identificacion and ActividadId = @idActividad
+END
 
+exec desinscribirParticipante 5,2015101893
