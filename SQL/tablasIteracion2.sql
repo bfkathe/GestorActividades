@@ -7,15 +7,16 @@ create table Curso(
 	Numero int
 );
 
+drop table ParticipantesxActividad
+
 create table ParticipantesxActividad(
 	ParticipanteActividadId int identity(1,1) primary key,
 	ActividadId int not null,
-	Asistencia bit not null default 0, ---0 No, 1 Sí
 	CursoId int,
+	tipoParticipanteId int,
+	Asistencia bit not null default 0, ---0 No, 1 Sí
 );
 
-
-alter table ParticipantesxActividad add tipoParticipanteId int
 alter table ParticipantesxActividad add Apellido1 varchar(25)
 alter table ParticipantesxActividad add Apellido2 varchar(25)
 alter table ParticipantesxActividad add Nombre varchar(25)
@@ -50,7 +51,6 @@ foreign key (tipoParticipanteId) references TipoParticipante(TipoId);
 
 create procedure insertarTipos(
 	@Nombre varchar(125)
-
 )
 AS 
 insert into TipoParticipante(Nombre) values(@Nombre)
@@ -59,6 +59,7 @@ GO
 exec insertarTipos 'Estudiante'
 exec insertarTipos 'Externo'
 exec insertarTipos 'Profesor'
+exec insertarTipos 'Funcionario'
 
 --------Insertar en Cursos---------------
 

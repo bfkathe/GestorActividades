@@ -48,23 +48,6 @@ begin
 end
 go
 
-exec verificarLoginUsuarios 'Admin','admin'
-go
-
----------Verificar login del Staff ------- (para después)
-create proc verificarLoginStaff(@Usuario nvarchar(50),@Pass nvarchar(50))
-as
-begin
-	Declare @PassCodificado As nvarchar(300)
-    Declare @PassDecodificado As nvarchar(50)
-
-	Select @PassCodificado = Contraseña From Staff Where Usuario = @Usuario
-    Set @PassDecodificado = CONVERT(NVARCHAR,DECRYPTBYPASSPHRASE('password', @PassCodificado))
-
-	select * from Staff where @PassDecodificado = @Pass and Usuario = @Usuario COLLATE SQL_Latin1_General_CP1_CS_AS
-end
-go
-
 -------usuarios de staff unicos-----------
 create proc staffUnico(@nombreUsuario varchar(40))
 as
@@ -242,27 +225,9 @@ AS
 GO
 
 
-
-
 --Nuevo 28/4/19
 
---Renombrar columna en participantes que esta mal escrita
-exec sp_rename 'Participantes.Identidicacion','Identificacion','COLUMN'
-go
---Consultar actividades de un participante
-alter procedure actividadesXparticipante(@id int)
-as
-begin
-	select A.Nombre 
-	from ParticipantesXActividad PA inner join Actividades A on PA.ActividadId=A.ActividadId 
-	inner join Participantes P on PA.ParticipanteId=P.ParticipanteId
-	where P.Identificacion = @id
-end
-go
-
-exec actividadesXparticipante 2014096399
-
-go
+-- Cargar imagenes
 create procedure cargarImagen(@idActividad int)
 as
 begin
@@ -270,5 +235,37 @@ begin
 end
 
 exec cargarImagen 2
+go
 
 
+
+
+--CORRER ESTO 5/5/2019
+
+---------Verificar login del Staff ------- (para después)
+create proc verificarLoginStaff(@Usuario nvarchar(50),@Pass nvarchar(50))
+as
+begin
+	Declare @PassCodificado As nvarchar(300)
+    Declare @PassDecodificado As nvarchar(50)
+
+	Select @PassCodificado = Contraseña From Staff Where Usuario = @Usuario
+    Set @PassDecodificado = CONVERT(NVARCHAR,DECRYPTBYPASSPHRASE('password', @PassCodificado))
+
+	select * from Staff where @PassDecodificado = @Pass and Usuario = @Usuario COLLATE SQL_Latin1_General_CP1_CS_AS
+end
+
+exec verificarLoginStaff 'katherinabf','789'
+go
+
+--Consultar actividades de un participante
+alter procedure actividadesXparticipante(@id int)
+as
+begin
+	select A.Nombre, A.Campus 
+	from ParticipantesXActividad PA inner join Actividades A on PA.ActividadId=A.ActividadId
+	where PA.Identificacion = @id
+end
+go
+
+exec actividadesXparticipante 2014096399
