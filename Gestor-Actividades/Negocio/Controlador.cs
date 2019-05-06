@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using Gestor_Actividades.DTO1;
 using Gestor_Actividades.Modelo;
+using System.Net;
+using System.Net.Mail;
 
 namespace Gestor_Actividades.Negocio
 {
@@ -164,6 +166,37 @@ namespace Gestor_Actividades.Negocio
 
         }
 
+        // PARTICIPAANTES
+
+        public List<Modelo.Lista> llenarParticipantes(int idActividad)
+        {
+            List<Modelo.Lista> lista = new List<Modelo.Lista>();
+            try
+            {
+                lista = conexion.llenarParticipantes(idActividad);
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al obtener participantes", ex);
+                return lista;
+            }
+
+        }
+
+        public void desinscribirParticipante(DTO dto)
+        {
+            try
+            {
+                conexion.desinscribirParticipante(dto.getActividadId(), dto.getIdParticipante());
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al desinscribir participante", ex);
+            }
+
+        }
+
 
         public Boolean verificarLogin(DTO dto)
         {
@@ -282,5 +315,35 @@ namespace Gestor_Actividades.Negocio
             return lista;
         }
 
+        public void email_send(String email, String actividad, String nombreUsuario)
+        {
+            MailMessage mail = new MailMessage();
+            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+            mail.From = new MailAddress("proyectogestoractividades@gmail.com");
+            mail.To.Add(email);
+            mail.Subject = "Confirmación de Inscripción";
+            mail.Body = "Hola " +nombreUsuario +"!\nTu inscripción fue exitosa para la Actividad: " + actividad + ". Si querés conocer más información acerca de la actividad"+
+                "podés visitar la página web del Gestor de Actividades. \nRecordá que en caso de querer desinscribirte de esta actividad contactá al administrador.\nTe esperamos";
+            /*
+            System.Net.Mail.Attachment attachment;
+            attachment = new System.Net.Mail.Attachment("c:/textfile.txt");
+            mail.Attachments.Add(attachment);
+            */
+            SmtpServer.Port = 587;
+            SmtpServer.EnableSsl = true;
+            SmtpServer.UseDefaultCredentials = false;
+            SmtpServer.Credentials = new System.Net.NetworkCredential("proyectogestoractividades@gmail.com", "proyectoGA");
+
+            try
+            {
+                SmtpServer.Send(mail);
+            }
+            catch(Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al enviar correo con", ex);
+            }
+            
+
+        }
     }
 }

@@ -66,5 +66,10 @@ namespace Gestor_Actividades.Vista
         {
             Response.Redirect("Login.aspx");
         }
+
+        protected void boton_Inscripcion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

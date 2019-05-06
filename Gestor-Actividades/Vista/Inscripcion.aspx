@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Desinscribir.aspx.cs" Inherits="Gestor_Actividades.Vista.Desinscribir" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inscripcion.aspx.cs" Inherits="Gestor_Actividades.Vista.Inscripcion" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Desinscribir Participante</title>
+    <title>Formulario de Inscripción</title>
     <link href="/CSS/StyleSheet2.css" rel="Stylesheet" type="text/css"/>
     <style type="text/css">
 
@@ -31,24 +31,18 @@
 
         <div id="seccion" class="auto-style2"><br />
             <div id="titulo">
-                <h1>Desinscribir Participante</h1>
+                <h1>Formulario de Inscripción</h1>
             </div>
             <br /><br />
 
             <div class="row">
                 <div class=column>
-                    <asp:CheckBoxList ID="CheckBoxList_Participantes" runat="server" RepeatDirection="Vertical" TextAlign="Right" CellSpacing="20">
-                        <asp:ListItem>Participante 1</asp:ListItem>
-                        <asp:ListItem>Participante 2</asp:ListItem>
-                    </asp:CheckBoxList>
+
                 </div>
                <div class=column>
-                   <asp:Button ID="botonDesinscribir" runat="server" Text="Desinscribir" CssClass="botones" Width="170px" OnClick="botonDesinscribirParticipante_Click" />
+                   <asp:Button ID="botonInscribirse" runat="server" Text="Inscribirse" CssClass="botones" Width="170px" OnClick="botonInscribirParticipante_Click" />
                 </div>
-                <br />
-                <br />
-                <br /><br />
-                <br /><br />
+         
                 
             </div> 
         </div>

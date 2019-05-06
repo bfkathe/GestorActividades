@@ -81,6 +81,7 @@
     <Content Include="Vista\EditarEvento.aspx" />
     <Content Include="Vista\InformacionActividad.aspx" />
     <Content Include="Vista\Inicio.aspx" />
+    <Content Include="Vista\Inscripcion.aspx" />
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\PRUEBA.aspx" />
     <Content Include="Vista\Staff-Actividad.aspx" />
@@ -150,6 +151,13 @@
     </Compile>
     <Compile Include="Vista\Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inscripcion.aspx.cs">
+      <DependentUpon>Inscripcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Inscripcion.aspx.designer.cs">
+      <DependentUpon>Inscripcion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

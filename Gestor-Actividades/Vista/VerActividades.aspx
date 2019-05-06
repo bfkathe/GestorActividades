@@ -8,12 +8,7 @@
     <link href="../CSS/StyleSheet2.css" rel="stylesheet" />
     <script runat="server">
     </script>
-    <style type="text/css">
-        .auto-style1 {
-            width: 417px;
-        }
-    </style>
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
         <nav id="barraNav">
@@ -28,41 +23,36 @@
             <asp:Button ID="botonCrearAct" runat="server" Text="Crear Actividad" CssClass="botones" OnClick="botonCrearAct_Click" /><br />
             <asp:Button ID="botonVerAct" runat="server" Text="Ver Actividades" CssClass="botones" OnClick="botonVerAct_Click" /><br />
             <asp:Button ID="botonCrearStaff" runat="server" Text="Crear Staff" CssClass="botones" OnClick="botonCrearStaff_Click" /><br />
-            <asp:Button ID="botonDesinscribir" runat="server" Text="Desinscribir Participante" CssClass="botones" OnClick="botonDesinscribir_Click"/>
         </div>
-        <div id="seccion" align="center">
-            <br />
+        <div id="seccion" class="auto-style2"> <!--align="center"-->
             <div id="titulo">
                 <h1>Ver Actividades</h1>
             </div>
-            <br />
-            <div id="form3" align="center">
-                <div style="font-weight:600;border:ridge" class="auto-style1">
-                    <asp:CheckBoxList ID="CheckBoxList_Actividades" runat="server" RepeatDirection="Vertical" TextAlign="Right" CellSpacing="20">
+            <br /><br />
+
+                <!-- aqui -->
+            <div class="row">
+                <div class="column">
+                    <asp:CheckBoxList ID="CheckBoxList_Actividades" runat="server" RepeatDirection="Vertical" TextAlign="Right" CellSpacing="20" style="margin-left: 100px">
                         <asp:ListItem>Actividad 1</asp:ListItem>
                         <asp:ListItem>Actividad 2</asp:ListItem>
                     </asp:CheckBoxList>
                 </div>
-
-                <br />
-                <br />
-                <asp:Button ID="botonEliminar" runat="server" Text="Eliminar" CssClass="botones" Width="170px" OnClick="botonEliminarActividad_Click" /><br />
-                <br />
-                <asp:Button ID="botonEditar" runat="server" Text="Editar" CssClass="botones" Width="170px" OnClick="botonEditarActividad_Click" OnClientClick="True" /><br />
-                <br />
-                <asp:Button ID="botonVerEventos" runat="server" Text="Eventos" CssClass="botones" Width="170px" OnClick="botonVerEventos_Click" /><br />
-                <br />
-                <asp:Button ID="botonArchivos" runat="server" Text="Archivos" CssClass="botones" Width="170px" OnClick="botonArchivos_Click" />
-                <br />
-                <br />
-                <br />
-
-                <br />
-                <br />
-
-
-            </div>
+                <div class="column">
+                        <asp:Button ID="botonEliminar" runat="server" Text="Eliminar" CssClass="botones" Width="170px" OnClick="botonEliminarActividad_Click" />
+                        <br />
+                        <asp:Button ID="botonEditar" runat="server" Text="Editar" CssClass="botones" Width="170px" OnClick="botonEditarActividad_Click" OnClientClick="True" />
+                        <br />
+                        <asp:Button ID="botonVerEventos" runat="server" Text="Eventos" CssClass="botones" Width="170px" OnClick="botonVerEventos_Click" />
+                        <br />
+                        <asp:Button ID="botonArchivos" runat="server" Text="Archivos" CssClass="botones" Width="170px" OnClick="botonArchivos_Click" />
+                        <br />
+                        <asp:Button ID="botonParticipantes" runat="server" Text="Participantes" CssClass="botones" Width="170px" OnClick="botonParticipantes_Click" />
+                </div>
+            </div> 
         </div>
+        
+        
 
 
 

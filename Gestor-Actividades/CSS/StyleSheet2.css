@@ -93,7 +93,7 @@ nav li{
     background-color: #ffffff;
     margin: 0 auto;
     width: 495px;
-    padding: 0 20px 0 0;
+  //  padding: 0 20px 0 0;
 }
 
 #seccion {
@@ -108,4 +108,17 @@ nav li{
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    max-height: 150px;
+    overflow-y: scroll;
+    height: 400px;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }

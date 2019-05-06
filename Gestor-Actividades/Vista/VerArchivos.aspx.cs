@@ -103,10 +103,5 @@ namespace Gestor_Actividades.Vista
                 System.Diagnostics.Debug.WriteLine("Error al eliminar archivo", ex);
             }
         }
-
-        protected void botonDesinscribir_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Desinscribir.aspx");
-        }
     }
 }

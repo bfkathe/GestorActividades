@@ -239,10 +239,22 @@ go
 
 
 
+create procedure desinscribirParticipante (
+@idActividad int,
+@identificacion int
+)
+AS 
+BEGIN
+	DELETE FROM ParticipantesxActividad WHERE Identificacion = @identificacion and ActividadId = @idActividad
+END
 
---CORRER ESTO 5/5/2019
+exec desinscribirParticipante 5,2015101893
 
----------Verificar login del Staff ------- (para después)
+
+
+-------CORRER ESTO----------
+
+---------Verificar login del Staff ------- 
 create proc verificarLoginStaff(@Usuario nvarchar(50),@Pass nvarchar(50))
 as
 begin
@@ -258,6 +270,7 @@ end
 exec verificarLoginStaff 'katherinabf','789'
 go
 
+
 --Consultar actividades de un participante
 alter procedure actividadesXparticipante(@id int)
 as
@@ -269,3 +282,4 @@ end
 go
 
 exec actividadesXparticipante 2014096399
+

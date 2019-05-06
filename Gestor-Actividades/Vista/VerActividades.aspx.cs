@@ -111,8 +111,15 @@ namespace Gestor_Actividades.Vista
             Response.Redirect("VerArchivos.aspx");
         }
 
-        protected void botonDesinscribir_Click(object sender, EventArgs e)
+        protected void botonParticipantes_Click(object sender, EventArgs e)
         {
+            foreach (ListItem item in CheckBoxList_Actividades.Items)
+            {
+                if (item.Selected)
+                {
+                    singleton.setActividadId(Convert.ToInt32(item.Value));
+                }
+            }
             Response.Redirect("Desinscribir.aspx");
         }
     }

@@ -174,7 +174,6 @@ namespace Gestor_Actividades.DTO1
             return this.idParticipante;
         }
 
-
         //Sets-----------------
 
         //login
