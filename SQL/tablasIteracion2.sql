@@ -23,6 +23,7 @@ alter table ParticipantesxActividad add Nombre varchar(25)
 alter table ParticipantesxActividad add Identificacion int
 alter table ParticipantesxActividad add Correo varchar(255)
 
+
 create table TipoParticipante(
 	TipoId int identity(1,1) primary key,
 	Nombre varchar(30)
@@ -79,3 +80,6 @@ exec insertarCursos 'Administración de Proyectos',3
 create table Pruebas(
 	Nombre varchar(125)
 );
+
+--Agregar para tabla de participantes
+alter table ParticipantesxActividad add Campus varchar(255)

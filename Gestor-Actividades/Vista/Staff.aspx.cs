@@ -98,9 +98,9 @@ namespace Gestor_Actividades.Vista
             Response.Redirect("Staff-Actividad.aspx");
         }
 
-        protected void botonDesinscribir_Click(object sender, EventArgs e)
+        protected void botonLogOut_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Desinscribir.aspx");
+            Response.Redirect("Inicio.aspx");
         }
     }
 }

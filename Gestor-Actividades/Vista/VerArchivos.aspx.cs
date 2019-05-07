@@ -103,5 +103,10 @@ namespace Gestor_Actividades.Vista
                 System.Diagnostics.Debug.WriteLine("Error al eliminar archivo", ex);
             }
         }
+
+        protected void botonLogOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
+        }
     }
 }

@@ -122,5 +122,10 @@ namespace Gestor_Actividades.Vista
             }
             Response.Redirect("Desinscribir.aspx");
         }
+
+        protected void botonLogOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
+        }
     }
 }

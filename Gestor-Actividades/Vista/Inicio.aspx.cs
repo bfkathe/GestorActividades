@@ -39,6 +39,7 @@ namespace Gestor_Actividades.Vista
                 if (item.Selected)
                 {
                     singleton.setActividadId(Convert.ToInt32(item.Value));
+                    singleton.setNombreArchivo(item.Text);
                 }
             }
             dto.setActividadId(singleton.getActividadId());

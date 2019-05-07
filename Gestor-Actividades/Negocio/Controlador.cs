@@ -267,6 +267,39 @@ namespace Gestor_Actividades.Negocio
 
         }
 
+        public List<Lista> llenarCursos()
+        {
+            List<Lista> lista = new List<Lista>();
+            try
+            {
+                lista = conexion.llenarCursos();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al obtener cursos", ex);
+                return lista;
+            }
+
+        }
+
+
+        public List<Lista> llenarTiposParticipantes()
+        {
+            List<Lista> lista = new List<Lista>();
+            try
+            {
+                lista = conexion.llenarTipoParticipante();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al obtener tipos de participantes", ex);
+                return lista;
+            }
+
+        }
+
 
         public void agregarStaffXActividad(DTO dto)
         {
@@ -315,14 +348,14 @@ namespace Gestor_Actividades.Negocio
             return lista;
         }
 
-        public void email_send(String email, String actividad, String nombreUsuario)
+        public void email_send(DTO dto)
         {
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
             mail.From = new MailAddress("proyectogestoractividades@gmail.com");
-            mail.To.Add(email);
+            mail.To.Add(dto.getCorreo());
             mail.Subject = "Confirmación de Inscripción";
-            mail.Body = "Hola " +nombreUsuario +"!\nTu inscripción fue exitosa para la Actividad: " + actividad + ". Si querés conocer más información acerca de la actividad"+
+            mail.Body = "Hola " + dto.getStaffNombre() +"!\nTu inscripción fue exitosa para la Actividad: " + dto.getActividadNombre() + ". Si querés conocer más información acerca de la actividad"+
                 "podés visitar la página web del Gestor de Actividades. \nRecordá que en caso de querer desinscribirte de esta actividad contactá al administrador.\nTe esperamos";
             /*
             System.Net.Mail.Attachment attachment;
@@ -343,6 +376,20 @@ namespace Gestor_Actividades.Negocio
                 System.Diagnostics.Debug.WriteLine("Error al enviar correo con", ex);
             }
             
+
+        }
+
+        public void agregarParticipante(DTO dto)
+        {
+            Participante participante = new Participante(dto.getActividadId(), dto.getIdTipoParticipante(), dto.getIdCurso(),dto.getIdentificacion(),dto.getCampus(),dto.getNombreP(),dto.getPrimerApellidoP(),dto.getSegundoApellidoP(), dto.getCorreo());
+            try
+            {
+                conexion.agregarParticipante(participante);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al insertar participante", ex);
+            }
 
         }
     }

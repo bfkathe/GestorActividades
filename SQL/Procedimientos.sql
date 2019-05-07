@@ -255,7 +255,7 @@ exec desinscribirParticipante 5,2015101893
 -------CORRER ESTO----------
 
 ---------Verificar login del Staff ------- 
-create proc verificarLoginStaff(@Usuario nvarchar(50),@Pass nvarchar(50))
+alter proc verificarLoginStaff(@Usuario nvarchar(50),@Pass nvarchar(50))
 as
 begin
 	Declare @PassCodificado As nvarchar(300)
@@ -281,5 +281,23 @@ begin
 end
 go
 
-exec actividadesXparticipante 2014096399
+exec actividadesXparticipante 2015101893
+
+create procedure agregarParticipante(
+@ActividadId int,
+@CursoId int,
+@TipoPId int,
+@Apellido1 varchar(50),
+@Apellido2 varchar(50),
+@Nombre varchar(50),
+@Identificacion int,
+@Correo varchar(50),
+@Campus varchar(50)
+)AS BEGIN 
+insert into ParticipantesxActividad(ActividadId,CursoId,tipoParticipanteId,Asistencia,
+			Apellido1,Apellido2,Nombre,Identificacion,Correo,Campus)
+values(@ActividadId,@CursoId,@TipoPId,0,@Apellido1,@Apellido2,@Nombre,@Identificacion,
+		@Correo,@Campus)
+
+END
 

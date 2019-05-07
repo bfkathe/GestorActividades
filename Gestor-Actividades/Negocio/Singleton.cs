@@ -11,6 +11,7 @@ namespace Gestor_Actividades.Negocio
 
         private Singleton() { }
         private int idActividad;
+        private String nombreArchivo;
         private int idEvento;
         private int idArchivo;
 
@@ -41,6 +42,11 @@ namespace Gestor_Actividades.Negocio
             this.idArchivo = id;
         }
 
+        public void setNombreArchivo(String nombre)
+        {
+            this.nombreArchivo = nombre;
+        }
+
         public int getActividadId()
         {
             return idActividad;
@@ -54,6 +60,11 @@ namespace Gestor_Actividades.Negocio
         public int getArchivoId()
         {
             return idArchivo;
+        }
+
+        public String getNombreActividad()
+        {
+            return nombreArchivo;
         }
     }
 }

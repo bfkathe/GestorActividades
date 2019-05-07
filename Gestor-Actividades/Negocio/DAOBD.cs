@@ -706,6 +706,95 @@ namespace Gestor_Actividades.Negocio
             }
         }
 
+        public List<Modelo.Lista> llenarCursos()
+        {
+            List<Modelo.Lista> list = new List<Modelo.Lista>();
+            try
+            {
+                Abrir();
+                SqlCommand cmd = new SqlCommand("select CursoId, Nombre from Curso", conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    list.Add(new Modelo.Lista
+                    {
+                        id = rdr.GetInt32(0),
+                        nombre = rdr.GetString(1)
+
+                    });
+                }
+                rdr.Close();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al obtener Cursos");
+                list.Add(new Modelo.Lista
+                {id = -1,nombre = "Error"});
+                return list;
+            }
+        }
+
+        public List<Modelo.Lista> llenarTipoParticipante()
+        {
+            List<Modelo.Lista> list = new List<Modelo.Lista>();
+            try
+            {
+                Abrir();
+                SqlCommand cmd = new SqlCommand("select TipoId, Nombre from TipoParticipante", conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    list.Add(new Modelo.Lista
+                    {
+                        id = rdr.GetInt32(0),
+                        nombre = rdr.GetString(1)
+
+                    });
+                }
+                rdr.Close();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al obtener tipo de participante");
+                list.Add(new Modelo.Lista
+                { id = -1, nombre = "Error" });
+                return list;
+            }
+        }
+
+        public void agregarParticipante(Modelo.Participante participante)
+        {
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("agregarParticipante", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@ActividadId", participante.getIdActividad()));
+                command.Parameters.Add(new SqlParameter("@CursoId", participante.getIdCurso()));
+                command.Parameters.Add(new SqlParameter("@TipoPId", participante.getIdTipoParticipante()));
+                command.Parameters.Add(new SqlParameter("@Apellido1", participante.getPrimerApellidoP()));
+                command.Parameters.Add(new SqlParameter("@Apellido2", participante.getSegundoApellidoP()));
+                command.Parameters.Add(new SqlParameter("@Nombre", participante.getNombreP()));
+                command.Parameters.Add(new SqlParameter("@Identificacion", participante.getIdentificacion()));
+                command.Parameters.Add(new SqlParameter("@Correo", participante.getCorreo()));
+                command.Parameters.Add(new SqlParameter("@Campus", participante.getCampus()));
+                command.ExecuteNonQuery();
+                if (conn.State != ConnectionState.Closed)
+                {
+                    Cerrar();
+                }
+                System.Diagnostics.Debug.WriteLine("Participante agregado correctamente");
+            }
+            catch (SqlException ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al insertar participante");
+            }
+        }
 
 
 

@@ -47,6 +47,15 @@ namespace Gestor_Actividades.DTO1
 
         //busqueda de actividadesXparticipante
         private int idParticipante;
+        private int idTipoParticipante;
+        private int idCurso;
+        private int identificacion;
+        private String campus;
+        private String nombreParticipante;
+        private String primerApellidoP;
+        private String segundoApellidoP;
+        private String correo;
+
 
 
         //Gets --------------------------
@@ -174,6 +183,48 @@ namespace Gestor_Actividades.DTO1
             return this.idParticipante;
         }
 
+        public int getIdCurso()
+        {
+            return this.idCurso;
+        }
+
+        public int getIdTipoParticipante()
+        {
+            return this.idTipoParticipante;
+        }
+
+        public int getIdentificacion()
+        {
+            return this.identificacion;
+        }
+
+        public String getCampus()
+        {
+            return this.campus;
+        }
+
+        public String getNombreP()
+        {
+            return this.nombreParticipante;
+        }
+
+        public String getPrimerApellidoP()
+        {
+            return this.primerApellidoP;
+        }
+
+        public String getSegundoApellidoP()
+        {
+            return this.segundoApellidoP;
+        }
+
+        public String getCorreo()
+        {
+            return this.correo;
+        }
+
+
+
         //Sets-----------------
 
         //login
@@ -298,6 +349,46 @@ namespace Gestor_Actividades.DTO1
         public void setIdParticipante(int id)
         {
             this.idParticipante = id;
+        }
+
+        public void setIdCurso(int id)
+        {
+            this.idCurso = id;
+        }
+
+        public void setIdTipoParticipante(int id)
+        {
+            this.idTipoParticipante = id;
+        }
+
+        public void setIdentificacion(int id)
+        {
+            this.identificacion = id;
+        }
+
+        public void setCampus(String id)
+        {
+            this.campus = id;
+        }
+
+        public void setNombreP(String id)
+        {
+            this.nombreParticipante = id;
+        }
+
+        public void setPrimerApellidoP(String id)
+        {
+            this.primerApellidoP = id;
+        }
+
+        public void setSegundoApellidoP(String id)
+        {
+            this.segundoApellidoP = id;
+        }
+
+        public void setCorreo(String id)
+        {
+            this.correo = id;
         }
 
 

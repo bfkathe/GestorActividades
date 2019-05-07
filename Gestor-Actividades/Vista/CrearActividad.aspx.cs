@@ -87,8 +87,6 @@ namespace Gestor_Actividades.Vista
                 }
                 String nombreActividad = txtBox_nombre.Text;
                 String horario = txtBox_horario.Text;
-
-                //String file = FileUpload1.Text; OJOOOOO NO SE COMO JALAR EL ARCHIVO DE LA ACTIVIDAD
                 //Archivos
                 FileInfo fi = new FileInfo(FileUpload1.FileName);
                 byte[] docContent = FileUpload1.FileBytes;
@@ -146,6 +144,9 @@ namespace Gestor_Actividades.Vista
             cs.RegisterClientScriptBlock(cstype, s, s.ToString());
         }
 
-
+        protected void botonLogOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
+        }
     }
 }

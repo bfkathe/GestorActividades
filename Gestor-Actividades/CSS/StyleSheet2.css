@@ -113,11 +113,12 @@ nav li{
 .column {
     float: left;
     width: 50%;
-    max-height: 150px;
+    max-height: 400px;
     overflow-y: scroll;
     height: 400px;
-}
-.row:after {
+
+    }
+    .row:after {
     content: "";
     display: table;
     clear: both;
