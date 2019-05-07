@@ -118,6 +118,22 @@ namespace Gestor_Actividades.Negocio
             
         }
 
+        public List<Modelo.Lista> llenarActividades2()
+        {
+            List<Modelo.Lista> lista = new List<Modelo.Lista>();
+            try
+            {
+                lista = conexion.llenarActividades2();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al obtener actividades2", ex);
+                return lista;
+            }
+
+        }
+
         public List<Modelo.Actividad> datosActividades(DTO dto)
         {
             List<Modelo.Actividad> lista = new List<Modelo.Actividad>();
@@ -405,5 +421,32 @@ namespace Gestor_Actividades.Negocio
                 return false;
             }
         }
+
+        public int cantCuposDisponibles(DTO dto)
+        {
+            try
+            {
+                return conexion.cantCuposDisponibles(dto.getActividadId());
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al obtener cantidad de cupos", ex);
+                return -2;
+            }
+        }
+
+        public void disminuirCupo(DTO dto)
+        {
+            try
+            {
+                conexion.disminuirCupos(dto.getActividadId());
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al disminuir cupos", ex);          
+            }
+        }
+
+
     }
 }

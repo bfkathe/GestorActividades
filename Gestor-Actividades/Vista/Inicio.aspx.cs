@@ -19,7 +19,7 @@ namespace Gestor_Actividades.Vista
         {
             if (!IsPostBack)
             {
-                List<Lista> lista = controlador.llenarActividades();
+                List<Lista> lista = controlador.llenarActividades2();
                 CheckBoxList_Actividades.DataTextField = "nombre";
                 CheckBoxList_Actividades.DataValueField = "id";
                 CheckBoxList_Actividades.DataSource = lista;

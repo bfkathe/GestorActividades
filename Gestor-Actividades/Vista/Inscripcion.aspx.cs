@@ -100,9 +100,23 @@ namespace Gestor_Actividades.Vista
                     }
                     else
                     {
-                        controlador.agregarParticipante(dto);
-                        controlador.email_send(dto);
-                        MsgBox("Inscripción exitosa", this.Page, this);
+                        if (controlador.cantCuposDisponibles(dto) > 0)
+                        {
+                            controlador.agregarParticipante(dto);
+                            controlador.disminuirCupo(dto);
+                            controlador.email_send(dto);
+                            MsgBox("Inscripción exitosa", this.Page, this);
+                        }
+                        else if(controlador.cantCuposDisponibles(dto) == -1)
+                        {
+                            controlador.agregarParticipante(dto);
+                            controlador.email_send(dto);
+                            MsgBox("Inscripción exitosa", this.Page, this);
+                        }
+                        else
+                        {
+                            MsgBox("No hay cupo disponible", this.Page, this);
+                        }
                     }
                     
                 }

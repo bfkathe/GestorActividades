@@ -14,10 +14,10 @@ namespace Gestor_Actividades.Negocio
         //private string cadena = "Data Source=ANDRE\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
 
         /*Cadena Audra*/
-        //private string cadena = "Data Source=DESKTOP-7K75JTA\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
+        private string cadena = "Data Source=DESKTOP-7K75JTA\\SQLEXPRESS ; Initial Catalog=ProyectoGestorActividades; Integrated Security=True";
 
         /*Cadena Katherina*/
-        private string cadena = "Data Source = KATHERINA\\KATHERINABD;Initial Catalog = ProyectoGestorActividades; Integrated Security = True";
+        //private string cadena = "Data Source = KATHERINA\\KATHERINABD;Initial Catalog = ProyectoGestorActividades; Integrated Security = True";
         public SqlConnection conn = new SqlConnection();
         
 
@@ -185,6 +185,41 @@ namespace Gestor_Actividades.Negocio
                 });
                 return list;
                 
+            }
+        }
+
+        public List<Modelo.Lista> llenarActividades2()
+        {
+            List<Modelo.Lista> list = new List<Modelo.Lista>();
+            try
+            {
+                Abrir();
+                SqlCommand cmd = new SqlCommand("select ActividadId, Nombre from Actividades WHERE CuposDisponibles > 0 OR CuposDisponibles = -1", conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    list.Add(new Modelo.Lista
+                    {
+                        id = rdr.GetInt32(0),
+                        nombre = rdr.GetString(1)
+
+                    });
+                }
+                rdr.Close();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al obtener actividades");
+                list.Add(new Modelo.Lista
+                {
+                    id = -1,
+                    nombre = "Error"
+
+                });
+                return list;
+
             }
         }
 
@@ -823,7 +858,50 @@ namespace Gestor_Actividades.Negocio
             }
         }
 
+        public int cantCuposDisponibles(int idActividad)
+        {
+            try
+            {
+                Abrir();
+                int resultado = 0;
+                SqlCommand cmd = new SqlCommand("select CuposDisponibles from Actividades WHERE ActividadId = "+idActividad, conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    resultado = rdr.GetInt32(0);
+                }
+                rdr.Close();
+                return resultado;
+            }
+            catch (SqlException ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al obtener verificacion");
+                return -2;
+            }
+        }
 
+        public void disminuirCupos(int idActividad)
+        {
+            try
+            {
+                Abrir();
+                SqlCommand command = new SqlCommand("disminuirCupos", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@idActividad", idActividad));
+                command.ExecuteNonQuery();
+                if (conn.State != ConnectionState.Closed)
+                {
+                    Cerrar();
+                }
+                System.Diagnostics.Debug.WriteLine("Cupo Disminuido");
+            }
+            catch (SqlException ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al disminuir cupo");
+            }
+        }
     }   
 
 }

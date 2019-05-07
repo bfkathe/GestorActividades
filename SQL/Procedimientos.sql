@@ -317,4 +317,57 @@ END
 
 exec verificarRegistro 4,2015
 
+go
 
+alter procedure insertarActividad(
+	@Fecha date,
+	@Nombre varchar(125),
+	@Horario varchar(125),
+	@Campus varchar(35),
+	@Restriccion bit,
+	@Encargado varchar(125),
+	@cantCupos int,
+	@lugar varchar(50),
+	@Descripcion varchar(250)
+)
+AS 
+insert into Actividades(Fecha,Nombre,Horario,Campus,Restriccion,Encargado,CantCupos,Lugar,Descripcion,Estado,CuposDisponibles) values(@Fecha,@Nombre,@Horario,@Campus,@Restriccion,@Encargado,@cantCupos,@lugar,@Descripcion,1,@cantCupos)
+GO
+
+alter procedure editarActividad(
+	@id int,
+	@Fecha date,
+	@Nombre varchar(125),
+	@Horario varchar(125),
+	@Campus varchar(35),
+	@Restriccion bit,
+	@Encargado varchar(125),
+	@cantCupos int,
+	@lugar varchar(50),
+	@Despcripcion varchar(250)
+)
+AS 
+UPDATE Actividades
+SET Fecha = @Fecha,
+	Nombre = @Nombre,
+	Horario = @Horario,
+	Campus = @Campus,
+	Restriccion = @Restriccion,
+	Encargado = @Encargado,
+	CantCupos = @cantCupos,
+	Lugar = @lugar,
+	Descripcion = @Despcripcion,
+	CuposDisponibles =  @cantCupos
+WHERE ActividadId = @id
+GO
+
+create procedure disminuirCupos(
+@idActividad int
+)
+AS BEGIN
+	UPDATE Actividades
+	SET CuposDisponibles = CuposDisponibles -1
+	WHERE ActividadId = @idActividad
+END
+
+exec disminuirCupos 4
