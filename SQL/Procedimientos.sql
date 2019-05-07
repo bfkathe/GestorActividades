@@ -301,3 +301,17 @@ values(@ActividadId,@CursoId,@TipoPId,0,@Apellido1,@Apellido2,@Nombre,@Identific
 
 END
 
+CREATE PROCEDURE verificarRegistro(
+@idActividad int,
+@identificacion int)
+AS BEGIN
+SELECT CASE WHEN EXISTS (
+    SELECT *
+    FROM ParticipantesxActividad
+    WHERE ActividadId = @idActividad AND Identificacion = @Identificacion
+)
+THEN CAST(1 AS BIT)
+ELSE CAST(0 AS BIT) END
+END
+
+exec verificarRegistro 4,2015
