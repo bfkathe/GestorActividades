@@ -84,7 +84,6 @@ create table Pruebas(
 --Agregar para tabla de participantes
 alter table ParticipantesxActividad add Campus varchar(255)
 
-
 --Arreglo del eliminar actividades
 -- Agregar cascada a la fk de StaffxActividad 
 alter table StaffxActividad
@@ -95,3 +94,11 @@ add constraint FK_ActividadSA
 foreign key (ActividadId)
 references Actividades (ActividadId)
 on delete cascade
+
+
+--Agregar estado en tabla actividades
+alter table Actividades add Estado bit not null default 1 --1 abierta 0 cerrada
+
+--Agrega los cupos que se disminuyen en actividades
+alter table Actividades add CuposDisponibles int
+
