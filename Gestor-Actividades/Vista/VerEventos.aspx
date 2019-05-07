@@ -24,7 +24,6 @@
         <div id="menuOpciones"><br />
             <asp:Button ID="botonCrearAct" runat="server" Text="Crear Actividad" CssClass="botones" OnClick="botonCrearAct_Click"/><br />
             <asp:Button ID="botonVerAct" runat="server" Text="Ver Actividades" CssClass="botones" OnClick="botonVerAct_Click"/><br />
-            <asp:Button ID="botonCrearStaff" runat="server" Text="Crear Staff" CssClass="botones" OnClick="botonCrearStaff_Click"/><br />
             <br />
             <br />
             <br />
@@ -35,6 +34,7 @@
             <br />
             <br />
             <asp:Button ID="botonLogOut" runat="server" Text="Cerrar Sesión" CssClass="botones" Width="170px" OnClick="botonLogOut_Click" />
+            <asp:Button ID="Button1" runat="server" Text="Cerrar Sesión" CssClass="botones" Width="170px" OnClick="botonLogOut_Click" />
         </div>
 
         <div id="seccion" align="center"><br />
@@ -42,25 +42,26 @@
                 <h1>Eventos</h1>
             </div>
             <br />
-            <div id="form2">
+            <div class="row">
 
-                <div style="font-weight: 600; border: ridge" class="auto-style3" align="center">
+                <div class="column">
                     <asp:CheckBoxList ID="CheckBoxList_Eventos" runat="server" RepeatDirection="Vertical" TextAlign="Right" CellSpacing="20">
                         <asp:ListItem>Evento 1</asp:ListItem>
                         <asp:ListItem>Evento 2</asp:ListItem>
                     </asp:CheckBoxList>
                 </div>
-
-                <br />
-                <br />
-                <asp:Button ID="botonAgregarEvento" runat="server" Text="Agregar" CssClass="botones" Width="170px" OnClick="botonAgregarEvento_Click"/> <br /><br />
-                <asp:Button ID="botonEliminarEvento" runat="server" Text="Eliminar" CssClass="botones" Width="170px" OnClick="botonEliminarEvento_Click"/><br /><br />
-                <asp:Button ID="botonEditarEvento" runat="server" Text="Editar" CssClass="botones" Width="170px" OnClick="botonEditarEvento_Click"/><br /><br />
-                
-            </div>
-
-             
-            
+                <div class="column">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <asp:Button ID="botonAgregarEvento" runat="server" Text="Agregar" CssClass="botones" Width="170px" OnClick="botonAgregarEvento_Click"/> <br /><br />
+                    <asp:Button ID="botonEliminarEvento" runat="server" Text="Eliminar" CssClass="botones" Width="170px" OnClick="botonEliminarEvento_Click"/><br /><br />
+                    <asp:Button ID="botonEditarEvento" runat="server" Text="Editar" CssClass="botones" Width="170px" OnClick="botonEditarEvento_Click"/><br /><br />
+                </div>  
+            </div>    
         </div>
 
         

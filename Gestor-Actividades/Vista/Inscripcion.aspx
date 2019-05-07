@@ -84,7 +84,7 @@
                    <br />
                    <asp:TextBox ID="txtBox_correo" runat="server" Width="165px" style="margin-left: 150px"></asp:TextBox><br /><br />
                    <br />
-                   <asp:Button ID="botonInscribirse" runat="server" Text="Inscribirse" CssClass="botones" Width="170px" OnClick="botonInscribirParticipante_Click" />
+                   <asp:Button ID="botonInscribirse" runat="server" Text="Inscribirse" CssClass="botones" Width="170px" OnClick="botonInscribirParticipante_Click" BorderStyle="None" Height="27px" />
                </div>
             </div> 
  

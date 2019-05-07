@@ -35,16 +35,17 @@ namespace Gestor_Actividades.Vista
         protected void ButtonVer_Click(object sender, EventArgs e)
         {
             foreach (ListItem item in CheckBoxList_Actividades.Items)
-            {
-                if (item.Selected)
-                {
-                    singleton.setActividadId(Convert.ToInt32(item.Value));
-                    singleton.setNombreArchivo(item.Text);
-                }
-            }
-            dto.setActividadId(singleton.getActividadId());
+             {
+                 if (item.Selected)
+                 {
+                     singleton.setActividadId(Convert.ToInt32(item.Value));
+                     singleton.setNombreArchivo(item.Text);
+                 }
+             }
+             dto.setActividadId(singleton.getActividadId());
 
-            Response.Redirect("InformacionActividad.aspx");
+             Response.Redirect("InformacionActividad.aspx");
+
         }
     }
 }

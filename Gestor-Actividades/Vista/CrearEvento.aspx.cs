@@ -83,7 +83,7 @@ namespace Gestor_Actividades.Vista
             {
                 System.Diagnostics.Debug.WriteLine("Error al insertar Evento GUI", ex);
             }
-            
+            Response.Redirect("VerEventos.aspx");
         }
 
         protected void botonLogOut_Click(object sender, EventArgs e)

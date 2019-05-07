@@ -21,6 +21,7 @@ namespace Gestor_Actividades.Vista
 
         protected void botonBuscar_Click(object sender, EventArgs e)
         {
+            ListBox_Actividades.Items.Clear();
             List<string> listaActividades = new List<string>();
             dto.setIdParticipante(Convert.ToInt32(txt_ID.Text));
             listaActividades = controlador.actividadesXparticipante(dto);

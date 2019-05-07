@@ -199,9 +199,7 @@ C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\roslyn\Sy
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\roslyn\System.Diagnostics.Process.dll
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\roslyn\System.Diagnostics.StackTrace.dll
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\roslyn\System.IO.Compression.dll
-C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
-C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\roslyn\System.IO.Pipes.dll
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\roslyn\System.Security.AccessControl.dll
@@ -229,4 +227,6 @@ C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\obj\Debug\Ges
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\obj\Debug\Gestor-Actividades.csproj.CopyComplete
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\obj\Debug\Gestor-Actividades.dll
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\obj\Debug\Gestor-Actividades.pdb
+C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Users\audra\Source\Repos\Gestor-Actividades2\Gestor-Actividades\obj\Debug\Gestor-Actividades.csprojAssemblyReference.cache

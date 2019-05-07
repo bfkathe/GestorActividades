@@ -90,7 +90,7 @@ namespace Gestor_Actividades.Vista
             try
             {
                 controlador.editarEvento(dto);
-                Response.Redirect("VerActividades.aspx");
+                Response.Redirect("VerEventos.aspx");
             }catch(Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Error al editar evento GUI" + ex.Message);
@@ -99,6 +99,11 @@ namespace Gestor_Actividades.Vista
 
 
             MsgBox("Evento Registrado", this.Page, this);
+        }
+
+        protected void botonLogOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
         }
     }
 

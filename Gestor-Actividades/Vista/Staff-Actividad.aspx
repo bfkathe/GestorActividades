@@ -21,7 +21,17 @@
             <asp:Button ID="botonCrearAct" runat="server" Text="Crear Actividad" CssClass="botones" OnClick="botonCrearAct_Click" /><br />
             <asp:Button ID="botonVerAct" runat="server" Text="Ver Actividades" CssClass="botones" OnClick="botonVerAct_Click" /><br />
             <asp:Button ID="botonCrearStaff" runat="server" Text="Crear Staff" CssClass="botones" OnClick="botonCrearStaff_Click" /><br />
-            <asp:Button ID="botonDesinscribir" runat="server" Text="Desinscribir Participante" CssClass="botones" OnClick="botonDesinscribir_Click"/>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <asp:Button ID="botonLogOut" runat="server" Text="Cerrar Sesión" CssClass="botones" Width="170px" OnClick="botonLogOut_Click" />
+       
         </div>
 
         <div id="seccion" class="auto-style2">
@@ -30,28 +40,19 @@
                 <h1>Staff de actividad</h1>
             </div>
             <br />
-            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <h2 style="margin-left: 120px">Actividades&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Staff</h2><br />
             <div id="listas" align="center">
-                <table align="center" style="border:solid #808080">
-                    <tr>
-                        <th style="background-color:#808080;font-size:large">Actividades</th>
-                        <th style="background-color:#808080"></th>
-                        <th style="background-color:#808080;font-size:large">Usuarios de Staff</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:CheckBoxList ID="CheckBoxList_Actividades" runat="server" OnSelectedIndexChanged="CheckBoxList_Actividades_SelectedIndexChanged" CellSpacing="30" TextAlign="Right">
-                            </asp:CheckBoxList>
-                        </td>
-                        <td style="background-color:#808080">&nbsp;</td>
-                        <td>
-                            <asp:CheckBoxList ID="CheckBoxList_Staff" runat="server" CellSpacing="30" TextAlign="Right">
-                            </asp:CheckBoxList>
-                        </td>
-                    </tr>
-                </table>
-                <br />
-                <br />
+                <div class="row">
+                    <div class="column">
+                        <asp:CheckBoxList ID="CheckBoxList_Actividades" runat="server" OnSelectedIndexChanged="CheckBoxList_Actividades_SelectedIndexChanged" CellSpacing="30" TextAlign="Right">
+                        </asp:CheckBoxList>
+                    </div>
+                    <div class="column">
+                        <asp:CheckBoxList ID="CheckBoxList_Staff" runat="server" CellSpacing="30" TextAlign="Right">
+                        </asp:CheckBoxList>
+                        
+                    </div>
+                </div>
                 <asp:Button ID="botonConfirmar" runat="server" Text="Confirmar" CssClass="botones" OnClick="botonConfirmar_Click" />
             </div>
             <br />

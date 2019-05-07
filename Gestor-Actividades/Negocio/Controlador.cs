@@ -392,5 +392,18 @@ namespace Gestor_Actividades.Negocio
             }
 
         }
+
+        public bool verificarRegistro(DTO dto)
+        {
+            try
+            {
+                return conexion.verificarRegistro(dto.getActividadId(),dto.getIdentificacion());
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al verificar", ex);
+                return false;
+            }
+        }
     }
 }

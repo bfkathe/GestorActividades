@@ -40,15 +40,6 @@ namespace Gestor_Actividades.Vista {
         protected global::System.Web.UI.WebControls.Button botonVerAct;
         
         /// <summary>
-        /// Control botonCrearStaff.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonCrearStaff;
-        
-        /// <summary>
         /// Control botonLogOut.
         /// </summary>
         /// <remarks>
@@ -56,6 +47,15 @@ namespace Gestor_Actividades.Vista {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button botonLogOut;
+        
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// Control CheckBoxList_Eventos.

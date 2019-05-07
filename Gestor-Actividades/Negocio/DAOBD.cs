@@ -796,7 +796,32 @@ namespace Gestor_Actividades.Negocio
             }
         }
 
-
+        public bool verificarRegistro(int idActividad, int identificacion)
+        {
+            try
+            {
+                Abrir();
+                bool resultado = false; 
+                SqlCommand command = new SqlCommand("verificarRegistro", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@idActividad", idActividad));
+                command.Parameters.Add(new SqlParameter("@identificacion", identificacion));
+                command.ExecuteNonQuery();
+                SqlDataReader rdr = command.ExecuteReader();
+                while (rdr.Read())
+                {
+                    resultado = rdr.GetBoolean(0);
+                }
+                rdr.Close();
+                return resultado;
+            }
+            catch (SqlException ex)
+            {
+                Console.Write(ex);
+                System.Diagnostics.Debug.WriteLine("Error al obtener verificacion");
+                return false;
+            }
+        }
 
 
     }   

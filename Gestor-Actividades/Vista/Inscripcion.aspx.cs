@@ -4,6 +4,7 @@ using Gestor_Actividades.Negocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -38,23 +39,75 @@ namespace Gestor_Actividades.Vista
             char[] charsToTrim = {' '};
             try
             {
+                //Expresiones regulares
+                String validaCaracteres = "[a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]+";
+                String validaNumero = "^[0-9]*$";
+                String validaCorreo = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+
+                //Datos a verificar
                 String correo = txtBox_correo.Text.Trim(charsToTrim);
                 String nombreCompleto = txtBox_nombreParticipante.Text.Trim(charsToTrim) + " " + txtBox_primerAParticipante.Text.Trim(charsToTrim);
                 String nombreActividad = singleton.getNombreActividad();
-                dto.setActividadId(singleton.getActividadId());
-                dto.setIdTipoParticipante(Convert.ToInt32(DropDownList_TipoParticipante.SelectedValue));
-                dto.setIdCurso(Convert.ToInt32(DropDownList_Curso.SelectedValue));
-                dto.setCampus(DropDownList_Campus.SelectedValue.ToString());
-                dto.setIdentificacion(Convert.ToInt32(txtBox_identificacion.Text.Trim(charsToTrim)));
-                dto.setNombreP(txtBox_nombreParticipante.Text.Trim(charsToTrim));
-                dto.setPrimerApellidoP(txtBox_primerAParticipante.Text.Trim(charsToTrim));
-                dto.setSegundoApellidoP(txtBox_segundoAParticipante.Text.Trim(charsToTrim));
-                dto.setCorreo(correo);
-                dto.setStaffNombre(nombreCompleto);
-                dto.setActividadNombre(nombreActividad);
+                String nombre = txtBox_nombreParticipante.Text.Trim(charsToTrim);
+                String primerApellido = txtBox_primerAParticipante.Text.Trim(charsToTrim);
+                String segundoApellido = txtBox_segundoAParticipante.Text.Trim(charsToTrim);
+                String identificacion = txtBox_identificacion.Text.Trim(charsToTrim);
+                
+                //Matches
+                Match matchNombre = Regex.Match(nombre, validaCaracteres);
+                Match matchApellido1 = Regex.Match(primerApellido, validaCaracteres);
+                Match matchApellido2 = Regex.Match(segundoApellido, validaCaracteres);
+                Match matchIdentificacion = Regex.Match(identificacion,validaNumero);
+                Match matchCorreo = Regex.Match(correo,validaCorreo);
 
-                controlador.agregarParticipante(dto);
-                controlador.email_send(dto);
+                //Validaciones
+                if(!matchNombre.Success || !matchApellido1.Success || !matchApellido2.Success)
+                {
+                    MsgBox("El nombre y apellidos no pueden contener carácteres especiales o números", this.Page, this);
+                }else if (!matchIdentificacion.Success)
+                {
+                    MsgBox("La identificacion puede contener unicamente números", this.Page, this);
+                }
+                else if (!matchCorreo.Success)
+                {
+                    MsgBox("Formato de correo inválido", this.Page, this);
+                }
+                else
+                {
+                    //Datos del participante
+                    dto.setActividadId(singleton.getActividadId());
+                    dto.setIdTipoParticipante(Convert.ToInt32(DropDownList_TipoParticipante.SelectedValue));
+                    dto.setIdCurso(Convert.ToInt32(DropDownList_Curso.SelectedValue));
+                    dto.setCampus(DropDownList_Campus.SelectedValue.ToString());
+                    dto.setIdentificacion(Convert.ToInt32(identificacion));
+                    dto.setNombreP(nombre);
+                    dto.setPrimerApellidoP(primerApellido);
+                    dto.setSegundoApellidoP(segundoApellido);
+                    dto.setCorreo(correo);
+
+                    //Datos para el correo
+                    dto.setStaffNombre(nombreCompleto);
+                    dto.setActividadNombre(nombreActividad);
+
+                    if (controlador.verificarRegistro(dto))
+                    {
+                        MsgBox("Usted ya se encuentra inscrito en esta actividad", this.Page, this);
+                        txtBox_correo.Text = "";
+                        txtBox_identificacion.Text = "";
+                        txtBox_nombreParticipante.Text = "";
+                        txtBox_primerAParticipante.Text = "";
+                        txtBox_segundoAParticipante.Text = "";
+                    }
+                    else
+                    {
+                        controlador.agregarParticipante(dto);
+                        controlador.email_send(dto);
+                        MsgBox("Inscripción exitosa", this.Page, this);
+                    }
+                    
+                }
+
+                
 
             }catch(Exception ex)
             {
@@ -76,6 +129,14 @@ namespace Gestor_Actividades.Vista
         protected void botonCrearStaff_Click(object sender, EventArgs e)
         {
             Response.Redirect("Staff.aspx");
+        }
+
+        public void MsgBox(String ex, Page pg, Object obj)
+        {
+            string s = "<SCRIPT language='javascript'>alert('" + ex.Replace("\r\n", "\\n").Replace("'", "") + "'); </SCRIPT>";
+            Type cstype = obj.GetType();
+            ClientScriptManager cs = pg.ClientScript;
+            cs.RegisterClientScriptBlock(cstype, s, s.ToString());
         }
     }
 }
