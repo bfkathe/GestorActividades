@@ -10,11 +10,14 @@
     <title>Crear Actividad</title>
     <link href="/CSS/StyleSheet2.css" rel="Stylesheet" type="text/css"/>
     <style type="text/css">
-        .auto-style1 {
-            height: 1062px;
-        }
         .auto-style2 {
-            height: 1290px;
+            height: 646px;
+        }
+        .auto-style3 {
+            float: left;
+            width: 47%;
+            max-height: 400px;
+            height: 400px;
         }
     </style>
 </head>
@@ -49,8 +52,8 @@
             </div>
             <br /><br /><br />
 
-                <div class="row">
-                    <div class="column">
+                <div class="row2">
+                    <div class="auto-style3" style="padding-left:30px">
                         
                         Nombre de la actividad:
                         <br />
@@ -85,7 +88,7 @@
                         <br />
 
                     </div>
-                    <div class="column">
+                    <div class="column2">
                         Cupo Reservado:
                         <asp:CheckBox ID="CheckBoxCupo" Text= " " runat="server" style="margin-left: 100px"/>
                         <br />
@@ -105,7 +108,7 @@
                         <br />
                         <asp:TextBox ID="txtEncargado" runat="server" Width="165px" style="margin-left: 150px"></asp:TextBox>
                         <br />
-                        Archivos: <asp:FileUpload ID="FileUpload1" runat="server" />
+                        Imagen de Actividad: <asp:FileUpload ID="FileUpload1" runat="server" />
                         <br />
                         <br />
                         <asp:Button ID="botonRegistrar" runat="server" Text="Registrar" CssClass="botones" OnClick="botonRegistrar_Click" />

@@ -31,13 +31,12 @@
 
         <div align="center" class="auto-style1">
             <br>
-            <asp:Image ID="imagenActividad" runat="server" src="/Imagenes/actividad.jpg" Width="350px" Height="500px"/>
+            <asp:Image ID="Image1" runat="server" width="350" Height="500px"/>
             <br />
             <asp:TextBox ID="txt_informacion" runat="server" Height="146px" Width="300px" BorderStyle="Dotted" TextMode="MultiLine" ></asp:TextBox>
             <br /><br />
             <asp:Button ID="boton_Inscripcion" runat="server" Text="Inscripción" CssClass="botones" Width="120px" OnClick="boton_Inscripcion_Click"/>
-            <br />
-            <asp:Image ID="Image1" runat="server" width="350" Height="500px"/>
+            <br />        
         </div>
         
     </form>

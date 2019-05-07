@@ -83,3 +83,15 @@ create table Pruebas(
 
 --Agregar para tabla de participantes
 alter table ParticipantesxActividad add Campus varchar(255)
+
+
+--Arreglo del eliminar actividades
+-- Agregar cascada a la fk de StaffxActividad 
+alter table StaffxActividad
+drop Constraint FK_ActividadSA
+
+alter table StaffxActividad
+add constraint FK_ActividadSA
+foreign key (ActividadId)
+references Actividades (ActividadId)
+on delete cascade

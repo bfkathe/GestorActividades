@@ -7,6 +7,19 @@
     <title>Gestor de Actividades</title>
     <link href="/CSS/StyleSheet2.css" rel="Stylesheet" type="text/css"/>
  
+    <style type="text/css">
+        .auto-style1 {
+            width: 198px;
+        }
+        .auto-style2 {
+            width: 196px;
+            float: left;
+        }
+        .auto-style3 {
+            width: 459px;
+        }
+    </style>
+ 
 </head>
 <body>
     <form id="form1" runat="server">
@@ -29,12 +42,15 @@
         <h2 align="center">Módulo administrativo</h2>
         <img id="imagen" src="/Imagenes/imagen.png" height="150px" width="150px">
 
-        <div id="form" align="center">
+        <div id="form" align="center" class="auto-style3">
             <br />
-            <asp:TextBox ID="txtBox_username" runat="server" Text="Username"></asp:TextBox><br>
-            <br>
-            <asp:TextBox ID="txtBox_password" runat="server" TextMode="Password"></asp:TextBox><br>
-            <br>
+            <div align="center">
+                <label class="auto-style1" style="float:left">Usuario</label>
+                <asp:TextBox ID="txtBox_username" runat="server" CssClass="textBox"></asp:TextBox><br><br />
+                <label class="auto-style2">Contraseña</label>
+                <asp:TextBox ID="txtBox_password" runat="server" TextMode="Password" CssClass="textBox"></asp:TextBox><br>
+            </div>
+            <br /><br />
             <asp:Button ID="botonLogIn" runat="server" Text="Ingresar" CssClass="botones" Width="120px" Height="35px" OnClick="botonLoggear_Click"/>
         </div>
     </form>

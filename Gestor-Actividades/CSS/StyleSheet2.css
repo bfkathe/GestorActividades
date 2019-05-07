@@ -64,12 +64,12 @@ nav li{
     background-color: #ffffff;
     margin: 0 auto;
     width: 500px;
-    padding: 0 20px 0 0;
+
 }
 
 #menuOpciones {
     background-color: #ffffff;
-    width: 350px;
+    width: 320px;
     height: 500px;
     padding: 0 20px 0 0;
     color: #444;
@@ -85,6 +85,8 @@ nav li{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 170px;
+    height: 40px;
     }
 
 #form2 {
@@ -121,3 +123,22 @@ nav li{
     display: table;
     clear: both;
 }
+
+
+.column2 {
+    float: left;
+    width: 50%;
+    max-height: 400px;
+    height: 400px;
+}
+
+.row2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.textBox{
+    float:left;
+}
+

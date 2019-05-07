@@ -63,7 +63,7 @@ Alter table Actividades ADD Lugar varchar(50);
 Alter table Actividades ADD Descripcion varchar(250);  
 
 -----------Insertar Actividades----------------------------------------------
-
+go
 create procedure insertarActividad(
 	@Fecha date,
 	@Nombre varchar(125),
@@ -82,7 +82,7 @@ GO
 exec insertarActividad '2019-03-29', 'Actividad1' , '5:00pm', 'Sede Cartago', 0, 'Audra Rodriguez', 28, 'Centro de las Artes', 'Descripcion'
 exec insertarActividad '2019-03-30', 'Actividad2' , '5:00pm', 'Sede Cartago', 0, 'Audra Rodriguez', 28, 'Centro de las Artes', 'Descripcion'
 exec insertarActividad '2019-03-30', 'Actividad3' , '5:00pm', 'Sede Cartago', 0, 'Audra Rodriguez', 28, 'Centro de las Artes', 'Descripcion'
-
+go
 -----------Editar Actividad----------------------------------------------
 create procedure editarActividad(
 	@id int,
@@ -113,6 +113,7 @@ GO
 exec editarActividad 9,'2019-03-29', 'Actividad1' , '4:00pm', 'Sede SJ', 0, 'Audra Rodriguez Mora', 27, 'Casa Verde', 'Descripcion'
 
 ---------------------Eliminar Actividad----------------------------------
+go
 create procedure eliminarActividad(
 	@id int
 )
@@ -120,7 +121,7 @@ AS
 DELETE FROM Actividades WHERE ActividadId = @id
 GO
 
-exec eliminarActividad 1
+exec eliminarActividad 10
 
 -----------Arregla la tabla de eventos--------------------
 Alter table Eventos ADD Descripcion varchar(150)
@@ -129,7 +130,7 @@ Alter table Eventos ADD Horario varchar(150)
 Alter table Eventos ADD ActividadId int; 
 Alter table Eventos ADD FOREIGN KEY (ActividadId) REFERENCES Actividades(ActividadId); 
 -----------Insertar Eventos----------------------------------------------
-
+go
 create procedure insertarEvento(
 	@idActividad int,
 	@Nombre varchar(125),
@@ -143,7 +144,7 @@ GO
 
 
 exec insertarEvento 2,'Evento1', '2019-03-29', 'Audra Rodriguez', 'Conferencia'
-
+go
 -----------Editar Actividad----------------------------------------------
 create procedure editarEvento(
 	@id int,
@@ -162,7 +163,7 @@ WHERE EventosId = @id
 GO
 
 exec editarEvento 2,'Evento1', '2019-03-29', 'Audra Rodriguez Mora', 'Conferencia Nueva'
-
+go
 ---------------------Eliminar Actividad----------------------------------
 create procedure eliminarEvento(
 	@id int
@@ -206,7 +207,7 @@ Alter table Archivos ADD FileType nvarchar(50)
 Alter table Archivos ADD Data varbinary(MAX)
 Alter table Archivos ADD ActividadId int; 
 Alter table Archivos ADD FOREIGN KEY (ActividadId) REFERENCES Actividades(ActividadId) ON DELETE CASCADE; 
-
+go
 create procedure agregarArchivo(
 	@Name nvarchar(50),
 	@FileType nvarchar(50),
@@ -253,7 +254,7 @@ exec desinscribirParticipante 5,2015101893
 
 
 -------CORRER ESTO----------
-
+go
 ---------Verificar login del Staff ------- 
 alter proc verificarLoginStaff(@Usuario nvarchar(50),@Pass nvarchar(50))
 as
@@ -282,7 +283,7 @@ end
 go
 
 exec actividadesXparticipante 2015101893
-
+go
 create procedure agregarParticipante(
 @ActividadId int,
 @CursoId int,
@@ -300,7 +301,7 @@ values(@ActividadId,@CursoId,@TipoPId,0,@Apellido1,@Apellido2,@Nombre,@Identific
 		@Correo,@Campus)
 
 END
-
+go
 CREATE PROCEDURE verificarRegistro(
 @idActividad int,
 @identificacion int)
@@ -315,3 +316,5 @@ ELSE CAST(0 AS BIT) END
 END
 
 exec verificarRegistro 4,2015
+
+
