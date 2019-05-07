@@ -9,8 +9,17 @@
     <link href="/CSS/StyleSheet2.css" rel="Stylesheet" type="text/css"/>
     <style type="text/css">
 
-        .auto-style3 {
-            width: 401px;
+        .auto-style4 {
+            float: left;
+            width: 42%;
+            max-height: 400px;
+            height: 400px;
+        }
+        .auto-style5 {
+            float: left;
+            width: 31%;
+            max-height: 400px;
+            height: 400px;
         }
     </style>
 </head>
@@ -23,7 +32,7 @@
                 <li style="font-size:large;padding-left:300px">&nbsp; Sistema Gestor de Actividades&nbsp;&nbsp;</li>              
             </ul>
         </nav>
-        <div id="menuInicio" style="background-color:#adadad;margin:0;width:auto;height:67px">
+        <div id="menuInicio" style="background-color:#adadad;margin:0;width:auto;height:40px">
             <ul>
                 <li><a href="Inicio.aspx">Inicio</a></li>
                 <li><a href="ActividadesXParticipante.aspx">Actividades por participante</a></li>
@@ -35,8 +44,8 @@
             </div>
             <br /><br />
 
-            <div class="row">
-                <div class="column">
+            <div class="row2">
+                <div class="auto-style4" style="padding-left:170px">
                                     
                 Tipo de Participante:<br /><br />
                     <asp:DropDownList ID="DropDownList_TipoParticipante" runat="server" Width="165px" style="margin-left: 150px">
@@ -64,7 +73,7 @@
                
 
                </div>
-               <div class="column">
+               <div class="auto-style5" style="padding-left:50px">
                 
 
                 Nombre:

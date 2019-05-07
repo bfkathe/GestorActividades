@@ -66,7 +66,7 @@
                     <br /><br />
                     <br /><br />
                     <br /><br />
-                    <asp:Button ID="ButtonVer" runat="server" Text="Ver" class="botones" width="100px" OnClick="ButtonVer_Click"/>
+                    <asp:Button ID="ButtonVer" runat="server" Text="Ver" class="botones" OnClick="ButtonVer_Click"/>
                 </div>
             </div>
             

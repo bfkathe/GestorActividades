@@ -87,6 +87,7 @@ namespace Gestor_Actividades.Vista
                 }
                 String nombreActividad = txtBox_nombre.Text;
                 String horario = txtBox_horario.Text;
+
                 //Archivos
                 FileInfo fi = new FileInfo(FileUpload1.FileName);
                 byte[] docContent = FileUpload1.FileBytes;

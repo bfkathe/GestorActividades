@@ -16,7 +16,7 @@
                 <li style="font-size:large;padding-left:300px">&nbsp; Sistema Gestor de Actividades&nbsp;&nbsp;</li>              
             </ul>
         </nav>
-        <div id="menuInicio" style="background-color:#adadad;margin:0;width:auto;height:70px">
+        <div id="menuInicio" style="background-color:#adadad;margin:0;width:auto;height:40px">
             <ul>
                 <li><a href="Inicio.aspx">Inicio</a></li>
                 <li><a href="ActividadesXParticipante.aspx">Actividades por participante</a></li>
@@ -26,9 +26,8 @@
         <div align="center">
             <br>
             <h3>Carné/Identificación</h3>
-            <asp:TextBox ID="txt_ID" runat="server"></asp:TextBox>
-            &nbsp;&nbsp;
-            <asp:Button ID="botonBuscar" runat="server" Text="Buscar" CssClass="botones" OnClick="botonBuscar_Click" Height="35px" Width="130px" /><br /><br />
+            <asp:TextBox ID="txt_ID" runat="server"></asp:TextBox><br /><br />
+            <asp:Button ID="botonBuscar" runat="server" Text="Buscar" CssClass="botones" OnClick="botonBuscar_Click" Height="35px" Width="130px" float="left"/><br /><br />
             <asp:ListBox ID="ListBox_Actividades" runat="server" Width ="297px" Height ="94px"></asp:ListBox>
         </div>
     </form>
